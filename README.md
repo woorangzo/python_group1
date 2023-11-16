@@ -1,6 +1,4 @@
 # woorangzo
-### git clone 으로 가져가시고 만들어진 레포지토리 폴더 자체 우클릭하셔서 파이참으로 열어주세요
-
 ### 1. venv 파일 생성방법
 - 설정파일에 들어가 python interpreter 검색
 - python interpreter 부분의 ∨ 을 눌러 show all 선택
