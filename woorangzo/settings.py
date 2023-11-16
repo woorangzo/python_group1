@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'woorangzo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'woorangzo',
+        'USER': 'woorangzo',
+        'PASSWORD': '1234',
+        'HOST': 'localhost', # MySQL 서버 호스트
+        'PORT': '3306', # MySQL 포트 번호
     }
 }
 
