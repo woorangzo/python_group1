@@ -13,4 +13,11 @@
 - .\activate
 - 가상환경 진입
 - pip install -r requirements.txt 해주세요
-  
+
+
+### cmd 입력해주세요
+- mysql -u root -p
+- create user 'woorangzo'@'%' identified by '1234';
+- grant all privileges on *.* to 'woorangzo'@'%';
+- create database woorangzo default character set UTF8;
+
