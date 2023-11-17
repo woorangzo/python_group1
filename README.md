@@ -23,7 +23,7 @@
 ### cmd 입력해주세요
 - mysql -u root -p
 - create user 'woorangzo'@'%' identified by '1234';
-- grant all privileges on `*.*` to 'woorangzo'@'%';
+- grant all privileges on `*`.`*` to 'woorangzo'@'%';
 - create database woorangzo default character set UTF8;
 
 #### dbeaver mySql 설정(driver setting)
