@@ -26,3 +26,6 @@
 - grant all privileges on *.* to 'woorangzo'@'%';
 - create database woorangzo default character set UTF8;
 
+#### dbeaver mySql 설정(driver setting)
+- useSSL  : false
+- allowPublicKeyRetrieval : true
