@@ -6,6 +6,13 @@
 - venv가 만들어진 것을 볼 수 있음
 - 안 될 경우 우지연,김세환에게 오세요..
 
+### 2. venv 설정 후
+- django설치 (경로 : ..\woorangzo\venv\Scripts) <br/>
+`명령어`
+- pip install django==4.2.7
+- python -m pip install --upgrade pip
+
+
 ### 가상환경
 - cd venv/Scripts
 - .\activate
