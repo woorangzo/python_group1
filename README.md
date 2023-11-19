@@ -6,6 +6,13 @@
 - venv가 만들어진 것을 볼 수 있음
 - 안 될 경우 우지연,김세환에게 오세요..
 
+### 2. venv 설정 후
+- django설치 (경로 : ..\woorangzo\venv\Scripts) <br/>
+`명령어`
+- pip install django==4.2.7
+- python -m pip install --upgrade pip
+
+
 ### 가상환경
 - cd venv/Scripts
 - .\activate
@@ -16,6 +23,9 @@
 ### cmd 입력해주세요
 - mysql -u root -p
 - create user 'woorangzo'@'%' identified by '1234';
-- grant all privileges on *.* to 'woorangzo'@'%';
+- grant all privileges on `*`.`*` to 'woorangzo'@'%';
 - create database woorangzo default character set UTF8;
 
+#### dbeaver mySql 설정(driver setting)
+- useSSL  : false
+- allowPublicKeyRetrieval : true
