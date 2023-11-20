@@ -1,6 +1,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
-from .views import join
+
+from . import views
+from .views import join, MainView
 
 app_name = 'accounts'
 
@@ -13,6 +15,6 @@ urlpatterns = [
     path('join/', join, name="join"),
     path('navbar/', auth_views.LoginView.as_view(template_name="accounts/navbar.html", redirect_authenticated_user=False),
          name="navbar"),
-    path('index/', auth_views.LoginView.as_view(template_name="accounts/index.html", redirect_authenticated_user=False),
-         name="index")
+    path('index/', views.MainView),
+
 ]

@@ -2,6 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+from django.views.generic import TemplateView
+
+
 # Create your views here.
 def join(request):
     if request.method == "POST":
@@ -23,6 +26,7 @@ def join(request):
 
     return render(request, 'accounts/join.html')
 
+
 def login(request):
     if request.method == "POST":
         username = request.POST['username']
@@ -32,13 +36,17 @@ def login(request):
             auth.login(request, user)
             return redirect('home')
         else:
-            return render(request,'accounts/login.html', {'error':'username or password is incorrect'})
+            return render(request, 'accounts/login.html', {'error': 'username or password is incorrect'})
     else:
-        return render(request,'accounts/login.html')
+        return render(request, 'accounts/login.html')
+
 
 def logout(request):
     if request.method == "POST":
         auth.logout(request)
         return redirect('home')
-    return render(request,'accounts/join.html')
+    return render(request, 'accounts/join.html')
 
+
+def MainView(request):
+    return render(request, 'accounts/index.html')
