@@ -6,9 +6,9 @@ from django.contrib import auth
 def join(request):
     if request.method == "POST":
         username = request.POST['username']
+
         password1 = request.POST['password1']
         password2 = request.POST['password2']
-
         if password1 == password2:
             # Check if the username is unique
             if User.objects.filter(username=username).exists():
@@ -40,4 +40,5 @@ def logout(request):
     if request.method == "POST":
         auth.logout(request)
         return redirect('home')
-    return render(request,'accouts/join.html')
+    return render(request,'accounts/join.html')
+
