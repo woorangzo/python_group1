@@ -50,3 +50,4 @@ def logout(request):
 
 def MainView(request):
     return render(request, 'accounts/index.html')
+

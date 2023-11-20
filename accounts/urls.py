@@ -17,4 +17,5 @@ urlpatterns = [
          name="navbar"),
     path('index/', views.MainView),
 
+
 ]
