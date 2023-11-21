@@ -20,7 +20,7 @@ conn = pymysql.connect(
 
 # 사용자로부터 종목 코드 입력 받기
 stock_name = input("종목명을 입력하세요: ")
-5
+
 # SQL 쿼리 작성 - 종목명을 기준으로 데이터 조회
 # (종가, 거래량, 시가, 고가, 저가)
 sql_query = f"""

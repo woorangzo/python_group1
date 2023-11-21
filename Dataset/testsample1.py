@@ -28,7 +28,7 @@ if df.empty:
     print(f"종목 코드 '{stock_code}'에 대한 데이터가 없습니다.")
 else:
     # 차트 그리기
-    df['stock_dt'] = pd5.to_datetime(df['stock_dt'])  # stock_dt를 날짜로 변환
+    df['stock_dt'] = pd.to_datetime(df['stock_dt'])  # stock_dt를 날짜로 변환
     df = df.set_index('stock_dt')  # 날짜를 인덱스로 설정
 
     plt.figure(figsize=(12, 6))
