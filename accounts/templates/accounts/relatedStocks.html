@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>RelatedStocks</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet"/>
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+
+<body style="margin:0 0;">
+<div class="container-xxl position-relative bg-white d-flex p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+
+        <nav>
+            <div class="container position-relative">
+                <div class="logo ms-auto">
+                    <img src="{% static 'img/woorangzo.png' %}" alt="로고" style="width: 130px; height: auto;" onclick="redirectToHome()">
+                </div>
+
+                <!--KOSPI-->
+                <div id="kpi-info" class="info position-absolute top-0 end-0" style="width: 190px;">
+                    <span class="label label-default">KOSPI</span>
+                    <div class="con">
+                        <strong id="kpi-value">Loading...</strong>
+                        <span class="up" id="kpi-change"></span>
+                        <span class="up" id="kpi-percent"></span>
+                    </div>
+                </div>
+
+
+                <!--KOSDAQ-->
+                <div id="kosdaq-info" class="info position-absolute top-0 end-0" style="width: 190px; display: none;">
+                    <span class="label label-default">KOSDAQ</span>
+                    <div class="con">
+                        <strong id="kosdaq-value">Loading...</strong>
+                        <span class="up" id="kosdaq-change"></span>
+                        <span class="up" id="kosdaq-percent"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-end">
+                    <!-- 로그인 버튼 -->
+                    <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
+
+                    <!-- 회원가입 버튼 -->
+                    <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
+
+                    <!-- 마이페이지 버튼 -->
+                    <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
+
+                </div>
+           </div>
+            <div class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
+                <div class="col-md-3 mb-2 mb-md-0">
+                    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
+                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
+                    </a>
+                </div>
+                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                AI 정보 분석
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
+                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
+
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                AI 종목 추천
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
+                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
+
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                주식 비교
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                                뉴스레터
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+
+                            </ul>
+                    </ul>
+                    <form class="d-flex search-form ml-auto">
+                        <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
+                        <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
+                    </form>
+                </div>
+            </nav>
+            <!-- SelectBox Start -->
+            <div class="col-sm-12 col-xl-6" style="width:1322px;">
+                <div class="bg-light rounded h-100 p-4">
+                    <h3 class="mb-4">관련주</h3>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox1" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox1">판매업</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox2" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">은행</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox3" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">생물공학</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox4" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox1">전자제품</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox5" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">자동차부품</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox6" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">소프트웨어</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox7" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox1">문구류</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox8" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">제약</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox9" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">건설</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox10" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox1">교육서비스</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox11" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">증권</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox12" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">조선</label>
+                    </div>
+                </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox13" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">가구</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox14" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">기계</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox15" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">자동차</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox16" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">출판</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox17" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">항공사</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox18" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">화학</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox19" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">문구류</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox20" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">엔터테이먼트</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox21" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">전기장비</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox22" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">석유/가스</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox23" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">호텔/레스토랑/레저</label>
+                    </div>
+
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="inlineCheckbox24" name="stock">
+                        <label class="form-check-label" for="inlineCheckbox2">기타</label>
+                    </div>
+                </div>
+            </div>
+            <!-- SelectBox End -->
+            <div class="container-fluid p-4">
+                <table class= "table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">
+                            <input class="form-check-input" type="checkbox" id="selectAll">
+                        </th>
+                        <th scope="col">등락률</th>
+                        <th scope="col">종목명</th>
+                        <th scope="col">거래량</th>
+                        <th scope="col">날짜</th>
+
+                      </tr>
+                    </thead>
+                    <tbody>
+
+                      <tr>
+                        <th scope="row">
+                            <input class="form-check-input selectCheckbox" type="checkbox">
+                        </th>
+                        <th scope="row">+30.17%</th>
+                        <td>대한항공</td>
+                        <td>32,354,424</td>
+                        <td>11/21</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                            <input class="form-check-input selectCheckbox" type="checkbox">
+                        </th>
+                        <th scope="row">+20.17%</th>
+                        <td>아시아나항공</td>
+                        <td>12,178,296</td>
+                        <td>11/21</td>
+                      </tr>
+
+                      <tr>
+                        <th scope="row">
+                            <input class="form-check-input selectCheckbox" type="checkbox">
+                        </th>
+                        <th scope="row">+10.17%</th>
+                        <td>제주항공</td>
+                        <td>9,825,611</td>
+                        <td>11/21</td>
+                      </tr>
+                    </tbody>
+              </table>
+            </div>
+
+            <div class="container-fluid p-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-6" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-xl-6">
+                        <div class="bg-light text-center rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h5 class="mb-0">관련주 가격 비교</h5>
+                            </div>
+                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="margin-left: -15rem; margin-right: -19rem">
+                    <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+                </div>
+            </footer>
+            <!-- Footer End -->
+
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="{% static 'lib/chart/chart.min.js' %}"></script>
+<script src="{% static 'lib/easing/easing.min.js' %}"></script>
+<script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+<script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+<script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+<script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+<script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+
+<!-- logo -->
+<script>
+    function redirectToHome() {
+        window.location.href = '/';
+    }
+</script>
+
+<script>
+    function updateKPI() {
+        fetch('/get_kpi_data/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('kpi-value').textContent = data.value;
+                document.getElementById('kpi-change').textContent = data.change;
+                document.getElementById('kpi-percent').textContent = data.percent;
+
+                // 코스피 데이터를 가져왔으면 코스피를 보이게 하고, 코스닥은 숨기기
+                document.getElementById('kpi-info').style.display = 'block';
+                document.getElementById('kosdaq-info').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error fetching KPI data:', error);
+                document.getElementById('kpi-value').textContent = 'Error';
+                document.getElementById('kpi-change').textContent = '';
+                document.getElementById('kpi-percent').textContent = '';
+            });
+    }
+
+    function updateKosdaq() {
+        fetch('/get_kosdaq_data/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('kosdaq-value').textContent = data.value;
+                document.getElementById('kosdaq-change').textContent = data.change;
+                document.getElementById('kosdaq-percent').textContent = data.percent;
+
+                // 코스닥 데이터를 가져왔으면 코스피를 숨기고, 코스닥은 보이게 하기
+                document.getElementById('kpi-info').style.display = 'none';
+                document.getElementById('kosdaq-info').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error fetching KOSDAQ data:', error);
+                document.getElementById('kosdaq-value').textContent = 'Error';
+                document.getElementById('kosdaq-change').textContent = '';
+                document.getElementById('kosdaq-percent').textContent = '';
+            });
+    }
+
+    // 초기 로딩
+    updateKPI();
+
+    // 일정 간격으로 KPI 업데이트
+    setInterval(function() {
+        updateKPI();
+        // 코스피를 업데이트한 후에 코스닥을 업데이트
+        updateKosdaq();
+    }, 3000);
+</script>
+
+<script>
+    $(document).ready(function () {
+        // 상단 체크박스 선택 시 모든 체크박스 선택/해제
+        $('#selectAll').change(function () {
+            $('input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+        });
+    });
+</script>
+
+</body>
+
+</html>
