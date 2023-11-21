@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>회원가입</title>
+    <title>MyPage</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -133,7 +133,81 @@
 
 
     <!-- mypage Start -->
+    <div class="container-fluid p-4 px-4">
+        <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
+            <div class="col-md-6 text-center">
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4" style="position: relative; bottom: 70px; right: 310px; width: 800px;">
+                        <h4 class="mb-4" style="position:relative; right:16rem;">회원정보</h4>
+                        <hr style="width:1200px;"/>
+                        <dl class="row mb-0">
+                            <dt class="col-sm-4">이름</dt>
+                            <dd class="col-sm-8">홍길동</dd>
 
+                            <dt class="col-sm-4">아이디</dt>
+                            <dd class="col-sm-8">gildong</dd>
+
+                            <dt class="col-sm-4">주소</dt>
+                            <dd class="col-sm-8">서울특별시 강남구 개포동 123-45</dd>
+
+                            <dt class="col-sm-4 text-truncate">이메일</dt>
+                            <dd class="col-sm-8">hong@gmail.com</dd>
+
+                            <dt class="col-sm-4">전화번호</dt>
+                            <dd class="col-sm-8">010-1234-5678</dd>
+                        </dl>
+                        <hr style="width:1200px;"/>
+                        <br>
+                        <h4 class="mb-4" style="position:relative; right:16rem;">회원 정보 수정</h4>
+                        <form>
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">아이디 변경</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="newUsername">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">비밀번호 변경</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPassword3">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">비밀번호 변경 확인</label>
+                                <div class="col-sm-10">
+                                    <input type="password" class="form-control" id="inputPasswordConfirm">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">주소 변경</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="inputAddress">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">이메일 변경</label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">전화번호 변경</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control" id="inputPhone">
+                                </div>
+                            </div>
+                            <br>
+
+                            <button type="submit" class="btn btn-primary" style="position:relative; right:16rem;">수정</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-xl-6">
+                    <div class="bg-light rounded h-100 p-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- mypage End -->
 
             <footer>
