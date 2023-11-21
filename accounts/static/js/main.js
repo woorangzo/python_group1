@@ -10,9 +10,11 @@
         }, 1);
     };
     spinner();
+
     
     
     // Back to top button
+    // 위로 올리는 버튼
     $(window).scroll(function () {
         if ($(this).scrollTop() > 300) {
             $('.back-to-top').fadeIn('slow');
@@ -21,16 +23,16 @@
         }
     });
     $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+        $('html, body').animate({scrollTop: 0}, 100, 'easeOutQuad ');
         return false;
     });
 
 
     // Sidebar Toggler
-    $('.sidebar-toggler').click(function () {
-        $('.sidebar, .content').toggleClass("open");
-        return false;
-    });
+//    $('.sidebar-toggler').click(function () {
+//        $('.sidebar, .content').toggleClass("open");
+//        return false;
+//    });
 
 
     // Progress Bar
