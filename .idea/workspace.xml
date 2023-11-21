@@ -4,15 +4,135 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="메인/로그인/회원가입 페이지 헤더풋터 적용">
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="로그인 버튼 수정">
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/issue.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/img/testimonial-1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/img/testimonial-2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/img/user.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/img/woorangzo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/chart/chart.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/easing/easing.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/easing/easing.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/ajax-loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.carousel.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.theme.default.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.theme.default.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.theme.green.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.theme.green.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/assets/owl.video.play.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/owl.carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/owlcarousel/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/js/moment-timezone.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/js/moment.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/waypoints/links.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/lib/waypoints/waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_accordion.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_card.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_close.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_containers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_helpers.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_images.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_offcanvas.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_root.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_spinners.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_toasts.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_type.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/bootstrap-utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_floating-labels.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_form-check.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_form-control.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_form-range.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_form-select.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_form-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_input-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_labels.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/forms/_validation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_colored-links.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_position.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_ratio.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_stretched-link.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_text-truncation.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/helpers/_visually-hidden.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_color-scheme.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_container.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_deprecate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_table-variants.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_utilities.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/mixins/_visually-hidden.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/utilities/_api.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/static/scss/bootstrap/scss/vendor/_rfs.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/StockTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/StockTable.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/index.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/join.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +142,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -49,18 +169,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/woorangzo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "hansam",
+    "last_opened_file_path": "D:/woorangzo/accounts/templates/accounts",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\woorangzo\accounts\templates\accounts" />
+      <recent name="D:\woorangzo\single_page" />
+      <recent name="D:\woorangzo" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\woorangzo\woorangzo" />
       <recent name="D:\woorangzo\dashmin-1.0.0\templates" />
@@ -122,7 +247,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700469246975</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="로그인 버튼 수정">
+      <option name="closed" value="true" />
+      <created>1700473511184</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700473511184</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,6 +273,7 @@
     <MESSAGE value="[Ver 0.1] readme jango설치 및 mysql 환경설정" />
     <MESSAGE value="test" />
     <MESSAGE value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
-    <option name="LAST_COMMIT_MESSAGE" value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
+    <MESSAGE value="로그인 버튼 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인 버튼 수정" />
   </component>
 </project>

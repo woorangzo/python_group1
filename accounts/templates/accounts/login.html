@@ -47,20 +47,40 @@
         <nav>
             <div class="container position-relative">
                 <div class="logo ms-auto" >
-                    <img src="{% static 'img/woorangzo.png' %}" alt="로고" style="width: 130px; height: auto;">
+                    <img src="{% static 'img/woorangzo.png' %}" alt="로고" style="width: 130px; height: auto;" onclick="redirectToHome()">
                 </div>
-                <div class="info position-absolute top-0 end-0" style="width: 190px;">
+
+                <!--KOSPI-->
+                <div id="kpi-info" class="info position-absolute top-0 end-0" style="width: 190px;">
                     <span class="label label-default">KOSPI</span>
                     <div class="con">
-                        <strong>2,486.67</strong>
-                        <span class="up"> ▲53.42 </span>
-                        <span class="up"> +2.2% </span>
+                        <strong id="kpi-value">Loading...</strong>
+                        <span class="up" id="kpi-change"></span>
+                        <span class="up" id="kpi-percent"></span>
                     </div>
                 </div>
+
+
+                <!--KOSDAQ-->
+                <div id="kosdaq-info" class="info position-absolute top-0 end-0" style="width: 190px; display: none;">
+                    <span class="label label-default">KOSDAQ</span>
+                    <div class="con">
+                        <strong id="kosdaq-value">Loading...</strong>
+                        <span class="up" id="kosdaq-change"></span>
+                        <span class="up" id="kosdaq-percent"></span>
+                    </div>
+                </div>
+
                 <div class="col-md-3 text-end">
-                   <button type="button" onclick="location.href='#'" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</button>
-                   <button type="button" onclick="location.href='../join'" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</button>
-                   <button type="button" onclick="location.href='../mypage'" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</button>
+                    <!-- 로그인 버튼 -->
+                    <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
+
+                    <!-- 회원가입 버튼 -->
+                    <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
+
+                    <!-- 마이페이지 버튼 -->
+                    <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
+
                 </div>
            </div>
             <div class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
@@ -71,39 +91,37 @@
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">종목 분석</a></li>
-                                <li><a class="dropdown-item" href="#">업종/테마</a></li>
-                                <li><a class="dropdown-item" href="#">추천 3</a></li>
+                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
+                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
+
                             </ul>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">이슈 추천</a></li>
-                                <li><a class="dropdown-item" href="#">종목 추천</a></li>
-                                <li><a class="dropdown-item" href="#">추천 3</a></li>
+                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
+                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
+
                             </ul>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 주식 비교
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">종목</a></li>
-                                <li><a class="dropdown-item" href="#">관련주</a></li>
+                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
                             </ul>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">뉴스리스트</a></li>
-                                <li><a class="dropdown-item" href="#">추천 2</a></li>
-                                <li><a class="dropdown-item" href="#">추천 3</a></li>
+                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+
                             </ul>
                     </ul>
                     <form class="d-flex search-form ml-auto">
@@ -171,6 +189,65 @@
 
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
+
+<!-- logo -->
+<script>
+    function redirectToHome() {
+        window.location.href = '/';
+    }
+</script>
+
+<script>
+    function updateKPI() {
+        fetch('/get_kpi_data/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('kpi-value').textContent = data.value;
+                document.getElementById('kpi-change').textContent = data.change;
+                document.getElementById('kpi-percent').textContent = data.percent;
+
+                // 코스피 데이터를 가져왔으면 코스피를 보이게 하고, 코스닥은 숨기기
+                document.getElementById('kpi-info').style.display = 'block';
+                document.getElementById('kosdaq-info').style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error fetching KPI data:', error);
+                document.getElementById('kpi-value').textContent = 'Error';
+                document.getElementById('kpi-change').textContent = '';
+                document.getElementById('kpi-percent').textContent = '';
+            });
+    }
+
+    function updateKosdaq() {
+        fetch('/get_kosdaq_data/')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('kosdaq-value').textContent = data.value;
+                document.getElementById('kosdaq-change').textContent = data.change;
+                document.getElementById('kosdaq-percent').textContent = data.percent;
+
+                // 코스닥 데이터를 가져왔으면 코스피를 숨기고, 코스닥은 보이게 하기
+                document.getElementById('kpi-info').style.display = 'none';
+                document.getElementById('kosdaq-info').style.display = 'block';
+            })
+            .catch(error => {
+                console.error('Error fetching KOSDAQ data:', error);
+                document.getElementById('kosdaq-value').textContent = 'Error';
+                document.getElementById('kosdaq-change').textContent = '';
+                document.getElementById('kosdaq-percent').textContent = '';
+            });
+    }
+
+    // 초기 로딩
+    updateKPI();
+
+    // 일정 간격으로 KPI 업데이트
+    setInterval(function() {
+        updateKPI();
+        // 코스피를 업데이트한 후에 코스닥을 업데이트
+        updateKosdaq();
+    }, 3000);
+</script>
 </body>
 
 </html>
