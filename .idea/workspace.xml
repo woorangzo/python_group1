@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +30,20 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "hansamk97"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="1b3d3a1d-22ed-44ce-9492-9680386a5f84" />
+        <option name="url" value="https://github.com/woorangzo/woorangzo.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -138,7 +153,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700552911831</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
+      <option name="closed" value="true" />
+      <created>1700553861990</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1700553861990</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
