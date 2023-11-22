@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
-      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/js/validation_join.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accounts/static/js/validation_login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" afterDir="false" />
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="회원가입/로그인 벨리데이션 체크, 마이페이지 수정">
+      <change afterPath="$PROJECT_DIR$/accounts/static/js/calc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/calc.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/issue.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/issue.html" afterDir="false" />
@@ -23,6 +18,7 @@
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
     </list>
@@ -34,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -177,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700553861990</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="회원가입/로그인 벨리데이션 체크, 마이페이지 수정">
+      <option name="closed" value="true" />
+      <created>1700628416760</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700628416760</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +201,7 @@
     <MESSAGE value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
     <MESSAGE value="로그인 버튼 수정" />
     <MESSAGE value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
-    <option name="LAST_COMMIT_MESSAGE" value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
+    <MESSAGE value="회원가입/로그인 벨리데이션 체크, 마이페이지 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="회원가입/로그인 벨리데이션 체크, 마이페이지 수정" />
   </component>
 </project>

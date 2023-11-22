@@ -9,7 +9,8 @@
 <meta content="" name="keywords">
 <meta content="" name="description">
 
-
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Favicon -->
 <link href="img/favicon.ico" rel="icon">
@@ -34,6 +35,11 @@
 <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
 <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- 부트스트랩 JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -121,11 +127,13 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-
-                            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
+
+                    <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
                         <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
@@ -239,6 +247,35 @@
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
+ <!-- 모달 -->
+<div class="modal" id="investmentModal" tabindex="-1" role="dialog" aria-labelledby="investmentModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <!-- 모달 내용 -->
+            <div class="modal-header" style="background-color: cornflowerblue;">
+                <h5 class="modal-title" id="investmentModalLabel" style="color: aliceblue;">투자계산기</h5>
+                <a href="#" style="position: absolute; top: 15px; right: 15px; color: aliceblue;">
+                    <img src="http://image.paxnet.co.kr/rpan/common/images/btn_refresh.png" alt="새로고침">
+                </a>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- 투자계산기 내용 여기에 복사 -->
+                <label for="Now_Price" class="textfield">
+                    <input name="Now_Price" type="tel" max="99999999" autocomplete="off">
+                    <span>현재가</span> <i>원</i>
+                </label>
+                <!-- 나머지 투자계산기의 내용 추가 -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -250,6 +287,21 @@
     <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
     <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
     <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+
+    <script>
+        function openInvestmentCalculator() {
+            // 새 창을 열기 위한 창 속성
+            var features = 'width=800,height=1000,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no';
+
+            // 투자계산기 페이지 URL
+            var calculatorURL = "/accounts/calc";
+
+            // 새 창 열기
+            window.open(calculatorURL, 'Investment Calculator', features);
+        }
+    </script>
+
 
     <!-- Template Javascript -->
     <script src="{% static 'js/main.js' %}"></script>

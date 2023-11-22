@@ -85,3 +85,5 @@ def analyze(request):
 def theme(request):
     return render(request, 'accounts/theme.html')
 
+def calc(request):
+    return render(request, 'accounts/calc.html')
