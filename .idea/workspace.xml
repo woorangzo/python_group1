@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-17__4_21__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-17__4_21__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-17__4_21__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023-11-17__4_21__Changes_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-20__6_22__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-20__6_22__Changes_.xml" afterDir="false" />
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
+      <change afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/js/validation_join.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/static/js/validation_login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/bootstrap.min.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/issue.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/issue.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/join.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
@@ -20,6 +23,8 @@
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +197,6 @@
     <MESSAGE value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
     <MESSAGE value="로그인 버튼 수정" />
     <MESSAGE value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <option name="LAST_COMMIT_MESSAGE" value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
   </component>
 </project>
