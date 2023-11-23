@@ -51,7 +51,6 @@ def login_view(request):
         password = request.POST['password']
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
             return redirect('singlepage:index')
         else:
             return render(request, 'accounts/login.html', {'error': 'username or password is incorrect'})
