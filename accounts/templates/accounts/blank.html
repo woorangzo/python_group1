@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>StockRecommendation</title>
+    <title>회원가입</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -106,6 +106,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
                                 <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
+
                             </ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
@@ -118,10 +119,13 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-                            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
+
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
                         <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
@@ -158,6 +162,19 @@
 <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
 <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
 <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+    <script>
+        function openInvestmentCalculator() {
+            // 새 창을 열기 위한 창 속성
+            var features = 'width=800,height=1000,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no';
+
+            // 투자계산기 페이지 URL
+            var calculatorURL = "/accounts/calc";
+
+            // 새 창 열기
+            window.open(calculatorURL, 'Investment Calculator', features);
+        }
+    </script>
 
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
