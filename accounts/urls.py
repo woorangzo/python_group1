@@ -1,6 +1,7 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 
+
 from . import views
 from .views import join
 
@@ -12,11 +13,9 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name="accounts/login.html", redirect_authenticated_user=False),
          name="login"),
     path('logout/', auth_views.LogoutView.as_view(), name="logout"),
-    path('join/', join, name="join"),
+    path('join/', views.join, name="join"),
     path('navbar/', auth_views.LoginView.as_view(template_name="accounts/navbar.html", redirect_authenticated_user=False),
          name="navbar"),
-    path('', views.mainview),
-    path('blank/', views.blank),
     path('mypage/', views.mypage),
     path('relatedStocks/', views.relatedStocks),
     path('issue/', views.issue),
