@@ -1,0 +1,156 @@
+Index: accounts/templates/accounts/mypage.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n{% load static %}\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"utf-8\">\r\n    <title>회원가입</title>\r\n    <meta content=\"width=device-width, initial-scale=1.0\" name=\"viewport\">\r\n    <meta content=\"\" name=\"keywords\">\r\n    <meta content=\"\" name=\"description\">\r\n\r\n    <!-- Favicon -->\r\n    <link href=\"img/favicon.ico\" rel=\"icon\">\r\n\r\n    <!-- Google Web Fonts -->\r\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\r\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\r\n    <link href=\"https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap\" rel=\"stylesheet\">\r\n\r\n    <!-- Icon Font Stylesheet -->\r\n    <link href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css\" rel=\"stylesheet\">\r\n    <link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css\" rel=\"stylesheet\">\r\n\r\n    <!-- Libraries Stylesheet -->\r\n    <link href=\"{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}\" rel=\"stylesheet\">\r\n    <link href=\"{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}\" rel=\"stylesheet\"/>\r\n\r\n    <!-- Customized Bootstrap Stylesheet -->\r\n    <link href=\"{% static 'css/bootstrap.min.css' %}\" rel=\"stylesheet\">\r\n\r\n    <!-- Template Stylesheet -->\r\n    <link href=\"{% static 'css/style.css' %}\" rel=\"stylesheet\">\r\n\r\n    <link href=\"{% static 'css/main.css' %}\" rel=\"stylesheet\">\r\n</head>\r\n\r\n<body style=\"margin:0 0;\">\r\n<div class=\"container-xxl position-relative bg-white d-flex p-0\">\r\n        <!-- Spinner Start -->\r\n        <div id=\"spinner\" class=\"show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center\">\r\n            <div class=\"spinner-border text-primary\" style=\"width: 3rem; height: 3rem;\" role=\"status\">\r\n                <span class=\"sr-only\">Loading...</span>\r\n            </div>\r\n        </div>\r\n\r\n\r\n        <nav>\r\n            <div class=\"container position-relative\">\r\n                <div class=\"logo ms-auto\">\r\n                    <img src=\"{% static 'img/woorangzo.png' %}\" alt=\"로고\" style=\"width: 130px; height: auto;\" onclick=\"redirectToHome()\">\r\n                </div>\r\n\r\n                <!--KOSPI-->\r\n                <div id=\"kpi-info\" class=\"info position-absolute top-0 end-0\" style=\"width: 190px;\">\r\n                    <span class=\"label label-default\">KOSPI</span>\r\n                    <div class=\"con\">\r\n                        <strong id=\"kpi-value\">Loading...</strong>\r\n                        <span class=\"up\" id=\"kpi-change\"></span>\r\n                        <span class=\"up\" id=\"kpi-percent\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n\r\n                <!--KOSDAQ-->\r\n                <div id=\"kosdaq-info\" class=\"info position-absolute top-0 end-0\" style=\"width: 190px; display: none;\">\r\n                    <span class=\"label label-default\">KOSDAQ</span>\r\n                    <div class=\"con\">\r\n                        <strong id=\"kosdaq-value\">Loading...</strong>\r\n                        <span class=\"up\" id=\"kosdaq-change\"></span>\r\n                        <span class=\"up\" id=\"kosdaq-percent\"></span>\r\n                    </div>\r\n                </div>\r\n\r\n                <div class=\"col-md-3 text-end\">\r\n                    <!-- 로그인 버튼 -->\r\n                    <a href=\"/accounts/login/\" class=\"btn btn-outline-primary me-2\" style=\"font-size: 13px;\">로그인</a>\r\n\r\n                    <!-- 회원가입 버튼 -->\r\n                    <a href=\"/accounts/join/\" class=\"btn btn-outline-primary me-2\" style=\"font-size: 13px;\">회원가입</a>\r\n\r\n                    <!-- 마이페이지 버튼 -->\r\n                    <a href=\"/accounts/mypage/\" class=\"btn btn-outline-primary me-2\" style=\"font-size: 13px;\">마이페이지</a>\r\n\r\n                </div>\r\n           </div>\r\n            <div class=\"d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom\">\r\n                <div class=\"col-md-3 mb-2 mb-md-0\">\r\n                    <a href=\"/\" class=\"d-inline-flex link-body-emphasis text-decoration-none\">\r\n                    <svg class=\"bi\" width=\"40\" height=\"32\" role=\"img\" aria-label=\"Bootstrap\"><use xlink:href=\"#bootstrap\"/></svg>\r\n                    </a>\r\n                </div>\r\n                    <ul class=\"nav col-12 col-md-auto mb-2 justify-content-center mb-md-0\">\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"font-size: 18px;\">\r\n                                AI 정보 분석\r\n                            </a>\r\n                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/analyze/\">종목 분석</a></li>\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/theme/\">업종/테마</a></li>\r\n\r\n                            </ul>\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"font-size: 18px;\">\r\n                                AI 종목 추천\r\n                            </a>\r\n                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/issue/\">이슈 추천</a></li>\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/stockRecommend/\">종목 추천</a></li>\r\n\r\n                            </ul>\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"font-size: 18px;\">\r\n                                주식 비교\r\n                            </a>\r\n                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/relatedStocks/\">관련주</a></li>\r\n                            </ul>\r\n                        <li class=\"nav-item dropdown\">\r\n                            <a class=\"nav-link dropdown-toggle\" id=\"navbarDropdown\" role=\"button\" data-bs-toggle=\"dropdown\" aria-expanded=\"false\" style=\"font-size: 18px;\">\r\n                                뉴스레터\r\n                            </a>\r\n                            <ul class=\"dropdown-menu\" aria-labelledby=\"navbarDropdown\">\r\n                                <li><a class=\"dropdown-item\" href=\"/accounts/news/\">뉴스리스트</a></li>\r\n\r\n                            </ul>\r\n                    </ul>\r\n                    <form class=\"d-flex search-form ml-auto\">\r\n                        <input class=\"form-control me-2\" type=\"search\" placeholder=\"종목명 종목정보를 입력하세요\" aria-label=\"Search\">\r\n                        <button class=\"btn btn-outline-success bg-primary text-white custom-btn\" type=\"submit\"> 검색 </button>\r\n                    </form>\r\n                </div>\r\n            </nav>\r\n\r\n\r\n    <!-- mypage Start -->\r\n\r\n    <!-- mypage End -->\r\n\r\n            <footer>\r\n                <div class=\"d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top\" style=\"margin-left: -15rem; margin-right: -19rem\">\r\n                    <p>&copy; 2023 Company, Inc. All rights reserved.</p>\r\n                </div>\r\n            </footer>\r\n            <!-- Footer End -->\r\n\r\n        <!-- Content End -->\r\n\r\n\r\n        <!-- Back to Top -->\r\n        <a href=\"#\" class=\"btn btn-lg btn-primary btn-lg-square back-to-top\"><i class=\"bi bi-arrow-up\"></i></a>\r\n    </div>\r\n\r\n\r\n<!-- JavaScript Libraries -->\r\n<script src=\"https://code.jquery.com/jquery-3.4.1.min.js\"></script>\r\n<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js\"></script>\r\n<script src=\"{% static 'lib/chart/chart.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/easing/easing.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/waypoints/waypoints.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/owlcarousel/owl.carousel.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/tempusdominus/js/moment.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}\"></script>\r\n<script src=\"{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}\"></script>\r\n\r\n<!-- Template Javascript -->\r\n<script src=\"{% static 'js/main.js' %}\"></script>\r\n\r\n<!-- logo -->\r\n<script>\r\n    function redirectToHome() {\r\n        window.location.href = '/';\r\n    }\r\n</script>\r\n\r\n<script>\r\n    function updateKPI() {\r\n        fetch('/get_kpi_data/')\r\n            .then(response => response.json())\r\n            .then(data => {\r\n                document.getElementById('kpi-value').textContent = data.value;\r\n                document.getElementById('kpi-change').textContent = data.change;\r\n                document.getElementById('kpi-percent').textContent = data.percent;\r\n\r\n                // 코스피 데이터를 가져왔으면 코스피를 보이게 하고, 코스닥은 숨기기\r\n                document.getElementById('kpi-info').style.display = 'block';\r\n                document.getElementById('kosdaq-info').style.display = 'none';\r\n            })\r\n            .catch(error => {\r\n                console.error('Error fetching KPI data:', error);\r\n                document.getElementById('kpi-value').textContent = 'Error';\r\n                document.getElementById('kpi-change').textContent = '';\r\n                document.getElementById('kpi-percent').textContent = '';\r\n            });\r\n    }\r\n\r\n    function updateKosdaq() {\r\n        fetch('/get_kosdaq_data/')\r\n            .then(response => response.json())\r\n            .then(data => {\r\n                document.getElementById('kosdaq-value').textContent = data.value;\r\n                document.getElementById('kosdaq-change').textContent = data.change;\r\n                document.getElementById('kosdaq-percent').textContent = data.percent;\r\n\r\n                // 코스닥 데이터를 가져왔으면 코스피를 숨기고, 코스닥은 보이게 하기\r\n                document.getElementById('kpi-info').style.display = 'none';\r\n                document.getElementById('kosdaq-info').style.display = 'block';\r\n            })\r\n            .catch(error => {\r\n                console.error('Error fetching KOSDAQ data:', error);\r\n                document.getElementById('kosdaq-value').textContent = 'Error';\r\n                document.getElementById('kosdaq-change').textContent = '';\r\n                document.getElementById('kosdaq-percent').textContent = '';\r\n            });\r\n    }\r\n\r\n    // 초기 로딩\r\n    updateKPI();\r\n\r\n    // 일정 간격으로 KPI 업데이트\r\n    setInterval(function() {\r\n        updateKPI();\r\n        // 코스피를 업데이트한 후에 코스닥을 업데이트\r\n        updateKosdaq();\r\n    }, 3000);\r\n</script>\r\n</body>\r\n\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/accounts/templates/accounts/mypage.html b/accounts/templates/accounts/mypage.html
+--- a/accounts/templates/accounts/mypage.html	(revision f54201c3bdc23443103b103cc59639fd3f402e56)
++++ b/accounts/templates/accounts/mypage.html	(date 1700556614243)
+@@ -133,7 +133,39 @@
+ 
+ 
+     <!-- mypage Start -->
++    <div class="container-fluid p-4 px-4">
++        <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
++            <div class="col-md-6 text-center">
++                <div class="col-sm-12 col-xl-6">
++                    <div class="bg-light rounded h-100 p-4">
++                        <h6 class="mb-4">Description List</h6>
++                        <dl class="row mb-0">
++                            <dt class="col-sm-4">Description lists</dt>
++                            <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
++
++                            <dt class="col-sm-4">Term</dt>
++                            <dd class="col-sm-8">Definition for the term.</dd>
+ 
++                            <dt class="col-sm-4">Another term</dt>
++                            <dd class="col-sm-8">This definition is short, so no extra paragraphs or anything.</dd>
++
++                            <dt class="col-sm-4 text-truncate">Truncated term is truncated</dt>
++                            <dd class="col-sm-8">This can be useful when space is tight. Adds an ellipsis at the
++                                end.</dd>
++
++                            <dt class="col-sm-4">Nesting</dt>
++                            <dd class="col-sm-8">
++                                <dl class="row">
++                                    <dt class="col-sm-4">Nested list</dt>
++                                    <dd class="col-sm-8">Nested definition list.</dd>
++                                </dl>
++                            </dd>
++                        </dl>
++                    </div>
++                </div>
++            </div>
++        </div>
++    </div>
+     <!-- mypage End -->
+ 
+             <footer>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"44ce3f39-f0a4-4721-9d09-373827d0e5d3\" name=\"Changes\" comment=\"프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/.gitignore\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/single_page/templates/accounts/index.html\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/single_page/templates/accounts/index.html\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"HTML File\" />\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"hansam\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\"><![CDATA[{\r\n  \"lastFilter\": {\r\n    \"state\": \"OPEN\",\r\n    \"assignee\": \"hansamk97\"\r\n  }\r\n}]]></component>\r\n  <component name=\"GithubPullRequestsUISettings\">\r\n    <option name=\"selectedUrlAndAccountId\">\r\n      <UrlAndAccount>\r\n        <option name=\"accountId\" value=\"1b3d3a1d-22ed-44ce-9492-9680386a5f84\" />\r\n        <option name=\"url\" value=\"https://github.com/woorangzo/woorangzo.git\" />\r\n      </UrlAndAccount>\r\n    </option>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 6\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2YHXvwgkbiTlV4YPdWjVaEQApQF\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"DefaultHtmlFileTemplate\": \"HTML File\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"git-widget-placeholder\": \"hansam\",\r\n    \"last_opened_file_path\": \"D:/woorangzo/accounts/templates/accounts\",\r\n    \"settings.editor.selected.configurable\": \"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\woorangzo\\accounts\\templates\\accounts\" />\r\n      <recent name=\"D:\\woorangzo\\single_page\" />\r\n      <recent name=\"D:\\woorangzo\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"D:\\woorangzo\\woorangzo\" />\r\n      <recent name=\"D:\\woorangzo\\dashmin-1.0.0\\templates\" />\r\n      <recent name=\"D:\\woorangzo\\dashmin-1.0.0\\static\" />\r\n      <recent name=\"D:\\woorangzo\\dashmin\\static\" />\r\n      <recent name=\"D:\\woorangzo\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\">\r\n    <configuration name=\"StockTable\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"woorangzo\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Dataset\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Dataset/StockTable.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.StockTable\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"44ce3f39-f0a4-4721-9d09-373827d0e5d3\" name=\"Changes\" comment=\"\" />\r\n      <created>1700183712093</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1700183712093</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700441611214</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700441611214</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"메인/로그인/회원가입 페이지 헤더풋터 적용\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700469246975</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700469246975</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"로그인 버튼 수정\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700473511184</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700473511184</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700552911831</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700552911831</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1700553861990</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1700553861990</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"[Ver 0.1] readme jango설치 및 mysql 환경설정\" />\r\n    <MESSAGE value=\"test\" />\r\n    <MESSAGE value=\"메인/로그인/회원가입 페이지 헤더풋터 적용\" />\r\n    <MESSAGE value=\"로그인 버튼 수정\" />\r\n    <MESSAGE value=\"프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision f54201c3bdc23443103b103cc59639fd3f402e56)
++++ b/.idea/workspace.xml	(date 1700612174527)
+@@ -5,10 +5,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
+-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -31,12 +29,12 @@
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+-  "lastFilter": {
+-    "state": "OPEN",
+-    "assignee": "hansamk97"
++  <component name="GitHubPullRequestSearchHistory">{
++  &quot;lastFilter&quot;: {
++    &quot;state&quot;: &quot;OPEN&quot;,
++    &quot;assignee&quot;: &quot;hansamk97&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="GithubPullRequestsUISettings">
+     <option name="selectedUrlAndAccountId">
+       <UrlAndAccount>
+@@ -59,17 +57,17 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "DefaultHtmlFileTemplate": "HTML File",
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "git-widget-placeholder": "hansam",
+-    "last_opened_file_path": "D:/woorangzo/accounts/templates/accounts",
+-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
++    &quot;last_opened_file_path&quot;: &quot;D:/woorangzo/accounts/templates/accounts&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="D:\woorangzo\accounts\templates\accounts" />
+@@ -161,7 +159,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1700553861990</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지">
++      <option name="closed" value="true" />
++      <created>1700554186840</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1700554186840</updated>
++    </task>
++    <option name="localTasksCounter" value="7" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -169,7 +175,19 @@
+       <map>
+         <entry key="MAIN">
+           <value>
+-            <State />
++            <State>
++              <option name="FILTERS">
++                <map>
++                  <entry key="branch">
++                    <value>
++                      <list>
++                        <option value="origin/hansam" />
++                      </list>
++                    </value>
++                  </entry>
++                </map>
++              </option>
++            </State>
+           </value>
+         </entry>
+       </map>
