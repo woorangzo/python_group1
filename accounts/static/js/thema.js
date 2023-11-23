@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // 일정 시간 간격으로 자동으로 다음 뉴스로 전환
-    const intervalId = setInterval(showNextNews, 4000); // 5000 밀리초(5초)마다 전환
+    const intervalId = setInterval(showNextNews, 40000); // 5000 밀리초(5초)마다 전환
 
     // 이벤트 핸들러: 마우스가 뉴스에 올라갈 때, 자동 전환을 일시 중지
     function viewNewsflashPause() {

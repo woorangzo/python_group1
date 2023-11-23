@@ -18,6 +18,13 @@
     top: 167px;
 }
 
+.up {
+    color: #fc2f2f !important;
+}
+.dn {
+    color: #447aec !important;
+}
+
 .search-form {
     margin-top: 5px;
     margin-right: 230px; /* Adjust the left margin as needed */
