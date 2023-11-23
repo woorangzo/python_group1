@@ -1,0 +1,404 @@
+body{
+    min-height: 100%;
+    font-family: "Heebo",sans-serif;
+    background: #fff;
+}
+
+tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+tbody th {
+    color: #000;
+}
+
+a:link, a:visited{
+    color: #464646;
+    text-decoration: none;
+}
+
+.main_main {
+    position: relative;
+    width: 100%;
+    min-width: 1200px;
+    height: 900px;
+}
+
+.content1 {
+    position: relative;
+    clear: both;
+}
+
+.container1 {
+    width: 1200px;
+    height: 62px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 30px;
+}
+
+.subNav {
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 62px;
+    background: #fff;
+    margin-top: 0;
+}
+
+.subNav ul {
+    display: flex;
+    width: 1030px;
+    margin: 0 auto;
+    justify-content: center;
+    padding:  0 3px;
+}
+
+.subNav ul li {
+    width: 300px;
+    height: 61px;
+    line-height: 61px;
+    display: inline-block;
+    text-align: center;
+}
+
+.subNav ul li a {
+    font-size: 18px;
+    color: #333;
+    padding: 0 20px;
+    font-weight: bold;
+    line-height: 61px;
+}
+
+.contentar {
+    position: relative;
+    width: 1100px;
+    padding-left: 50px;
+    margin: 0 auto;
+    height: 600px;
+}
+
+
+
+.box_type_s {
+    float: left;
+    width: 450px;
+    margin-top: 20px;
+}
+
+.top_tlt {
+    clear: both;
+    padding: 0 0 4px 4px;
+    position: relative;
+    color: #333;
+    font-size: 14px;
+}
+
+.top_tlt em {
+    color: #009CFF;
+    font-style: normal;
+}
+
+.tit_more {
+    position: absolute;
+    right: 2px;
+    top: 1px;
+    padding-left: 6px;
+    background: url(https://ssl.pstatic.net/imgstock/images5/ico_arrow_04.gif) no-repeat 0 2px;
+    color: #999;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.tit_more a {
+    color: #999;
+    font-size: 11px;
+    letter-spacing: -1px;
+}
+
+.type_table1 {
+    table-layout: fixed;
+    letter-spacing: -1px;
+    width: 100%;
+}
+
+.tit_sub {
+    padding-left: 10px;
+}
+
+.tit_sub2 {
+    text-align: right;
+}
+
+.tit_sub3 {
+    text-align: right;
+}
+
+.blank_10 {
+    height: 10px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.tit_name {
+    padding-left: 9px;
+    color: #000;
+}
+
+.number {
+    padding-left: 8px;
+    color: #000;
+    font: 11px;
+    text-align: right;
+}
+
+.red01 {
+    color: #d90400;
+}
+
+.tc {
+    padding-left: 11px;
+    height: 22px;
+    color: #000;
+}
+
+.grapy_type_1 {
+    width: 90px;
+    text-align: left;
+    font-size: 0;
+    height: 4px;
+}
+
+.graph_bar{
+    height: 4px;
+    background-color: #d90400;
+    font-size: 0px;
+}
+
+.blank_03 {
+    padding: 0;
+    overflow: hidden;
+    border: 0.5px solid #f0f0f0;
+}
+
+.bu_p {
+    display: inline-block !important;
+    background: url(https://ssl.pstatic.net/static/nfinance/img/spr_bu.gif) no-repeat;
+}
+
+.bu_pup2 {
+    width: 7px !important;
+    height: 11px !important;
+    background-position: 0 -40px;
+}
+
+.box_type_c {
+    padding-left: 50px;
+    float: left;
+    width: 450px;
+    margin-top: 20px;
+}
+
+tt {
+    padding-left: 11px;
+}
+
+.tit_sub4 {
+    text-align: center;
+}
+
+.tab_style_1 {
+    overflow: visible !important;
+    position: relative;
+    height: 31px;
+    padding-left: 5px;
+    background: url(https://ssl.pstatic.net/imgstock/images5/tab_bg2.gif)repeat-x;
+}
+
+.tab_smenu {
+    float: left;
+    margin-left: 2px;
+}
+
+.choice {
+    height: 31px !important;
+    position: relative;
+    padding: 10px 16px 0 !important;
+    background: url(https://ssl.pstatic.net/imgstock/images5/tab_over2.gif) repeat-x right top;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+.choice_it {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2px;
+    height: 31px;
+    background: url(https://ssl.pstatic.net/imgstock/images5/tab_over_first.gif) no-repeat left bottom;
+}
+
+.tab_smeun{
+    float: left;
+    margin-left: 20px;
+    padding: 10px 7px 0 7px;
+}
+
+p.standard_date {
+    position: absolute;
+    right: 5px;
+    top: 13px;
+    color: #999;
+    font: 11px tahoma;
+}
+
+.rate_up {
+    padding-right: 8px;
+    color: #d90400;
+    font: 11px tahoma;
+    text-align: right;
+}
+
+.pu_pdn {
+    width: 7px !important;
+    height: 6px !important;
+    background-position: 0 -80px;
+}
+
+.tah {
+    font-family: Tahoma;
+}
+
+.pll {
+    font-size: 11px;
+}
+
+.nv01 {
+    color: #005dde;
+}
+
+.bu_pup {
+    width: 7px !important;
+    height: 6px !important;
+}
+
+.newarea {
+    position: relative;
+    width: 1100px;
+    margin: 20px auto 0;
+    text-align: left;
+    z-index: 20;
+}
+
+.box_top_box {
+    height: 286px;
+    width: 1050px;
+    border: 2px solid #009CFF;
+}
+
+.box_top_submain {
+    position: relative;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+
+.inner_area {
+    position: relative;
+    padding: 17px 12px 14px 14px;
+    z-index: 99;
+}
+
+.inner_area_left {
+    width: 100%;
+    float: left;
+    position: relative;
+}
+
+.inner_area_left h4 {
+    border-bottom: 1px solid #e1e1e1;
+    height: 18px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #009CFF;
+}
+
+.left01 {
+    width: 1000px;
+    height: 220px;
+    padding: 26px 0 0 9px;
+    display: inline;
+}
+
+h4 {
+    padding-left: 10px;
+
+}
+
+.main_news {
+    height: 178px;
+    font-family: Apple SD Gothic Neo,'돋움',Dotum,AppleGothic,sans-serif;
+}
+
+.main_news ul {
+    padding-left: 20px;
+}
+
+.main_news ul li {
+    overflow: hidden;
+    margin-bottom: 8px;
+    line-height: 18px;
+    white-space: nowrap;
+}
+
+.main_news ul li a {
+    font-weight: bold;
+    color: #000;
+}
+
+.main_news ul li a:hover{
+    border-bottom: 1px solid #000;
+}
+
+.mainNewsTicker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    clear: both;
+    height: 31px;
+    padding: 9px 0 0 13px;
+    border: 1px solid #ededed;
+    background: #f6f6f7;
+    color: #333;
+}
+
+.mainNewsTicker dt {
+    float: left;
+    margin-right: 7px;
+    font: bold 11px/1.4em dotum;
+}
+
+dd.data {
+    bottom: 4px;
+    float: left;
+    position: relative;
+}
+
+
+dd.data a {
+    white-space: nowrap;
+    max-width: 480px;
+    _width: 480px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+dd.action {
+    float: right;
+    font-size: 1px;
+    line-height: 0em;
+    margin-top: -1px;
+    padding-right: 5px;
+}
