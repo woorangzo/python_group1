@@ -32,3 +32,4 @@ class StockData(models.Model):
     #     if self.plot_image:
     #         return self.plot_image.url
     #     return None
+
