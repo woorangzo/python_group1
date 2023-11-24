@@ -3,11 +3,9 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.urls import reverse
 
-
 from django.views.generic import TemplateView
 
 from accounts.forms import JoinForm
-
 
 from .forms import StockInputForm
 from .models import StockData, Member
@@ -19,13 +17,16 @@ import json
 import pandas as pd
 import os  # Import the os module for directory creati
 import matplotlib
+
 matplotlib.use('SVG')
-from matplotlib import font_manager, rc # 폰트 세팅을 위한 모듈 추가
-font_path = "C:/Windows/Fonts/malgun.ttf" # 사용할 폰트명 경로 삽입
-font = font_manager.FontProperties(fname = font_path).get_name()
-rc('font', family = font)
+from matplotlib import font_manager, rc  # 폰트 세팅을 위한 모듈 추가
+
+font_path = "C:/Windows/Fonts/malgun.ttf"  # 사용할 폰트명 경로 삽입
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc('font', family=font)
 
 plt.rc('axes', unicode_minus=False)
+
 
 # Create your views here.
 def join(request):
@@ -64,11 +65,6 @@ def login_view(request):
     else:
         return render(request, 'accounts/login.html')
 
-def logout(request):
-    if request.method == "POST":
-        auth.logout(request)
-        return redirect('home')
-    return render(request,'accounts/join.html')
 
 def logout(request):
     if request.method == "POST":
@@ -92,6 +88,7 @@ def mypage(request):
 def relatedStocks(request):
     return render(request, 'accounts/relatedStocks.html')
 
+
 def issue(request):
     return render(request, 'accounts/issue.html')
 
@@ -103,6 +100,7 @@ def stockRecommend(request):
 def news(request):
     return render(request, 'accounts/news.html')
 
+
 def analyze(request):
     return render(request, 'accounts/analyze.html')
 
@@ -110,8 +108,10 @@ def analyze(request):
 def theme(request):
     return render(request, 'accounts/theme.html')
 
+
 def calc(request):
     return render(request, 'accounts/calc.html')
+
 
 def get_price(code, name, n):
     url = f'http://finance.daum.net/api/charts/A{code}/days?limit={n}&adjusted=true'
@@ -135,6 +135,7 @@ def get_price(code, name, n):
 
     return df
 
+
 def plot_stock_prices(request):
     stock_info_list = []
 
@@ -146,7 +147,8 @@ def plot_stock_prices(request):
             names = [item.strip() for item in form.cleaned_data['names'].split(',')]
 
             if len(codes) != len(names):
-                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
+                return render(request, 'accounts/plot_stock_prices.html',
+                              {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
 
             n = 50
             plt.figure(figsize=(10, 6))
@@ -196,14 +198,12 @@ def plot_stock_prices(request):
             plt.close()
 
             return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
-                                                                       'stock_info_list': stock_info_list,})
+                                                                       'stock_info_list': stock_info_list, })
 
     else:
         form = StockInputForm()
 
-
     return render(request, 'accounts/plot_stock_prices.html', {'form': form})
-
 
 
 def plot_get_stock_prices(request):
@@ -217,7 +217,8 @@ def plot_get_stock_prices(request):
             names = [item.strip() for item in form.cleaned_data['names'].split(',')]
 
             if len(codes) != len(names):
-                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
+                return render(request, 'accounts/plot_stock_prices.html',
+                              {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
 
             n = 50
             plt.figure(figsize=(10, 6))
@@ -264,12 +265,13 @@ def plot_get_stock_prices(request):
             plt.close()
 
             return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
-                                                                      'stock_info_list': stock_info_list,})
+                                                                       'stock_info_list': stock_info_list, })
 
     else:
         form = StockInputForm()
 
     return render(request, 'accounts/plot_stock_prices.html', {'form': form})
+
 
 def plot_get_stock_prices(request):
     stock_info_list = []
@@ -281,7 +283,8 @@ def plot_get_stock_prices(request):
             names = [item.strip() for item in form.cleaned_data['names'].split(',')]
 
             if len(codes) != len(names):
-                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': '코드와 이름의 수가 일치하지 않습니다.'})
+                return render(request, 'accounts/plot_stock_prices.html',
+                              {'plot_path': None, 'error': '코드와 이름의 수가 일치하지 않습니다.'})
 
             n = 50
             plt.figure(figsize=(10, 6))
@@ -303,3 +306,66 @@ def plot_get_stock_prices(request):
                     'trade_price': data['close_price'].tolist(),  # 종가를 사용
                     'change_rate': data['stock_rate'].tolist(),
                 })
+
+
+def plot_industry_stock_prices(request):
+    stock_info_list = []
+
+    if request.method == 'POST':
+        # 선택된 업종 가져오기
+        industry = request.POST.get('stock', None)
+
+        if industry:
+            # 데이터베이스에서 해당 업종의 주식 정보 가져오기
+            stocks = StockData.objects.filter(industry=industry).distinct('stock_cd')
+
+            if not stocks.exists():
+                return render(request, 'error.html', {'error': '선택한 업종에 대한 주식 정보가 없습니다.'})
+
+            n = 50
+            plt.figure(figsize=(10, 6))
+
+            for stock in stocks:
+                # 데이터베이스에서 주식 정보 가져오기
+                stock_data = StockData.objects.filter(stock_cd=stock.stock_cd).order_by('stock_dt')[:n]
+                if not stock_data.exists():
+                    continue
+
+                # Pandas DataFrame으로 변환
+                data = pd.DataFrame(list(stock_data.values()))
+                data['stock_dt'] = pd.to_datetime(data['stock_dt'])
+                data.set_index('stock_dt', inplace=True)
+
+                stock_info_list.append({
+                    'code': stock.stock_cd,
+                    'name': stock.stock_name,  # StockData 모델에 주식 이름 필드 추가 필요
+                    'trade_price': data['close_price'].tolist(),  # 종가를 사용
+                    'change_rate': data['stock_rate'].tolist(),
+                })
+
+                # 등락률을 왼쪽 y-축에, 종가를 오른쪽 y-축에 플로팅
+                plt.plot(data.index, data['stock_rate'], label=f"{stock.stock_name} 등락률")
+
+                # 오른쪽 y-축에 주가 그래프 추가
+                ax2 = plt.gca().twinx()
+                ax2.plot(data.index, data['close_price'], label=f"{stock.stock_name} 종가", color='orange')
+
+            # 그래프 스타일 및 주요 설정
+            plt.title(f'{industry} 업종 주식 등락률 및 종가 비교')
+            plt.xlabel('일자')
+            plt.ylabel('등락률')
+            ax2.set_ylabel('주가')
+            plt.legend(loc='upper left')  # 위치 조정
+
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+            # 그래프 저장
+            plot_path = f"./accounts/static/pic/{industry}_stock_price_plot.png"
+            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
+            plt.savefig(plot_path)
+            plt.close()
+
+            return render(request, 'industry_stock_prices.html', {'plot_path': plot_path,
+                                                                  'stock_info_list': stock_info_list})
+
+    return render(request, 'industry_stock_prices.html', {'form': None})
