@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/js/thema.js" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/js/thema.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700553861990</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ai추천 페이지 추가">
+      <option name="closed" value="true" />
+      <created>1700789391800</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1700789391800</updated>
+    </task>
+    <task id="LOCAL-00007" summary="ai추천 페이지 추가">
+      <option name="closed" value="true" />
+      <created>1700789438665</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1700789438665</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -189,7 +203,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/hansam" />
+                        <option value="origin/honyeon" />
                       </list>
                     </value>
                   </entry>
@@ -207,6 +221,7 @@
     <MESSAGE value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
     <MESSAGE value="로그인 버튼 수정" />
     <MESSAGE value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="ai추천 페이지 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai추천 페이지 추가" />
   </component>
 </project>
