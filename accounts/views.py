@@ -1,7 +1,12 @@
-from django.conf import settings
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
+from django.urls import reverse
+
+
+from django.views.generic import TemplateView
+
+from accounts.forms import JoinForm
 
 
 from .forms import StockInputForm
@@ -24,37 +29,40 @@ plt.rc('axes', unicode_minus=False)
 
 # Create your views here.
 def join(request):
-    if request.method == "POST":
-        username = request.POST['username']
-        password1 = request.POST['password1']
-        password2 = request.POST['password2']
+    if request.method == 'POST':
+        form = JoinForm(request.POST)
+        if form.is_valid():
+            member_data = form.cleaned_data
+            if member_data['member_pw'] == member_data['member_repw']:
+                Member.objects.create(
+                    member_id=member_data['member_id'],
+                    member_pw=member_data['member_pw'],
+                    member_repw=member_data['member_repw'],
+                    username=member_data['username'],
+                    phone=member_data['phone'],
+                    email=member_data['email'],
+                    jumin=member_data['jumin']
+                )
+                return redirect('accounts:login')
+            else:
+                form.add_error('member_repw', '비밀번호가 일치하지 않습니다')
+    else:
+        form = JoinForm()
 
-        if password1 == password2:
-            # Check if the username is unique
-            if User.objects.filter(username=username).exists():
-                return render(request, 'accounts/join.html', {'error': '이미 존재하는 사용자명입니다.'})
+    return render(request, 'accounts/join.html', {'form': form})
 
-            # Create a new user
-            user = User.objects.create_user(username, password=password1)
-            auth.login(request, user)
-            return redirect('home')
-        else:
-            return render(request, 'accounts/join.html', {'error': '비밀번호가 일치하지 않습니다.'})
 
-    return render(request, 'accounts/join.html')
-
-def login(request):
+def login_view(request):
     if request.method == "POST":
         username = request.POST['username']
         password = request.POST['password']
         user = auth.authenticate(request, username=username, password=password)
         if user is not None:
-            auth.login(request, user)
-            return redirect('home')
+            return redirect('singlepage:index')
         else:
-            return render(request,'accounts/login.html', {'error':'username or password is incorrect'})
+            return render(request, 'accounts/login.html', {'error': 'username or password is incorrect'})
     else:
-        return render(request,'accounts/login.html')
+        return render(request, 'accounts/login.html')
 
 def logout(request):
     if request.method == "POST":
@@ -294,96 +302,3 @@ def plot_get_stock_prices(request):
                     'trade_price': data['close_price'].tolist(),  # 종가를 사용
                     'change_rate': data['stock_rate'].tolist(),
                 })
-
-                # 등락률을 왼쪽 y-축에, 종가를 오른쪽 y-축에 플로팅
-                plt.plot(data.index, data['stock_rate'], label=f"{name} 등락률")
-
-                # 오른쪽 y-축에 주가 그래프 추가
-                ax2 = plt.gca().twinx()
-                ax2.plot(data.index, data['close_price'], label=f"{name} 종가", color='orange')
-
-            # 그래프 스타일 및 주요 설정
-            plt.title('주식 등락률 및 종가 비교')
-            plt.xlabel('일자')
-            plt.ylabel('등락률')
-            ax2.set_ylabel('주가')
-            plt.legend(loc='upper left')  # 위치 조정
-
-            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-
-            # 그래프 저장
-            plot_path = "./accounts/static/pic/stock_price_plot.png"
-            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
-            plt.savefig(plot_path)
-            plt.close()
-
-            return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
-                                                                      'stock_info_list': stock_info_list,})
-
-    else:
-        form = StockInputForm()
-
-    return render(request, 'accounts/plot_stock_prices.html', {'form': form})
-
-
-def plot_industry_stock_prices(request):
-    stock_info_list = []
-
-    if request.method == 'POST':
-        # 선택된 업종 가져오기
-        industry = request.POST.get('stock', None)
-
-        if industry:
-            # 데이터베이스에서 해당 업종의 주식 정보 가져오기
-            stocks = StockData.objects.filter(industry=industry).distinct('stock_cd')
-
-            if not stocks.exists():
-                return render(request, 'error.html', {'error': '선택한 업종에 대한 주식 정보가 없습니다.'})
-
-            n = 50
-            plt.figure(figsize=(10, 6))
-
-            for stock in stocks:
-                # 데이터베이스에서 주식 정보 가져오기
-                stock_data = StockData.objects.filter(stock_cd=stock.stock_cd).order_by('stock_dt')[:n]
-                if not stock_data.exists():
-                    continue
-
-                # Pandas DataFrame으로 변환
-                data = pd.DataFrame(list(stock_data.values()))
-                data['stock_dt'] = pd.to_datetime(data['stock_dt'])
-                data.set_index('stock_dt', inplace=True)
-
-                stock_info_list.append({
-                    'code': stock.stock_cd,
-                    'name': stock.stock_name,  # StockData 모델에 주식 이름 필드 추가 필요
-                    'trade_price': data['close_price'].tolist(),  # 종가를 사용
-                    'change_rate': data['stock_rate'].tolist(),
-                })
-
-                # 등락률을 왼쪽 y-축에, 종가를 오른쪽 y-축에 플로팅
-                plt.plot(data.index, data['stock_rate'], label=f"{stock.stock_name} 등락률")
-
-                # 오른쪽 y-축에 주가 그래프 추가
-                ax2 = plt.gca().twinx()
-                ax2.plot(data.index, data['close_price'], label=f"{stock.stock_name} 종가", color='orange')
-
-            # 그래프 스타일 및 주요 설정
-            plt.title(f'{industry} 업종 주식 등락률 및 종가 비교')
-            plt.xlabel('일자')
-            plt.ylabel('등락률')
-            ax2.set_ylabel('주가')
-            plt.legend(loc='upper left')  # 위치 조정
-
-            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-
-            # 그래프 저장
-            plot_path = f"./accounts/static/pic/{industry}_stock_price_plot.png"
-            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
-            plt.savefig(plot_path)
-            plt.close()
-
-            return render(request, 'industry_stock_prices.html', {'plot_path': plot_path,
-                                                                  'stock_info_list': stock_info_list})
-
-    return render(request, 'industry_stock_prices.html', {'form': None})
