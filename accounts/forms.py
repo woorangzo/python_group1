@@ -1,6 +1,3 @@
-<<<<<<<<< Temporary merge branch 1
-
-=========
 from django import forms
 from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator
@@ -31,4 +28,14 @@ class JoinForm(forms.Form):
             raise forms.ValidationError("비밀번호가 일치하지 않습니다.")
 
         return cleaned_data
->>>>>>>>> Temporary merge branch 2
+
+
+class StockInputForm(forms.Form):
+    codes = forms.CharField(
+        label='Enter stock codes (comma-separated)',
+        widget=forms.TextInput(attrs={'placeholder': 'e.g., 005930,005380'}),
+    )
+    names = forms.CharField(
+        label='Enter stock names (comma-separated)',
+        widget=forms.TextInput(attrs={'placeholder': 'e.g., 삼성전자,현대자동차'}),
+    )
