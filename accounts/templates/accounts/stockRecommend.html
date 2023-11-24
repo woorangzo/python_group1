@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>StockRecommendation</title>
+    <title>Analyze</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -32,11 +32,10 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-</head>
 
-<body style="margin:0 0;">
-<div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
+    <link href="{% static 'css/stockRecommend.css' %}" rel="stylesheet">
+<body>
+    <div class="container-xxl position-relative bg-white d-flex p-0">
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
@@ -106,6 +105,7 @@
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
                                 <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
+
                             </ul>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
@@ -132,25 +132,187 @@
                 </div>
             </nav>
 
-
-    <!-- Sign Up Start -->
-
-    <!-- Sign Up End -->
-</div>
-            <footer>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-                    <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+        <div class="container-fluid p-4">
+            <h3 style="color: #009CFF;">AI 종목 추천</h3>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">종목코드</th>
+                            <th scope="col">종목명</th>
+                            <th scope="col">전날종가/예측종가</th>
+                            <th scope="col">예측등락률</th>
+                            <th scope="col">전날거래량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td scope="row">
+                                1
+                                <button id="button1" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton1" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                2
+                                <button id="button2" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton2" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                3
+                                <button id="button3" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton3" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                4
+                                <button id="button4" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton4" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                5
+                                <button id="button5" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton5" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td scope="row">
+                                6
+                                <button id="button6" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton6" style="display: none;" class="btn btn-primary">닫기</button>
+                            </td>
+                            <td>
+                                1
+                            </td>
+                            <td >1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart1"  style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales"></canvas>
+                        </div>
+                    </div>
                 </div>
-            </footer>
-            <!-- Footer End -->
-
-        <!-- Content End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart2" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-salestwo"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart3" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales3"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart4" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales4"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart5" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales5"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid p-4 px-4" id="chart6" style="display: none;">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl" >
+                        <div class="bg-light text-center rounded p-4" >
+                            <div class="d-flex align-items-center justify-content-between mb-4" >
+                                <h5 class="mb-0">관련주 비교</h5>
+                            </div>
+                            <canvas id="worldwide-sales6"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <footer>
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="margin-left: -15rem; margin-right: -19rem">
+            <p>&copy; 2023 Company, Inc. All rights reserved.</p>
+        </div>
+    </footer>
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -177,6 +339,7 @@
 
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/stockRecommend.js' %}"></script>
 
 <!-- logo -->
 <script>
@@ -187,6 +350,16 @@
 
     <!--kospi, kosdaq(api는 안가져옴)-->
     <script src="{% static 'js/script.js' %}"></script>
+
+<script>
+    $(document).ready(function () {
+        // 상단 체크박스 선택 시 모든 체크박스 선택/해제
+        $('#selectAll').change(function () {
+            $('input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+        });
+    });
+</script>
+
 </body>
 
 </html>
