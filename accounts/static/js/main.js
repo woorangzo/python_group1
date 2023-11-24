@@ -12,42 +12,12 @@
     spinner();
 
     
-    
-    // Back to top button
-    // 위로 올리는 버튼
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 100, 'easeOutQuad ');
-        return false;
-    });
-
-
-    // Sidebar Toggler
-//    $('.sidebar-toggler').click(function () {
-//        $('.sidebar, .content').toggleClass("open");
-//        return false;
-//    });
-
-
-    // Progress Bar
+      // Progress Bar
     $('.pg-bar').waypoint(function () {
         $('.progress .progress-bar').each(function () {
             $(this).css("width", $(this).attr("aria-valuenow") + '%');
         });
     }, {offset: '80%'});
-
-
-    // Calender
-    $('#calender').datetimepicker({
-        inline: true,
-        format: 'L'
-    });
 
 
     // Testimonials carousel
