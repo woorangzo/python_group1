@@ -150,41 +150,45 @@
 
     <!-- Sign Up Start -->
     <div class="container-fluid">
-        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4" style="width: 40rem;">
-                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <a href="index.html" class="">
-                            <h4 class="text-primary">WOORANGZO</h4>
-                        </a>
-                        <h4>회원가입</h4>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingText" placeholder="username">
-                        <label for="floatingText">이름</label>
-                        <div id="usernameError" class="error-message"></div>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="tel" class="form-control" id="floatingInput" placeholder="01012345678">
-                        <label for="floatingInput">전화번호</label>
-                        <div id="phoneError" class="error-message"></div>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="password" class="form-control" id="password1" placeholder="Password">
-                        <label for="password1">비밀번호</label>
-                        <div id="passwordError" class="error-message"></div>
-                    </div>
-                    <div class="form-floating mb-4">
-                        <input type="password" class="form-control" id="password2" placeholder="Password">
-                        <label for="password2">비밀번호 확인</label>
-                        <div id="passwordMatchError" class="error-message"></div>
-                    </div>
-                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4" onclick="validateForm()">가입하기</button>
-                    <p class="text-center mb-0">이미 계정이 있으신가요? <a href="{% url 'accounts:login' %}">Sign In</a></p>
+    <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+            <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <a href="index.html" class="">
+                        <h4 class="text-primary">WOORANGZO</h4>
+                    </a>
+                    <h4>회원가입</h4>
                 </div>
+                <form method="post" action="{% url 'accounts:join' %}">
+                {% csrf_token %}
+                    <div class="form-floating mb-3">
+                        {{ form.username }}
+                        <label for="{{ form.username.id_for_label }}">이름</label>
+                        <div id="usernameError" class="error-message">{{ form.username.errors }}</div>
+                    </div>
+                    <div class="form-floating mb-3">
+                        {{ form.phone_number }}
+                        <label for="{{ form.phone_number.id_for_label }}">전화번호</label>
+                        <div id="phoneError" class="error-message">{{ form.phone_number.errors }}</div>
+                    </div>
+                    <div class="form-floating mb-4">
+                        {{ form.password1 }}
+                        <label for="{{ form.password1.id_for_label }}">비밀번호</label>
+                        <div id="passwordError" class="error-message">{{ form.password1.errors }}</div>
+                    </div>
+                    <div class="form-floating mb-4">
+                        {{ form.password2 }}
+                        <label for="{{ form.password2.id_for_label }}">비밀번호 확인</label>
+                        <div id="passwordMatchError" class="error-message">{{ form.password2.errors }}</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary py-3 w-100 mb-4">가입하기</button>
+                </form>
+                <!-- End of form tags -->
+                <p class="text-center mb-0">이미 계정이 있으신가요? <a href="{% url 'accounts:login' %}">Sign In</a></p>
             </div>
         </div>
     </div>
+</div>
     <!-- Sign Up End -->
 </div>
             <footer>
