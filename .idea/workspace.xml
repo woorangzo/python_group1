@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[Ver 0.1]메인화면 사이드바 생성, 관련주 업종 수정">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ChangesViewManager">
-    <option name="groupingKeys">
-      <option value="directory" />
-    </option>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -30,11 +22,19 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="ho1124 &lt;rlaghsus59@gmail.com&gt;" />
-      </list>
-    </option>
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="hansam" />
@@ -51,7 +51,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="1b3d3a1d-22ed-44ce-9492-9680386a5f84" />
+        <option name="accountId" value="b4f2e471-4e9c-4496-83fc-a6cad9f0448f" />
         <option name="url" value="https://github.com/woorangzo/woorangzo.git" />
       </UrlAndAccount>
     </option>
@@ -76,9 +76,9 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/woorangzo/accounts/templates/accounts&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+    &quot;git-widget-placeholder&quot;: &quot;honyeon&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/gb_khn_6030/jango/woorangzo&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.VCS&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -119,6 +119,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.StockTable" />
         <item itemvalue="Python.StockTable" />
       </list>
     </recent_temporary>
@@ -172,63 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1700553861990</updated>
     </task>
-    <task id="LOCAL-00006" summary="회원가입/로그인 벨리데이션 체크, 마이페이지 수정">
+    <task id="LOCAL-00006" summary="ai추천 페이지 추가">
       <option name="closed" value="true" />
-      <created>1700628416760</created>
+      <created>1700789391800</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1700628416760</updated>
+      <updated>1700789391800</updated>
     </task>
-    <task id="LOCAL-00007" summary="[Ver 0.1]투자계산기, 관련주비교 수정">
+    <task id="LOCAL-00007" summary="ai추천 페이지 추가">
       <option name="closed" value="true" />
-      <created>1700642071619</created>
+      <created>1700789438665</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1700642071619</updated>
+      <updated>1700789438665</updated>
     </task>
-    <task id="LOCAL-00008" summary="dummy">
-      <option name="closed" value="true" />
-      <created>1700711375777</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1700711375777</updated>
-    </task>
-    <task id="LOCAL-00009" summary="dummy">
-      <option name="closed" value="true" />
-      <created>1700711552817</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1700711552817</updated>
-    </task>
-    <task id="LOCAL-00010" summary="수정본">
-      <option name="closed" value="true" />
-      <created>1700711764278</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1700711764278</updated>
-    </task>
-    <task id="LOCAL-00011" summary="[Ver 0.1]회원가입 페이지 프론트 수정">
-      <option name="closed" value="true" />
-      <created>1700728361807</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1700728361807</updated>
-    </task>
-    <task id="LOCAL-00012" summary="[Ver 0.1]메인화면 사이드바 생성, 관련주 업종 수정">
-      <option name="closed" value="true" />
-      <created>1700792232773</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1700792232773</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -260,13 +221,7 @@
     <MESSAGE value="메인/로그인/회원가입 페이지 헤더풋터 적용" />
     <MESSAGE value="로그인 버튼 수정" />
     <MESSAGE value="프론트 페이지 연결, 코스피/코스닥(api연결x), 관련주비교 페이지" />
-    <MESSAGE value="회원가입/로그인 벨리데이션 체크, 마이페이지 수정" />
-    <MESSAGE value="[Ver 0.1]투자계산기, 관련주비교 수정" />
-    <MESSAGE value="[Ver 0.3]뉴스 페이지 프론트 작업" />
-    <MESSAGE value="dummy" />
-    <MESSAGE value="수정본" />
-    <MESSAGE value="[Ver 0.1]회원가입 페이지 프론트 수정" />
-    <MESSAGE value="[Ver 0.1]메인화면 사이드바 생성, 관련주 업종 수정" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Ver 0.1]메인화면 사이드바 생성, 관련주 업종 수정" />
+    <MESSAGE value="ai추천 페이지 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="ai추천 페이지 추가" />
   </component>
 </project>
