@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.urls import reverse
 
+
 from django.views.generic import TemplateView
 
 from accounts.forms import JoinForm
@@ -99,3 +100,31 @@ def analyze(request):
 
 def theme(request):
     return render(request, 'accounts/theme.html')
+
+def calc(request):
+    return render(request, 'accounts/calc.html')
+
+
+# def your_view(request):
+#     # 기사 목록을 가져오는 코드를 여기에 입력
+#     article_list = Article.objects.all().order_by('-published_date') # 최신 기사부터 가져오도록 정렬
+#     paginator = Paginator(article_list, 5)  # 페이지 당 5개의 기사를 보여준다.
+#
+#     page = request.GET.get('page')
+#     try:
+#         articles = paginator.page(page)
+#     except PageNotAnInteger:
+#         articles = paginator.page(1)
+#     except EmptyPage:
+#         articles = paginator.page(paginator.num_pages)
+#
+#     return render(request, 'news.html', {'articles': articles})
+
+
+
+
+
+
+
+
+

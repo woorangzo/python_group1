@@ -32,6 +32,8 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/thema.css' %}" rel="stylesheet">
 </head>
 
 <body style="margin:0 0;">
@@ -119,11 +121,13 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-
-                            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
+
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
                         <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
@@ -136,6 +140,754 @@
 
     <!-- Sign Up End -->
 </div>
+<main class="main_main">
+        <section class="content1">
+            <div class="container1">
+                <nav class="subNav">
+                    <ul>
+                        <li>
+                            <a href="/accounts/analyze/" >
+                                정보분석
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/accounts/theme/" style="color: #009CFF;">
+                                업종/테마
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="newarea">
+                <div class="box_top_submain box_top_box">
+                    <div class="inner_area">
+                        <div class="inner_area_left">
+                            <h4>오늘의 뉴스</h4>
+                            <div class="left01">
+                                <div class="main_news">
+                                    <ul>
+                                        <li>
+                                            <a href="#"> 연말되면 반복되는 ‘큰손’개미 물량 털기…공매도 다음은 주식양도세?</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> "연말 8만전자 가는거야?"…외국인 폭풍매수에 '폭풍기대감'[종목현미경]</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> 증권사 '1조 클럽' 실종…연이은 겹악재 울상</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> "적자나면 세금 퍼줄거죠?"…'이재명 횡재세'에 뿔난 직장인 [김익환의 컴퍼니워치]</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> 연준 점진주의·경제 연착륙 기대에 강보합 마감[뉴욕증시]</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"> "앗! 잘못 샀어요" 개미들 한탄…'이 회사' 상장날 무슨 일이 [돈앤톡]</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mainNewsTicker" id="mainNewsTicker" style="display: block;">
+                                    <dl>
+                                        <dt>속보</dt>
+                                        <dd class="data">
+                                            <span id="newsflash_0" onmouseover="viewNewsflashPause()" onmouseout="viewNewsflashStart()" style="display: '';"><a href="https://n.news.naver.com/mnews/article/648/0000021122">실적 우등생' 된 식품업계의 수익성 진실게임</a></span>
+                                            <span id="newsflash_1" onmouseover="viewNewsflashPause()" onmouseout="viewNewsflashStart()" style="display: none;"><a href="https://n.news.naver.com/mnews/article/009/0005216993">연말되면 반복되는 ‘큰손’개미 물량 털기…공매도 다음은 주식양도세?</a></span>
+                                            <span id="newsflash_2" onmouseover="viewNewsflashPause()" onmouseout="viewNewsflashStart()" style="display: none;"><a href="https://n.news.naver.com/mnews/article/421/0007184336">"연말 8만전자 가는거야?"…외국인 폭풍매수에 '폭풍기대감'[종목현미경]</a></span>
+                                            <span id="newsflash_3" onmouseover="viewNewsflashPause()" onmouseout="viewNewsflashStart()" style="display: none;"><a href="https://n.news.naver.com/mnews/article/008/0004963311">증권사 '1조 클럽' 실종…연이은 겹악재 울상</a></span>
+                                            <span id="newsflash_4" onmouseover="viewNewsflashPause()" onmouseout="viewNewsflashStart()" style="display: none;"><a href="https://n.news.naver.com/mnews/article/648/0000021121">[신약 R&amp;D 트렌드]항암 신약 개발에 특화된 'ADC'</a></span>
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contentar">
+                <!-- 업종별 시세 -->
+                <div class="box_type_s">
+                    <h3 class="top_tlt">
+                        <em>업종별</em>
+                        시세
+                        <span class="tit_more">
+                            <a href="#">더보기</a>
+                        </span>
+                    </h3>
+                    <table class="type_table1">
+                        <colgroup>
+                            <col width="*">
+                            <col width="19%">
+                            <col width="24%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="tit_sub">업종명</th>
+                                <th class="tit_sub2">전일대비</th>
+                                <th class="tit_sub3">등락그래프</th>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="blank_10"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">항공사</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 3.49%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 100%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">항공화물운송과물류</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.47%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 42%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">무선통신서비스</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.35%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 39%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="blank_03"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">포장재</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.24%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 32%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">생명과학도구및서비스</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.04%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 26%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">상업서비스와공급품</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 0.97%</span>
+                                </td>
+                                <td class="tc">
+                                    <div class="grapy_type_1">
+                                        <div class="graph_bar" style=" width: 18%;"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 테마별 시세 -->
+                <div class="box_type_c">
+                    <h3 class="top_tlt">
+                        <em>테마별</em>
+                        시세
+                        <span class="tit_more">
+                            <a href="#">더보기</a>
+                        </span>
+                    </h3>
+                    <table class="type_table1">
+                        <colgroup>
+                            <col width="*">
+                            <col width="19%">
+                            <col width="35%">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th class="tit_sub">테마명</th>
+                                <th class="tit_sub2">전일대비</th>
+                                <th class="tit_sub4">주도주</th>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="blank_10"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">항공/저가 항공사</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 4.50%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">제주항공</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">마이크로바이옴</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 3.13%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">마크로젠</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">마이데이터</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 3.02%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">핑거</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="blank_03"></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">백신여권</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 2.13%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">라온시큐어</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">유전자치료제/분석</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.79%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">툴젠</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" class="tit_name">건설 대표주</a>
+                                </td>
+                                <td class="number">
+                                    <span class="red01">+ 1.76%</span>
+                                </td>
+                                <td class="tt">
+                                    <em class="bu_p bu_pup2" style="margin:  0 4px 0 10px;"></em>
+                                    <a href="#">GS건설</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 외국인 순매수,순매도 -->
+                <div class="box_type_s">
+                    <div class="tab_style_1" id="tabNetBuy" style="display: '';">
+                        <div class="tab_smenu choice">
+                            <div class="choice_it"></div>
+                            외국인 순매수
+                        </div>
+                        <div class="tab_smeun" onclick="showTab('tabNetSell', 'tabNetBuy',event)">
+                            <a href="#">외국인 순매도</a>
+                        </div>
+                        <p class="standard_date">11/17</p>
+                        <table class="type_table1">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="*">
+                                <col width="24%">
+                                <col width="24%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="blank_10"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n01.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">삼성전자</a>
+                                    </td>
+                                    <td class="number">
+                                        72,500
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">300</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n02.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">기아</a>
+                                    </td>
+                                    <td class="number">
+                                        85,200
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">700</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n03.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KODEX 200</a>
+                                    </td>
+                                    <td class="number">
+                                        33,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">170</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="blank_03"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n04.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">에코프로비엠</a>
+                                    </td>
+                                    <td class="number">
+                                        238,000
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">4,500</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n05.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">POSCO홀딩스</a>
+                                    </td>
+                                    <td class="number">
+                                        463,500
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">3,500</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n06.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">포스코DX</a>
+                                    </td>
+                                    <td class="number">
+                                        56,500
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">1,800</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab_style_1" id="tabNetSell" style="display: none;">
+                        <div class="tab_smeun" onclick="hideTab('tabNetBuy', 'tabNetSell',event)">
+                            <a href="#">외국인 순매수</a>
+                        </div>
+                        <div class="tab_smeun choice">
+                            외국인 순매도
+                        </div>
+                        <p class="standard_date">11/17</p>
+                        <table class="type_table1">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="*">
+                                <col width="24%">
+                                <col width="24%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="blank_10"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n01.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">에코프로머티</a>
+                                    </td>
+                                    <td class="number">
+                                        57,200
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">21,000</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n02.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">하이브</a>
+                                    </td>
+                                    <td class="number">
+                                        190,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">15,200</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n03.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">SK하이닉스</a>
+                                    </td>
+                                    <td class="number">
+                                        129,900
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">2,400</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="blank_03"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n04.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">삼성SDI</a>
+                                    </td>
+                                    <td class="number">
+                                        444,000
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">11,000</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n05.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">LG에너지솔루션</a>
+                                    </td>
+                                    <td class="number">
+                                        432,000
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">10,500</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n06.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">두산로보틱스</a>
+                                    </td>
+                                    <td class="number">
+                                        51,400
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">300</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 기관 순매수,순매도 -->
+                <div class="box_type_c">
+                    <div class="tab_style_1" id="tabgbuy" style="display: '';">
+                        <div class="tab_smenu choice">
+                            <div class="choice_it"></div>
+                            외국인 순매수
+                        </div>
+                        <div class="tab_smeun" onclick="hideTab2('tabgbuy', 'tabgsell',event)">
+                            <a href="#">외국인 순매도</a>
+                        </div>
+                        <p class="standard_date">11/17</p>
+                        <table class="type_table1">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="*">
+                                <col width="24%">
+                                <col width="24%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="blank_10"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n01.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KODEX 200선물인..</a>
+                                    </td>
+                                    <td class="number">
+                                        2,615
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">35</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n02.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KODEX 코스닥150선...</a>
+                                    </td>
+                                    <td class="number">
+                                        3,980
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">75</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n03.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">현대오토에버</a>
+                                    </td>
+                                    <td class="number">
+                                        163,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">3,600</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="blank_03"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n04.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KBSTAR 2차전지TOP 1..</a>
+                                    </td>
+                                    <td class="number">
+                                        23,550
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">330</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n05.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">CJ대한통운</a>
+                                    </td>
+                                    <td class="number">
+                                        87,400
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">8,200</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n06.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">롯데케미칼</a>
+                                    </td>
+                                    <td class="number">
+                                        154,900
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">3,300</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab_style_1" id="tabgsell" style="display: none;">
+                        <div class="tab_smenu ">
+                            <div class="tab_smeun" onclick="showTab2('tabgsell', 'tabgbuy',event)">
+                                <a href="#">외국인 순매수</a>
+                            </div>
+                        </div>
+                        <div class="tab_smeun choice">
+                            외국인 순매도
+                        </div>
+                        <p class="standard_date">11/17</p>
+                        <table class="type_table1">
+                            <colgroup>
+                                <col width="10%">
+                                <col width="*">
+                                <col width="24%">
+                                <col width="24%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td colspan="4" class="blank_10"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n01.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">에코프로머티</a>
+                                    </td>
+                                    <td class="number">
+                                        57,200
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p bu_pup" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll red01">21,000</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n02.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KODEX 200</a>
+                                    </td>
+                                    <td class="number">
+                                        33,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">170</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n03.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">KODEX 코스닥</a>
+                                    </td>
+                                    <td class="number">
+                                        9,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">430</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="blank_03"></td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n04.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">하이브</a>
+                                    </td>
+                                    <td class="number">
+                                        190,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">15,200</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n05.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">삼성전자</a>
+                                    </td>
+                                    <td class="number">
+                                        72,500
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">300</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="tc">
+                                        <img src="https://ssl.pstatic.net/imgstock/images5/ico_n06.gif" alt="" width="11" height="11">
+                                    </td>
+                                    <td>
+                                        <a href="#">JYP Ent,</a>
+                                    </td>
+                                    <td class="number">
+                                        90,300
+                                    </td>
+                                    <td class="rate_up">
+                                        <em class="bu_p pu_pdn" style="margin: 0 4px 0 0;"></em>
+                                        <span class="tah pll nv01">9,500</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
             <footer>
                 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>&copy; 2023 Company, Inc. All rights reserved.</p>
@@ -161,8 +913,22 @@
 <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
 <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
+    <script>
+        function openInvestmentCalculator() {
+            // 새 창을 열기 위한 창 속성
+            var features = 'width=800,height=1000,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no';
+
+            // 투자계산기 페이지 URL
+            var calculatorURL = "/accounts/calc";
+
+            // 새 창 열기
+            window.open(calculatorURL, 'Investment Calculator', features);
+        }
+    </script>
+
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/thema.js' %}"></script>
 
 <!-- logo -->
 <script>

@@ -23,6 +23,8 @@ urlpatterns = [
     path('news/', views.news),
     path('analyze/', views.analyze),
     path('theme/', views.theme),
+    path('calc/', views.calc),
+
 
 
 

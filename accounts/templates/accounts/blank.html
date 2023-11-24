@@ -119,11 +119,13 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-
-                            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
+
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
                         <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
@@ -161,6 +163,19 @@
 <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
 <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
+    <script>
+        function openInvestmentCalculator() {
+            // 새 창을 열기 위한 창 속성
+            var features = 'width=800,height=1000,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no';
+
+            // 투자계산기 페이지 URL
+            var calculatorURL = "/accounts/calc";
+
+            // 새 창 열기
+            window.open(calculatorURL, 'Investment Calculator', features);
+        }
+    </script>
+
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
 
@@ -171,57 +186,8 @@
     }
 </script>
 
-<script>
-    function updateKPI() {
-        fetch('/get_kpi_data/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('kpi-value').textContent = data.value;
-                document.getElementById('kpi-change').textContent = data.change;
-                document.getElementById('kpi-percent').textContent = data.percent;
-
-                // 코스피 데이터를 가져왔으면 코스피를 보이게 하고, 코스닥은 숨기기
-                document.getElementById('kpi-info').style.display = 'block';
-                document.getElementById('kosdaq-info').style.display = 'none';
-            })
-            .catch(error => {
-                console.error('Error fetching KPI data:', error);
-                document.getElementById('kpi-value').textContent = 'Error';
-                document.getElementById('kpi-change').textContent = '';
-                document.getElementById('kpi-percent').textContent = '';
-            });
-    }
-
-    function updateKosdaq() {
-        fetch('/get_kosdaq_data/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('kosdaq-value').textContent = data.value;
-                document.getElementById('kosdaq-change').textContent = data.change;
-                document.getElementById('kosdaq-percent').textContent = data.percent;
-
-                // 코스닥 데이터를 가져왔으면 코스피를 숨기고, 코스닥은 보이게 하기
-                document.getElementById('kpi-info').style.display = 'none';
-                document.getElementById('kosdaq-info').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error fetching KOSDAQ data:', error);
-                document.getElementById('kosdaq-value').textContent = 'Error';
-                document.getElementById('kosdaq-change').textContent = '';
-                document.getElementById('kosdaq-percent').textContent = '';
-            });
-    }
-
-    // 초기 로딩
-    updateKPI();
-
-    // 일정 간격으로 KPI 업데이트
-    setInterval(function() {
-        updateKPI();
-        // 코스피를 업데이트한 후에 코스닥을 업데이트
-        updateKosdaq();
-    }, 3000);
-</script>
+    <!--kospi, kosdaq(api는 안가져옴)-->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

@@ -32,10 +32,12 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/analyze.css' %}" rel="stylesheet">
 </head>
 
 <body style="margin:0 0;">
-<div class="container-xxl position-relative bg-white d-flex p-0">
+   <div class="container-xxl position-relative bg-white d-flex p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -119,11 +121,13 @@
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-
-                            </ul>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
+
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
                         <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
@@ -136,6 +140,2738 @@
 
     <!-- Sign Up End -->
 </div>
+    <div class="wrap">
+        <section class="container_w">
+            <div class="container1">
+                <nav class="subNav garo">
+                    <ul>
+                        <li >
+                            <a href="/accounts/analyze/" style="color: #009CFF;">정보분석</a>
+                        </li>
+                        <li>
+                            <a href="/accounts/theme/">업종/테마</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="content">
+                    <div class="sub_content">
+                        <div class="sub_section">
+                            <div class="left">
+                                <div class="tm_20">
+                                    <ul class="nav3">
+                                        <li class="active" id="left_tag1">
+                                            <a href="#" onclick="showleft('left1', event)">섬유,의복</a>
+                                        </li>
+                                        <li id="left_tag2" class="">
+                                            <a href="#" onclick="showleft('left2', event)">서비스업</a>
+                                         </li>
+                                         <li id="left_tag3" class="">
+                                            <a href="#" onclick="showleft('left3', event)">보험</a>
+                                         </li>
+                                         <li id="left_tag4" class="">
+                                            <a href="#" onclick="showleft('left4', event)">비금속광물</a>
+                                         </li>
+                                         <li id="left_tag5" class="">
+                                            <a href="#" onclick="showleft('left5', event)">운수창고</a>
+                                         </li>
+                                    </ul>
+                                    <div class="tab_content tm_20" id="left_data1" style="display: '';">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">일정관리</a>
+                                                        </td>
+                                                        <td>
+                                                            12,900
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,750
+                                                        </td>
+                                                        <td class="up">
+                                                            15.7%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">태평양물산</a>
+                                                        </td>
+                                                        <td>
+                                                            2,730
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲90
+                                                        </td>
+                                                        <td class="up">
+                                                            3.41%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">F&F</a>
+                                                        </td>
+                                                        <td>
+                                                            89,800
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲2,700
+                                                        </td>
+                                                        <td class="up">
+                                                            3.1%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">TBH글로벌</a>
+                                                        </td>
+                                                        <td>
+                                                            1,912
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲52
+                                                        </td>
+                                                        <td class="up">
+                                                            2.8%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한세실업</a>
+                                                        </td>
+                                                        <td>
+                                                            23,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲450
+                                                        </td>
+                                                        <td class="up">
+                                                            1.95%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">전방</a>
+                                                        </td>
+                                                        <td>
+                                                            24,050
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲300
+                                                        </td>
+                                                        <td class="up">
+                                                            1.26%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">방림</a>
+                                                        </td>
+                                                        <td>
+                                                            2,005
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲24
+                                                        </td>
+                                                        <td class="up">
+                                                            1.21%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">형지엘리트</a>
+                                                        </td>
+                                                        <td>
+                                                            1,426
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲14
+                                                        </td>
+                                                        <td class="up">
+                                                            0.99%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">LF</a>
+                                                        </td>
+                                                        <td>
+                                                            13,780
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲130
+                                                        </td>
+                                                        <td class="up">
+                                                            0.95%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">일신방직</a>
+                                                        </td>
+                                                        <td>
+                                                            9,250
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲60
+                                                        </td>
+                                                        <td class="up">
+                                                            0.65%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="left_data2" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">녹십자홀딩스2우</a>
+                                                        </td>
+                                                        <td>
+                                                            33,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲3,500
+                                                        </td>
+                                                        <td class="up">
+                                                            11.67%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">IHQ</a>
+                                                        </td>
+                                                        <td>
+                                                            3,585
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲330
+                                                        </td>
+                                                        <td class="up">
+                                                            10.14%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">현대오토에버</a>
+                                                        </td>
+                                                        <td>
+                                                            171,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲7,200
+                                                        </td>
+                                                        <td class="up">
+                                                            4.38%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">SK디앤디</a>
+                                                        </td>
+                                                        <td>
+                                                            28,550
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲950
+                                                        </td>
+                                                        <td class="up">
+                                                            3.44%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">에스원</a>
+                                                        </td>
+                                                        <td>
+                                                            60,300
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,800
+                                                        </td>
+                                                        <td class="up">
+                                                            3.08%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">카카오</a>
+                                                        </td>
+                                                        <td>
+                                                            50,600
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,350
+                                                        </td>
+                                                        <td class="up">
+                                                            2.74%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">엔씨소프트</a>
+                                                        </td>
+                                                        <td>
+                                                            262,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲6,500
+                                                        </td>
+                                                        <td class="up">
+                                                            2.54%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">하나투어</a>
+                                                        </td>
+                                                        <td>
+                                                            54,700
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,300
+                                                        </td>
+                                                        <td class="up">
+                                                            2.43%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">웅진씽크박</a>
+                                                        </td>
+                                                        <td>
+                                                            2,650
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲45
+                                                        </td>
+                                                        <td class="up">
+                                                            1.73%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">대교</a>
+                                                        </td>
+                                                        <td>
+                                                            2,520
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲40
+                                                        </td>
+                                                        <td class="up">
+                                                            1.61%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="left_data3" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">삼정화재</a>
+                                                        </td>
+                                                        <td>
+                                                            254,000
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲5,500
+                                                        </td>
+                                                        <td class="up">
+                                                            2.21%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한화생명</a>
+                                                        </td>
+                                                        <td>
+                                                            2,790
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲55
+                                                        </td>
+                                                        <td class="up">
+                                                            2.01%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양생명</a>
+                                                        </td>
+                                                        <td>
+                                                            4,615
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲60
+                                                        </td>
+                                                        <td class="up">
+                                                            1.32%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">미래에셋생명</a>
+                                                        </td>
+                                                        <td>
+                                                            5,240
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲40
+                                                        </td>
+                                                        <td class="up">
+                                                            0.77%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">현대해상</a>
+                                                        </td>
+                                                        <td>
+                                                            30,650
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲200
+                                                        </td>
+                                                        <td class="up">
+                                                            0.66%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">코리안리</a>
+                                                        </td>
+                                                        <td>
+                                                            7,770
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲50
+                                                        </td>
+                                                        <td class="up">
+                                                            0.65%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">DB손해보험</a>
+                                                        </td>
+                                                        <td>
+                                                            81,300
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲400
+                                                        </td>
+                                                        <td class="up">
+                                                            0.49%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">흥국화재</a>
+                                                        </td>
+                                                        <td>
+                                                            3,005
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲5
+                                                        </td>
+                                                        <td class="up">
+                                                            0.17%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">흥국화재우</a>
+                                                        </td>
+                                                        <td>
+                                                            5,820
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲10
+                                                        </td>
+                                                        <td class="up">
+                                                            0.17%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">삼성생명</a>
+                                                        </td>
+                                                        <td>
+                                                            69,600
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲100
+                                                        </td>
+                                                        <td class="up">
+                                                            0.14%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="left_data4" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양2우B</a>
+                                                        </td>
+                                                        <td>
+                                                            14,270
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲3,290
+                                                        </td>
+                                                        <td class="up">
+                                                            29,96%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양우</a>
+                                                        </td>
+                                                        <td>
+                                                            6,990
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,610
+                                                        </td>
+                                                        <td class="up">
+                                                            29.93%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양</a>
+                                                        </td>
+                                                        <td>
+                                                            12,820
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,090
+                                                        </td>
+                                                        <td class="up">
+                                                            9.29%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양</a>
+                                                        </td>
+                                                        <td>
+                                                            1,055
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲52
+                                                        </td>
+                                                        <td class="up">
+                                                            5.18%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">쌍용C&E</a>
+                                                        </td>
+                                                        <td>
+                                                            6,080
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲120
+                                                        </td>
+                                                        <td class="up">
+                                                            2.01%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">태경비케이</a>
+                                                        </td>
+                                                        <td>
+                                                            6,860
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲130
+                                                        </td>
+                                                        <td class="up">
+                                                            1.93%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">CR홀딩스</a>
+                                                        </td>
+                                                        <td>
+                                                            6,970
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲120
+                                                        </td>
+                                                        <td class="up">
+                                                            1.75%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">부산산업</a>
+                                                        </td>
+                                                        <td>
+                                                            65,700
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲900
+                                                        </td>
+                                                        <td class="up">
+                                                            1.39%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">대림B&Co</a>
+                                                        </td>
+                                                        <td>
+                                                            3,880
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲35
+                                                        </td>
+                                                        <td class="up">
+                                                            0.91%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">벽산</a>
+                                                        </td>
+                                                        <td>
+                                                            2,860
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲20
+                                                        </td>
+                                                        <td class="up">
+                                                            0.7%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="left_data5" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">흥아해운</a>
+                                                        </td>
+                                                        <td>
+                                                            2,225
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲512
+                                                        </td>
+                                                        <td class="up">
+                                                            29,89%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">대한해운</a>
+                                                        </td>
+                                                        <td>
+                                                            1,796
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲74
+                                                        </td>
+                                                        <td class="up">
+                                                            4.3%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">STX그린로지스</a>
+                                                        </td>
+                                                        <td>
+                                                            12,560
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲450
+                                                        </td>
+                                                        <td class="up">
+                                                            3.72%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동방</a>
+                                                        </td>
+                                                        <td>
+                                                            2,020
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲59
+                                                        </td>
+                                                        <td class="up">
+                                                            3.01%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">CJ대한통운</a>
+                                                        </td>
+                                                        <td>
+                                                            93,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲1,600
+                                                        </td>
+                                                        <td class="up">
+                                                            1.74%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">KSS해운</a>
+                                                        </td>
+                                                        <td>
+                                                            8,490
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲130
+                                                        </td>
+                                                        <td class="up">
+                                                            1.56%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한진</a>
+                                                        </td>
+                                                        <td>
+                                                            21,500
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲250
+                                                        </td>
+                                                        <td class="up">
+                                                            1.18%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">인터지스</a>
+                                                        </td>
+                                                        <td>
+                                                            2,450
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲25
+                                                        </td>
+                                                        <td class="up">
+                                                            1.03%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">팬오션</a>
+                                                        </td>
+                                                        <td>
+                                                            4,340
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲40
+                                                        </td>
+                                                        <td class="up">
+                                                            0.93%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">동양고속</a>
+                                                        </td>
+                                                        <td>
+                                                            13,170
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲120
+                                                        </td>
+                                                        <td class="up">
+                                                            0.92%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="tm_20">
+                                    <ul class="nav3">
+                                        <li class="active" id="right_tag1">
+                                            <a href="#" onclick="showright('right1', event)">섬유,의복</a>
+                                        </li>
+                                        <li class="" id="right_tag2">
+                                            <a href="#" onclick="showright('right2', event)">통신업</a>
+                                        </li>
+                                        <li class="" id="right_tag3">
+                                            <a href="#" onclick="showright('right3', event)">의약품</a>
+                                        </li>
+                                        <li class="" id="right_tag4">
+                                            <a href="#" onclick="showright('right4', event)">의료정밀</a>
+                                        </li>
+                                        <li class="" id="right_tag5">
+                                            <a href="#" onclick="showright('right5', event)">유통업</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab_content tm_20" id="right_data1" style="display: '';">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">성안</a>
+                                                        </td>
+                                                        <td>
+                                                            1,663
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼94
+                                                        </td>
+                                                        <td class="dn">
+                                                            -5.35%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">쌍방울</a>
+                                                        </td>
+                                                        <td>
+                                                            269
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼7
+                                                        </td>
+                                                        <td class="dn">
+                                                            -5.35%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">원림</a>
+                                                        </td>
+                                                        <td>
+                                                            19,450
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼430
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.16%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한세실업</a>
+                                                        </td>
+                                                        <td>
+                                                            23,050
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼500
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.12%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">F&F</a>
+                                                        </td>
+                                                        <td>
+                                                            88,900
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼1,200
+                                                        </td>
+                                                        <td class="dn">
+                                                           -1.33%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">인디에프</a>
+                                                        </td>
+                                                        <td>
+                                                            884
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼8
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.9%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한섬</a>
+                                                        </td>
+                                                        <td>
+                                                            18,960
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼140
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.73%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">비비안</a>
+                                                        </td>
+                                                        <td>
+                                                            1,266
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼8
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.63%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">호전실업</a>
+                                                        </td>
+                                                        <td>
+                                                            8,160
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼30
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.37%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">대현</a>
+                                                        </td>
+                                                        <td>
+                                                            2,090
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼5
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.24%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="right_data2" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">현대퓨처넷</a>
+                                                        </td>
+                                                        <td>
+                                                            3,200
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼50
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.54%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">KT</a>
+                                                        </td>
+                                                        <td>
+                                                            32,950
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼300
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.9%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">인스코비</a>
+                                                        </td>
+                                                        <td>
+                                                            1,236
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼11
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.88%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">LG유플러스</a>
+                                                        </td>
+                                                        <td>
+                                                            10,360
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼50
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.48%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">SK텔레콤</a>
+                                                        </td>
+                                                        <td>
+                                                            52,000
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼100
+                                                        </td>
+                                                        <td class="dn">
+                                                           -0.19%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="right_data3" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">우유제약1우</a>
+                                                        </td>
+                                                        <td>
+                                                            6,090
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼930
+                                                        </td>
+                                                        <td class="dn">
+                                                            -13.25%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">우유제약</a>
+                                                        </td>
+                                                        <td>
+                                                            5,230
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼330
+                                                        </td>
+                                                        <td class="dn">
+                                                            -5.94%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">국제약품</a>
+                                                        </td>
+                                                        <td>
+                                                            4,655
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼205
+                                                        </td>
+                                                        <td class="dn">
+                                                            -4.22%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">팜젠사이언스</a>
+                                                        </td>
+                                                        <td>
+                                                            5,840
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼220
+                                                        </td>
+                                                        <td class="dn">
+                                                            -3.63%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">진원생명과학</a>
+                                                        </td>
+                                                        <td>
+                                                            3,150
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼90
+                                                        </td>
+                                                        <td class="dn">
+                                                           -2.78%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">파미셀</a>
+                                                        </td>
+                                                        <td>
+                                                            6.510
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼150
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.25%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">광동제약</a>
+                                                        </td>
+                                                        <td>
+                                                            6,950
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼150
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.11%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">유나이티드제약</a>
+                                                        </td>
+                                                        <td>
+                                                            25,250
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼500
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.94%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한올바이오파마</a>
+                                                        </td>
+                                                        <td>
+                                                            35,750
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼700
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.92%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">종근당바이오</a>
+                                                        </td>
+                                                        <td>
+                                                            21,350
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼400
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.84%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="right_data4" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">덴티움</a>
+                                                        </td>
+                                                        <td>
+                                                            121,900
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼3,200
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.56%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">우진</a>
+                                                        </td>
+                                                        <td>
+                                                            8,630
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼60
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.69%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">에스디바이오센서</a>
+                                                        </td>
+                                                        <td>
+                                                            10,900
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼20
+                                                        </td>
+                                                        <td class="dn">
+                                                            -0.18%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">디아이</a>
+                                                        </td>
+                                                        <td>
+                                                            6,190
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲30
+                                                        </td>
+                                                        <td class="up">
+                                                            0.49%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한컴라이프케어</a>
+                                                        </td>
+                                                        <td>
+                                                            4,830
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲45
+                                                        </td>
+                                                        <td class="up">
+                                                           0.94%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">케이씨텍</a>
+                                                        </td>
+                                                        <td>
+                                                            24,600
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲250
+                                                        </td>
+                                                        <td class="up">
+                                                            1.03%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">케이씨</a>
+                                                        </td>
+                                                        <td>
+                                                            18,670
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲210
+                                                        </td>
+                                                        <td class="up">
+                                                            1.14%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">미래산업</a>
+                                                        </td>
+                                                        <td>
+                                                            2,930
+                                                        </td>
+                                                        <td class="up">
+                                                            ▲245
+                                                        </td>
+                                                        <td class="up">
+                                                            1.56%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tab_content tm_20" id="right_data5" style="display: none;">
+                                        <div class="table_w">
+                                            <table class="table singnal">
+                                                <colgroup>
+                                                    <col width="*">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                    <col width="22%">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col">종목명</th>
+                                                        <th scope="col">현재가</th>
+                                                        <th scope="col">전일비</th>
+                                                        <th scope="col">등락률</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">월비스</a>
+                                                        </td>
+                                                        <td>
+                                                            679
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼18
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.58%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">한국화장품</a>
+                                                        </td>
+                                                        <td>
+                                                            6,800
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼170
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.44%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">인바이오젠</a>
+                                                        </td>
+                                                        <td>
+                                                            9,340
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼220
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.3%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">BGF리테일</a>
+                                                        </td>
+                                                        <td>
+                                                            132,300
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼2,800
+                                                        </td>
+                                                        <td class="dn">
+                                                            -2.07%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">웰바이오텍</a>
+                                                        </td>
+                                                        <td>
+                                                            1,452
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼28
+                                                        </td>
+                                                        <td class="dn">
+                                                           -1.89%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">포스코인터내셔널</a>
+                                                        </td>
+                                                        <td>
+                                                            57,900
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼1,000
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.7%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">남성</a>
+                                                        </td>
+                                                        <td>
+                                                            2,200
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼35
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.57%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">영원무역</a>
+                                                        </td>
+                                                        <td>
+                                                            46,400
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼650
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.38%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">신송홀딩스</a>
+                                                        </td>
+                                                        <td>
+                                                            6,490
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼80
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1.22%
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <a href="#">대성산업</a>
+                                                        </td>
+                                                        <td>
+                                                            3,480
+                                                        </td>
+                                                        <td class="dn">
+                                                            ▼35
+                                                        </td>
+                                                        <td class="dn">
+                                                            -1%
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fina_main">
+                                <h3 class="titelsub">
+                                    업종별/테마별 상위
+                                </h3>
+                                <div class="tabs_area">
+                                    <ul class="col2">
+                                        <li id="sectors_tit" class="on">
+                                            <a href="#" onclick="toggleTabs('sectors', event)">업종별 상위</a>
+                                        </li>
+                                        <li id="tema_tit" class="">
+                                            <a href="#" onclick="toggleTabs('tema', event)">테마별 상위</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div id="sectors_sub" class="tab_cont">
+                                    <table>
+                                        <colgroup>
+                                            <col width="33%">
+                                            <col width="20%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">종목명</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">등락 그래프</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">섬유의복</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        2.19%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 73.9%;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">건설업</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        1.59%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 71.1%;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">서비스업</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        1.38%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 60.2%;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">금융업</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        1.21%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 63.4%;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">운수창고</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        1.11%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 51.7%;"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">화학</a>
+                                                </td>
+                                                <td>
+                                                    <span class="data_up">
+                                                        1.03%
+                                                    </span>
+                                                </td>
+                                                <td class="graph_data up">
+                                                    <span class="graph_horizon" style="width: 61.0%;"></span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div id="tema_sub" class="tab_cont" style="display: none;">
+                                    <table>
+                                        <colgroup>
+                                            <col width="33%">
+                                            <col width="20%">
+                                            <col width="*">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">업종명</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">주도주</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">초전도체 관련주</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    5.07%
+                                                </td>
+                                                <td >
+                                                    <a href="#">LS네트웍스</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">우선주(중소형)</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    4.31%
+                                                </td>
+                                                <td >
+                                                    <a href="#">동양2우B</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">코로나19 (혈장치료) 관련</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    4.17%
+                                                </td>
+                                                <td >
+                                                    <a href="#">에코볼트</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">인공태양관련주</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    4.11%
+                                                </td>
+                                                <td >
+                                                    <a href="#">덕성</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">네트워크장비 관련주</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    4.06%
+                                                </td>
+                                                <td >
+                                                    <a href="#">인성정보</a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">태양전지(모듈/인버터)관련주</a>
+                                                </td>
+                                                <td class="data_up">
+                                                    3.94%
+                                                </td>
+                                                <td >
+                                                    <a href="#">LS ELECTRIC</a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="left">
+                                <h4 class="sub_title_nidt">업종상위</h4>
+                                <div class="mt_30">
+                                    <ul class="nav3 nav_tabs">
+                                        <li class="active" id="left_chart1">
+                                            <a href="#" onclick="showleftchart('lchart1', event)">코스피</a>
+                                        </li>
+                                        <li class="" id="left_chart2">
+                                            <a href="#" onclick="showleftchart('lchart2', event)">코스닥</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="chartbox mt_20 " id="left_chart_main1" style="display: '';">
+                                    <div class="row g-4">
+                                        <div>
+                                            <div class="bg-light rounded h-100 p-4">
+                                                <h6 class="mb-4">Single Bar Chart</h6>
+                                                <canvas id="bar-chart" width="480" height="419" style="display: block; box-sizing: border-box; height: 419px; width: 480px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chartbox mt_20" id="left_chart_main2" style="display: none;">
+                                    <div class="row g-4">
+                                        <div>
+                                            <div class="bg-light rounded h-100 p-4">
+                                                <h6 class="mb-4">Single Bar Chart</h6>
+                                                <canvas id="bar-chart2" width="480" height="419" style="display: block; box-sizing: border-box; height: 419px; width: 480px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="date">
+                                    <span>11/22 기준</span>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <h4 class="sub_title_nidt">업종하위</h4>
+                                <div class="mt_30">
+                                    <ul class="nav3 nav_tabs">
+                                        <li class="active" id="right_chart1">
+                                            <a href="#" onclick="showrightchart('rchart1', event)">코스피</a>
+                                        </li>
+                                        <li class="" id="right_chart2">
+                                            <a href="#" onclick="showrightchart('rchart2', event)">코스닥</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="chartbox mt_20 " id="right_chart_main1" style="display: '';">
+                                    <div class="row g-4">
+                                        <div>
+                                            <div class="bg-light rounded h-100 p-4">
+                                                <h6 class="mb-4">Single Bar Chart</h6>
+                                                <canvas id="bar-chart3" width="480" height="419" style="display: block; box-sizing: border-box; height: 419px; width: 480px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chartbox mt_20 " id="right_chart_main2" style="display: none;">
+                                    <div class="row g-4">
+                                        <div>
+                                            <div class="bg-light rounded h-100 p-4">
+                                                <h6 class="mb-4">Single Bar Chart</h6>
+                                                <canvas id="bar-chart4" width="480" height="419" style="display: block; box-sizing: border-box; height: 419px; width: 480px;"></canvas>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="date">
+                                    <span>11/22 기준</span>
+                                </div>
+                            </div>
+                            <div class="fina_main2">
+                                <h3 class="titelsub">
+                                    업종동향
+                                </h3>
+                                <div class="sectorbox">
+                                    <ul class="nav3 nav_tabs1">
+                                        <li class="active2" id="kospiclick">
+                                            <a href="#" onclick="showkos('kos1', event)">코스피</a>
+                                        </li>
+                                        <li class="" id="kosdaqclick">
+                                            <a href="#" onclick="showkos('kos2', event)">코스닥</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="table_w mt_20" id="kospirank" style="display: '';">
+                                    <table class="table">
+                                        <colgroup>
+                                            <col width="*">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">업종명</th>
+                                                <th scope="col">지수</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">등락률</th>
+                                                <th scope="col">거래대금</th>
+                                                <th scope="col">거래량</th>
+                                                <th scope="col">거래비중</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        기계
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,063.1
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲13.65
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.3
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    440,123
+                                                </td>
+                                                <td class="text-right">
+                                                    13,344
+                                                </td>
+                                                <td class="text-right">
+                                                    13
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        보험
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    16,337.83
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲39.01
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.24
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    10,023
+                                                </td>
+                                                <td class="text-right">
+                                                    517
+                                                </td>
+                                                <td class="text-right">
+                                                    0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        운수장비
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    2,071.77
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲3.49
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.17
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    201,827
+                                                </td>
+                                                <td class="text-right">
+                                                    27,589
+                                                </td>
+                                                <td class="text-right">
+                                                    27
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      종이,목재
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    294.52
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼0.01
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span>
+                                                        -
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    18,395
+                                                </td>
+                                                <td class="text-right">
+                                                    11,574
+                                                </td>
+                                                <td class="text-right">
+                                                    11
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      전기가스업
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    593.42
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼0.17
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.03
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    7,916
+                                                </td>
+                                                <td class="text-right">
+                                                    464
+                                                </td>
+                                                <td class="text-right">
+                                                    0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      비금속광물
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    3,953.92
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼2.54
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.06
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    15,782
+                                                </td>
+                                                <td class="text-right">
+                                                    2,481
+                                                </td>
+                                                <td class="text-right">
+                                                    2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      건설업
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    75.19
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼0.07
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.09
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    19,079
+                                                </td>
+                                                <td class="text-right">
+                                                    2,471
+                                                </td>
+                                                <td class="text-right">
+                                                    2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      음식료품
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    3,704.29
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼7.55
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.2
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    19,420
+                                                </td>
+                                                <td class="text-right">
+                                                    1,166
+                                                </td>
+                                                <td class="text-right">
+                                                    1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      철강및금속
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    5,825.84
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼13.07
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.22
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    106,698
+                                                </td>
+                                                <td class="text-right">
+                                                    8,223
+                                                </td>
+                                                <td class="text-right">
+                                                    8
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      금융업
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    371.03
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼0.93
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.25
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    123,494
+                                                </td>
+                                                <td class="text-right">
+                                                    6,796
+                                                </td>
+                                                <td class="text-right">
+                                                    6
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      증권
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,812.21
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼6.96
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.38
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    4,721
+                                                </td>
+                                                <td class="text-right">
+                                                    870
+                                                </td>
+                                                <td class="text-right">
+                                                    0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      의료정밀
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,488.82
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼6.33
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.42
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    5,239
+                                                </td>
+                                                <td class="text-right">
+                                                    886
+                                                </td>
+                                                <td class="text-right">
+                                                    0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      서비스업
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,091.17
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼4.85
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.44
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    106,213
+                                                </td>
+                                                <td class="text-right">
+                                                    6,168
+                                                </td>
+                                                <td class="text-right">
+                                                    6
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      화학
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    4,828.97
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        ▼23.49
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="dn">
+                                                        -0.48
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    200,145
+                                                </td>
+                                                <td class="text-right">
+                                                    13,454
+                                                </td>
+                                                <td class="text-right">
+                                                    13
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="table_w mt_20" id="kosdaqrank" style="display: none;">
+                                    <table class="table">
+                                        <colgroup>
+                                            <col width="*">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                            <col width="14%">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">업종명</th>
+                                                <th scope="col">지수</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">등락률</th>
+                                                <th scope="col">거래대금</th>
+                                                <th scope="col">거래량</th>
+                                                <th scope="col">거래비중</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        방송서비스
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    2,642.64
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲67.72
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        2.63
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    98,641
+                                                </td>
+                                                <td class="text-right">
+                                                    55,602
+                                                </td>
+                                                <td class="text-right">
+                                                    55
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        통신방송서비스
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    878.55
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲17.06
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.98
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    134,157
+                                                </td>
+                                                <td class="text-right">
+                                                    58,406
+                                                </td>
+                                                <td class="text-right">
+                                                    58
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        정보기기
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    10,75
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲0.18
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.7
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    211,352
+                                                </td>
+                                                <td class="text-right">
+                                                    17,349
+                                                </td>
+                                                <td class="text-right">
+                                                    17
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      반도체
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,786.54
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲17.27
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.98
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    929,591
+                                                </td>
+                                                <td class="text-right">
+                                                    52,789
+                                                </td>
+                                                <td class="text-right">
+                                                    52
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      비금속
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    47,535.6
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲386.61
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.82
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    18,230
+                                                </td>
+                                                <td class="text-right">
+                                                    3,094
+                                                </td>
+                                                <td class="text-right">
+                                                    3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      인터넷
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    10,601.43
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲307.39
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        2.99
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    16,213
+                                                </td>
+                                                <td class="text-right">
+                                                    1,712
+                                                </td>
+                                                <td class="text-right">
+                                                    1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      기타 제조
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    997.74
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲20.27
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        2.07
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    8,528
+                                                </td>
+                                                <td class="text-right">
+                                                    1,270
+                                                </td>
+                                                <td class="text-right">
+                                                    1
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      오락.문화
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    604,51
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲9.34
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.57
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    52,102
+                                                </td>
+                                                <td class="text-right">
+                                                    2,412
+                                                </td>
+                                                <td class="text-right">
+                                                    2
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      종이.목재
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    12,862.22
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲149.57
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.18
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    1.980
+                                                </td>
+                                                <td class="text-right">
+                                                    99
+                                                </td>
+                                                <td class="text-right">
+                                                    0
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      컴퓨터서비스
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    202.8
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲1.42
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.71
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    10,796
+                                                </td>
+                                                <td class="text-right">
+                                                    3,215
+                                                </td>
+                                                <td class="text-right">
+                                                    3
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      소프트웨어
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    238.57
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲1.49
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.63
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    340,077
+                                                </td>
+                                                <td class="text-right">
+                                                    44,199
+                                                </td>
+                                                <td class="text-right">
+                                                    44
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                        제조
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    2,674.03
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲19.05
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.72
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,286,305
+                                                </td>
+                                                <td class="text-right">
+                                                    180,223
+                                                </td>
+                                                <td class="text-right">
+                                                    180
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      일반전기전차
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    1,917.21
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲20.8
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        1.1
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    350,756
+                                                </td>
+                                                <td class="text-right">
+                                                    51,565
+                                                </td>
+                                                <td class="text-right">
+                                                    51
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <a href="#">
+                                                      운송장비.부품
+                                                    </a>
+                                                </td>
+                                                <td class="text-right">
+                                                    5,092.12
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        ▲4.58
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span class="up">
+                                                        0.09
+                                                    </span>
+                                                </td>
+                                                <td class="text-right">
+                                                    20,875
+                                                </td>
+                                                <td class="text-right">
+                                                    7,735
+                                                </td>
+                                                <td class="text-right">
+                                                    7
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
             <footer>
                 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>&copy; 2023 Company, Inc. All rights reserved.</p>
@@ -161,8 +2897,23 @@
 <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
 <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
 
+    <script>
+        function openInvestmentCalculator() {
+            // 새 창을 열기 위한 창 속성
+            var features = 'width=800,height=1000,toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=no';
+
+            // 투자계산기 페이지 URL
+            var calculatorURL = "/accounts/calc";
+
+            // 새 창 열기
+            window.open(calculatorURL, 'Investment Calculator', features);
+        }
+    </script>
+
+
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/analyze.js' %}"></script>
 
 <!-- logo -->
 <script>
@@ -171,57 +2922,8 @@
     }
 </script>
 
-<script>
-    function updateKPI() {
-        fetch('/get_kpi_data/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('kpi-value').textContent = data.value;
-                document.getElementById('kpi-change').textContent = data.change;
-                document.getElementById('kpi-percent').textContent = data.percent;
-
-                // 코스피 데이터를 가져왔으면 코스피를 보이게 하고, 코스닥은 숨기기
-                document.getElementById('kpi-info').style.display = 'block';
-                document.getElementById('kosdaq-info').style.display = 'none';
-            })
-            .catch(error => {
-                console.error('Error fetching KPI data:', error);
-                document.getElementById('kpi-value').textContent = 'Error';
-                document.getElementById('kpi-change').textContent = '';
-                document.getElementById('kpi-percent').textContent = '';
-            });
-    }
-
-    function updateKosdaq() {
-        fetch('/get_kosdaq_data/')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('kosdaq-value').textContent = data.value;
-                document.getElementById('kosdaq-change').textContent = data.change;
-                document.getElementById('kosdaq-percent').textContent = data.percent;
-
-                // 코스닥 데이터를 가져왔으면 코스피를 숨기고, 코스닥은 보이게 하기
-                document.getElementById('kpi-info').style.display = 'none';
-                document.getElementById('kosdaq-info').style.display = 'block';
-            })
-            .catch(error => {
-                console.error('Error fetching KOSDAQ data:', error);
-                document.getElementById('kosdaq-value').textContent = 'Error';
-                document.getElementById('kosdaq-change').textContent = '';
-                document.getElementById('kosdaq-percent').textContent = '';
-            });
-    }
-
-    // 초기 로딩
-    updateKPI();
-
-    // 일정 간격으로 KPI 업데이트
-    setInterval(function() {
-        updateKPI();
-        // 코스피를 업데이트한 후에 코스닥을 업데이트
-        updateKosdaq();
-    }, 3000);
-</script>
+    <!--kospi, kosdaq(api는 안가져옴)-->
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
