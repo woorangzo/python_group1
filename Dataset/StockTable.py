@@ -2,7 +2,7 @@ import csv
 import os
 import mysql.connector
 
-simp_path = "C:\\Users\\[본인경로]"
+simp_path = "C:/Users/woosw/OneDrive/바탕 화면/samples"
 abs_path = os.path.abspath(simp_path)
 
 

@@ -1,6 +1,5 @@
 import csv
 import os
-
 import mysql.connector
 
 simp_path = "C:/Users/woosw/OneDrive/바탕 화면/samples"
@@ -22,9 +21,10 @@ def read_data_from_file(file_path):
         csv_reader = csv.reader(file)
         header = next(csv_reader)
 
-        data.append((code,name))
+        for row in csv_reader:
+            data.append((code, name, row[7]))
 
-        return data
+            return data
 
 
 files = os.listdir(abs_path)
@@ -45,7 +45,7 @@ for file_name in files:
     if name is not None and code is not None:
         data = read_data_from_file(file_path)
 
-        sql = "INSERT INTO stock_info (STOCK_CD ,STOCK_NM) VALUES (%s, %s)"
+        sql = "INSERT INTO stock_info (STOCK_CD, STOCK_NM, MARKET_TYPE) VALUES (%s, %s, %s)"
         try:
             mc.executemany(sql, data)
         except mysql.connector.Error as err:

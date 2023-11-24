@@ -9,7 +9,6 @@ def get_category_data():
 
     response = requests.get(api_url, verify=False)
     data = response.json()
-
     response2 = requests.get(api2_url, verify=False)
     data2 = response2.json()
 
