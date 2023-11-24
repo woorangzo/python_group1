@@ -31,3 +31,7 @@ class JoinForm(forms.Form):
 
 # class Join(forms.Form):
 #     id_member_id = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+
+class StockInputForm(forms.Form):
+    codes = forms.CharField(label='Stock Codes', max_length=200)
+    names = forms.CharField(label='Stock Names', max_length=200)

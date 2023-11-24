@@ -2,7 +2,7 @@ import csv
 import os
 import mysql.connector
 
-simp_path = "C:/Users/woosw/OneDrive/바탕 화면/samples"
+simp_path = "C:/Users/KITCOOP/Desktop/samples"
 abs_path = os.path.abspath(simp_path)
 
 # 주식 기본 정보 저장 (종목 코드, 종목 명)
@@ -23,7 +23,6 @@ def read_data_from_file(file_path):
 
         for row in csv_reader:
             data.append((code, name, row[7]))
-
             return data
 
 

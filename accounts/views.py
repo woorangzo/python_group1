@@ -10,7 +10,7 @@ from accounts.forms import JoinForm
 
 
 from .forms import StockInputForm
-from .models import StockData
+from .models import StockData, Member
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 from matplotlib import dates as mdates
@@ -110,7 +110,8 @@ def analyze(request):
 def theme(request):
     return render(request, 'accounts/theme.html')
 
-
+def calc(request):
+    return render(request, 'accounts/calc.html')
 
 def get_price(code, name, n):
     url = f'http://finance.daum.net/api/charts/A{code}/days?limit={n}&adjusted=true'
@@ -205,70 +206,70 @@ def plot_stock_prices(request):
 
 
 
-# def plot_get_stock_prices(request):
-#     stock_info_list = []
-#
-#     if request.method == 'POST':
-#         form = StockInputForm(request.POST)
-#         if form.is_valid():
-#             # Split the input codes and names, and remove leading/trailing whitespaces
-#             codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
-#             names = [item.strip() for item in form.cleaned_data['names'].split(',')]
-#
-#             if len(codes) != len(names):
-#                 return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
-#
-#             n = 50
-#             plt.figure(figsize=(10, 6))
-#
-#             for code, name in zip(codes, names):
-#                 data = get_price(code, name, n)
-#
-#                 if data is not None:
-#                     stock_info_list.append({
-#                         'code': code,
-#                         'name': name,
-#                         'trade_price': data['tradePrice'].tolist(),
-#                     })
-#
-#                     # 데이터를 모델에 저장
-#                     for index, row in data.iterrows():
-#                         StockData.objects.create(
-#                             code=code,
-#                             name=name,
-#                             date=index,
-#                             trade_price=row['tradePrice'],
-#                         )
-#
-#                     # Plot stock price on the left y-axis
-#                     plt.plot(data.index, data['tradePrice'], label=f"{name} 주가")
-#
-#                     # 여기에 주가 예측을 위한 코드를 추가하고 예측 그래프를 생성하여 저장
-#                     # 예시로 prediction_image 필드를 사용하겠습니다.
-#                     # prediction_image에는 주가 예측을 위한 이미지 파일의 경로를 저장하도록 합니다.
-#                     StockData.objects.filter(code=code, name=name).update(prediction_image=prediction_image_path)
-#
-#             # 그래프 스타일 및 주요 설정
-#             plt.title('주식 주가 비교')
-#             plt.xlabel('일자')
-#             plt.ylabel('주가')
-#             plt.legend(loc='upper left')  # 위치 조정
-#
-#             plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-#
-#             # 그래프 저장
-#             plot_path = "./accounts/static/pic/stock_price_plot.png"
-#             os.makedirs(os.path.dirname(plot_path), exist_ok=True)
-#             plt.savefig(plot_path)
-#             plt.close()
-#
-#             return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
-#                                                                       'stock_info_list': stock_info_list,})
-#
-#     else:
-#         form = StockInputForm()
-#
-#     return render(request, 'accounts/plot_stock_prices.html', {'form': form})
+def plot_get_stock_prices(request):
+    stock_info_list = []
+
+    if request.method == 'POST':
+        form = StockInputForm(request.POST)
+        if form.is_valid():
+            # Split the input codes and names, and remove leading/trailing whitespaces
+            codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
+            names = [item.strip() for item in form.cleaned_data['names'].split(',')]
+
+            if len(codes) != len(names):
+                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
+
+            n = 50
+            plt.figure(figsize=(10, 6))
+
+            for code, name in zip(codes, names):
+                data = get_price(code, name, n)
+
+                if data is not None:
+                    stock_info_list.append({
+                        'code': code,
+                        'name': name,
+                        'trade_price': data['tradePrice'].tolist(),
+                    })
+
+                    # 데이터를 모델에 저장
+                    for index, row in data.iterrows():
+                        StockData.objects.create(
+                            code=code,
+                            name=name,
+                            date=index,
+                            trade_price=row['tradePrice'],
+                        )
+
+                    # Plot stock price on the left y-axis
+                    plt.plot(data.index, data['tradePrice'], label=f"{name} 주가")
+
+                    # 여기에 주가 예측을 위한 코드를 추가하고 예측 그래프를 생성하여 저장
+                    # 예시로 prediction_image 필드를 사용하겠습니다.
+                    # prediction_image에는 주가 예측을 위한 이미지 파일의 경로를 저장하도록 합니다.
+                    StockData.objects.filter(code=code, name=name).update(prediction_image=prediction_image_path)
+
+            # 그래프 스타일 및 주요 설정
+            plt.title('주식 주가 비교')
+            plt.xlabel('일자')
+            plt.ylabel('주가')
+            plt.legend(loc='upper left')  # 위치 조정
+
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+            # 그래프 저장
+            plot_path = "./accounts/static/pic/stock_price_plot.png"
+            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
+            plt.savefig(plot_path)
+            plt.close()
+
+            return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
+                                                                      'stock_info_list': stock_info_list,})
+
+    else:
+        form = StockInputForm()
+
+    return render(request, 'accounts/plot_stock_prices.html', {'form': form})
 
 def plot_get_stock_prices(request):
     stock_info_list = []
