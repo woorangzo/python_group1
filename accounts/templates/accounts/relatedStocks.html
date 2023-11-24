@@ -298,72 +298,135 @@
                     </div>
                 </div>
             </div>
-            <!-- SelectBox End -->
-            <div class="container-fluid p-4">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th scope="col"></th>
-                                <th scope="col">종목명</th>
-                                <th scope="col">거래량</th>
-                                <th scope="col">등락률</th>
-                                <th scope="col">전일대비</th>
-                                <th scope="col">시가총액</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 테이블 내용은 여기에 추가 -->
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>대한항공</td>
-                                <td>32,354,424</td>
-                                <th scope="row">+30.17%</th>
-                                <td>32,354,424</td>
-                                <td>32,354,424</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>아시아나항공</td>
-                                <td>12,178,296</td>
-                                <th scope="row">+20.17%</th>
-                                <td>12,178,296</td>
-                                <td>12,178,296</td>
-                            </tr>
-
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>제주항공</td>
-                                <td>9,825,611</td>
-                                <th scope="row">+10.17%</th>
-                                <td>9,825,611</td>
-                                <td>9,825,611</td>
-                            </tr>
-
-
-                            <!-- 테이블 내용은 여기까지 추가 -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="container-fluid p-4 px-4">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl-6" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
+            <br><br>
+            <div class="col-sm-12 col-xl-6">
+                <div class="bg-light rounded h-100 p-4" style="width: 83rem;">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">코스피</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab"
+                                aria-controls="nav-profile" aria-selected="false">코스닥</button>
                         </div>
-                    </div>
-                    <div class="col-sm-12 col-xl-6">
-                        <div class="bg-light text-center rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h5 class="mb-0">관련주 가격 비교</h5>
+                    </nav>
+
+                    <div class="tab-content pt-3" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                            <div class="container-fluid p-4">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">종목명</th>
+                                                <th scope="col">거래량</th>
+                                                <th scope="col">등락률</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">시가총액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>대한항공</td>
+                                                <td>32,354,424</td>
+                                                <th scope="row">+30.17%</th>
+                                                <td>32,354,424</td>
+                                                <td>32,354,424</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>아시아나항공</td>
+                                                <td>12,178,296</td>
+                                                <th scope="row">+20.17%</th>
+                                                <td>12,178,296</td>
+                                                <td>12,178,296</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>제주항공</td>
+                                                <td>9,825,611</td>
+                                                <th scope="row">+10.17%</th>
+                                                <td>9,825,611</td>
+                                                <td>9,825,611</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-12 col-xl-6">
+                                    <div class="bg-light text-center rounded p-4" style="width: 50rem; position: relative; left: 14rem;">
+                                        <div class="d-flex align-items-center justify-content-between mb-4">
+                                            <h5 class="mb-0">관련주 가격 비교</h5>
+                                        </div>
+                                        <canvas id="salse-revenue"></canvas>
+                                    </div>
+                                </div>
                             </div>
-                            <canvas id="salse-revenue"></canvas>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="container-fluid p-4">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">종목명</th>
+                                                <th scope="col">거래량</th>
+                                                <th scope="col">등락률</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">시가총액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- 테이블 내용은 여기에 추가 -->
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>대한항공</td>
+                                                <td>32,354,424</td>
+                                                <th scope="row">+30.17%</th>
+                                                <td>32,354,424</td>
+                                                <td>32,354,424</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>아시아나항공</td>
+                                                <td>12,178,296</td>
+                                                <th scope="row">+20.17%</th>
+                                                <td>12,178,296</td>
+                                                <td>12,178,296</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>제주항공</td>
+                                                <td>9,825,611</td>
+                                                <th scope="row">+10.17%</th>
+                                                <td>9,825,611</td>
+                                                <td>9,825,611</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-12 col-xl-6" >
+                                    <div class="bg-light text-center rounded p-4" style="width: 50rem; position: relative; left: 14rem;">
+                                        <div class="d-flex align-items-center justify-content-between mb-4" >
+                                            <h5 class="mb-0">관련주 비교</h5>
+                                        </div>
+                                        <canvas id="worldwide-sales"></canvas>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
