@@ -32,6 +32,12 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+    <style>
+        .up {
+            color: #fc2f2f !important;
+        }
+    </style>
 </head>
 
 <body style="margin:0 0;">
@@ -542,14 +548,6 @@
     <!--kospi, kosdaq(api는 안가져옴)-->
     <script src="{% static 'js/script.js' %}"></script>
 
-<script>
-    $(document).ready(function () {
-        // 상단 체크박스 선택 시 모든 체크박스 선택/해제
-        $('#selectAll').change(function () {
-            $('input[type="checkbox"]').prop('checked', $(this).prop('checked'));
-        });
-    });
-</script>
 
 </body>
 

@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중">
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[ver 0.7] 메인,뉴스 페이지 조정, 관련주 항목 수정">
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/newsDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/static/css/analyze.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/analyze.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/news.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,17 +69,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/gb_khn_6030/jango/woorangzo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "hansam",
+    "last_opened_file_path": "D:/woorangzo/accounts/templates/accounts",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\woorangzo\accounts\templates\accounts" />
@@ -203,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700815947843</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="[ver 0.7] 메인,뉴스 페이지 조정, 관련주 항목 수정">
+      <option name="closed" value="true" />
+      <created>1701046277121</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1701046277121</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -263,6 +280,7 @@
     <MESSAGE value="[ver 1.0] 회원가입, 로그인 최종 프론트" />
     <MESSAGE value="[ver 0.1] 종목추천 페이지 초안" />
     <MESSAGE value="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중" />
+    <MESSAGE value="[ver 0.7] 메인,뉴스 페이지 조정, 관련주 항목 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[ver 0.7] 메인,뉴스 페이지 조정, 관련주 항목 수정" />
   </component>
 </project>

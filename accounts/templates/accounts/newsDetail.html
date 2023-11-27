@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>MyPage</title>
+    <title>회원가입</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -32,11 +32,11 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-    <style>
-        .up {
+<style>
+       .up {
             color: #fc2f2f !important;
         }
-    </style>
+</style>
 </head>
 
 <body style="margin:0 0;">
@@ -47,6 +47,7 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
+
 
         <nav>
             <div class="container position-relative">
@@ -138,86 +139,16 @@
             </nav>
 
 
-    <!-- mypage Start -->
-    <div class="container-fluid p-4 px-4">
-        <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
-            <div class="col-md-6 text-center">
-                <div class="col-sm-12 col-xl-6">
-                    <div class="bg-light rounded h-100 p-4" style="position: relative; bottom: 25px; right: 310px; width: 800px;">
-                        <h4 class="mb-4" style="position:relative; right:16rem;">회원정보</h4>
-                        <hr style="width:1200px;"/>
-                        <dl class="row mb-0">
-                            <dt class="col-sm-4">이름</dt>
-                            <dd class="col-sm-8">홍길동</dd>
+    <!-- Start -->
+    <div class="contents">
 
-                            <dt class="col-sm-4">아이디</dt>
-                            <dd class="col-sm-8">gildong</dd>
-
-                            <dt class="col-sm-4">주소</dt>
-                            <dd class="col-sm-8">서울특별시 강남구 개포동 123-45</dd>
-
-                            <dt class="col-sm-4 text-truncate">이메일</dt>
-                            <dd class="col-sm-8">hong@gmail.com</dd>
-
-                            <dt class="col-sm-4">전화번호</dt>
-                            <dd class="col-sm-8">010-1234-5678</dd>
-                        </dl>
-                        <hr style="width:1200px;"/>
-                        <br>
-                        <h4 class="mb-4" style="position:relative; right:16rem;">회원 정보 수정</h4>
-                        <form>
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">아이디 변경</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="newUsername">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">비밀번호 변경</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPassword3">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">비밀번호 변경 확인</label>
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" id="inputPasswordConfirm">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">주소 변경</label>
-                                <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="inputAddress">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">이메일 변경</label>
-                                <div class="col-sm-10">
-                                    <input type="email" class="form-control" id="inputEmail">
-                                </div>
-                            </div>
-                            <div class="row mb-3">
-                                <label for="inputPassword3" class="col-sm-2 col-form-label">전화번호 변경</label>
-                                <div class="col-sm-10">
-                                    <input type="tel" class="form-control" id="inputPhone">
-                                </div>
-                            </div>
-                            <br>
-
-                            <button type="submit" class="btn btn-primary" style="position:relative; right:16rem;">수정</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-xl-6">
-                    <div class="bg-light rounded h-100 p-4"></div>
-                </div>
-            </div>
-        </div>
     </div>
-    <!-- mypage End -->
 
+
+    <!-- End -->
+</div>
             <footer>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="margin-left: -15rem; margin-right: -19rem">
+                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>&copy; 2023 Company, Inc. All rights reserved.</p>
                 </div>
             </footer>
@@ -229,7 +160,6 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
