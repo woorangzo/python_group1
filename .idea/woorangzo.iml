@@ -16,11 +16,6 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-<<<<<<<<< Temporary merge branch 1
-    <orderEntry type="jdk" jdkName="Python 3.10" jdkType="Python SDK" />
-=========
-    <orderEntry type="inheritedJdk" />
->>>>>>>>> Temporary merge branch 2
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TemplatesService">

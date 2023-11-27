@@ -133,170 +133,252 @@
                 </div>
             </nav>
             <!-- SelectBox Start -->
-            <div class="col-sm-12 col-xl-6" style="width:1322px;">
-                <div class="bg-light rounded h-100 p-4">
                     <h3 class="mb-4">관련주</h3>
-                <div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox1" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox1">의약품</label>
-                    </div>
+            <div class="col-sm-12 col-xl-6" style="width:1322px;">
+                <div class="bg-light rounded h-100 p-4" style="width: 83rem;">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                aria-selected="true">코스피</button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                data-bs-target="#nav-profile" type="button" role="tab"
+                                aria-controls="nav-profile" aria-selected="false">코스닥</button>
+                        </div>
+                    </nav>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox2" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox2">운수장비</label>
-                    </div>
+                        <div class="tab-content pt-3" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                                <div class="container-fluid p-4">
+                                    <div class="bg-light rounded h-100 p-4">
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox1" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox1">의약품</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox3" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox3">유통업</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox2" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox2">운수장비</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox4" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox4">금융업</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox3" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox3">유통업</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox5" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox5">운수창고</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox4" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox4">금융업</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox6" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox6">서비스업</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox5" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox5">운수창고</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox7" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox7">화학</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox6" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox6">서비스업</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox8" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox8">제조</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox7" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox7">화학</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox9" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox9">전기,전자</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox8" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox8">제조</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox10" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox10">유통</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox9" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox9">전기,전자</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox11" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox11">비금속광물</label>
-                    </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox10" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox10">유통</label>
+                                </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox12" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox12">철강및금속</label>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox11" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox11">비금속광물</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox12" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox12">철강및금속</label>
+                                </div>
+                            </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox13" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox13">건설업</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox14" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox14">섬유,의복</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox15" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox15">종이,목재</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox16" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox16">건설</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox17" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox17">운송</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox18" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox18">의료정밀</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox19" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox19">금융</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox20" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox20">전기가스업</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox21" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox21">IT H/W</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox22" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox22">통신업</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox23" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox23">숙박·음식</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox24" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox24">IT S/W · SVC</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox25" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox25">사업서비스</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox26" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox26">부동산</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox27" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox27">통신방송서비스</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox28" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox28">기타서비스</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox29" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox29">오락·문화</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox30" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox30">교육서비스</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox31" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox31">전기,가스,수도</label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" id="inlineCheckbox32" name="stock">
+                                    <label class="form-check-label" for="inlineCheckbox32">농림업</label>
+                                </div>
+                            </div>
+                                <br>
+                                <hr>
+                                <br>
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                            <div class="container-fluid p-4">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col"></th>
+                                                <th scope="col">종목명</th>
+                                                <th scope="col">거래량</th>
+                                                <th scope="col">등락률</th>
+                                                <th scope="col">전일대비</th>
+                                                <th scope="col">시가총액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- 테이블 내용은 여기에 추가 -->
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>대한항공</td>
+                                                <td>32,354,424</td>
+                                                <th scope="row">+30.17%</th>
+                                                <td>32,354,424</td>
+                                                <td>32,354,424</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>아시아나항공</td>
+                                                <td>12,178,296</td>
+                                                <th scope="row">+20.17%</th>
+                                                <td>12,178,296</td>
+                                                <td>12,178,296</td>
+                                            </tr>
+
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>제주항공</td>
+                                                <td>9,825,611</td>
+                                                <th scope="row">+10.17%</th>
+                                                <td>9,825,611</td>
+                                                <td>9,825,611</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <br>
+                                <hr>
+                                <br>
+                                <div class="col-sm-12 col-xl-6" >
+                                    <div class="bg-light text-center rounded p-4" style="width: 50rem; position: relative; left: 14rem;">
+                                        <div class="d-flex align-items-center justify-content-between mb-4" >
+                                            <h5 class="mb-0">관련주 비교</h5>
+                                        </div>
+                                        <canvas id="worldwide-sales"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox13" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox13">건설업</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox14" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox14">섬유,의복</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox15" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox15">종이,목재</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox16" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox16">건설</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox17" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox17">운송</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox18" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox18">의료정밀</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox19" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox19">금융</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox20" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox20">전기가스업</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox21" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox21">IT H/W</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox22" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox22">통신업</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox23" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox23">숙박·음식</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox24" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox24">IT S/W · SVC</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox25" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox25">사업서비스</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox26" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox26">부동산</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox27" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox27">통신방송서비스</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox28" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox28">기타서비스</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox29" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox29">오락·문화</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox30" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox30">교육서비스</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox31" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox31">전기,가스,수도</label>
-                    </div>
-
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" id="inlineCheckbox32" name="stock">
-                        <label class="form-check-label" for="inlineCheckbox32">농림업</label>
-                    </div>
-                </div>
             </div>
             <br><br>
             <div class="col-sm-12 col-xl-6">
