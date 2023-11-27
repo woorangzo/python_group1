@@ -51,8 +51,7 @@
 
 <body style="margin:0 0;">
 <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+       <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -61,7 +60,7 @@
 
         <nav>
             <div class="container position-relative">
-                <div class="logo ms-auto" >
+                <div class="logo ms-auto">
                     <img src="{% static 'img/woorangzo.png' %}" alt="로고" style="width: 130px; height: auto;" onclick="redirectToHome()">
                 </div>
 
@@ -105,38 +104,26 @@
                     </a>
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        <li class="nav-item ">
+                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
-                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
-                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
                                 주식 비교
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-                        </ul>
+                        </li>
                     </ul>
 
                 <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>

@@ -92,14 +92,9 @@ li{
     line-height: 61px;
 }
 
-.content {
+.content1 {
     position: relative;
-    width: 1200px;
-    background: #fff;
-    box-shadow: none;
-    border: 0;
-    margin: 70px 0 0;
-    padding: 0 20px;
+    clear: both;
 }
 
 .sub_content {

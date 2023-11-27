@@ -28,16 +28,6 @@ rc('font', family = font)
 plt.rc('axes', unicode_minus=False)
 
 # Create your views here.
-from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
-from .forms import JoinForm
-
-from django.shortcuts import render, redirect
-from django.urls import reverse
-from .forms import JoinForm
-from .models import Member
-
-
 def join(request):
     if request.method == 'POST':
         form = JoinForm(request.POST)
@@ -80,6 +70,10 @@ def logout(request):
         return redirect('home')
     return render(request,'accounts/join.html')
 
+def detail(request):
+    return render(request, 'accounts/detail.html')
+
+
 
 def mainview(request):
     return render(request, 'accounts/index.html')
@@ -96,7 +90,6 @@ def mypage(request):
 def relatedStocks(request):
     return render(request, 'accounts/relatedStocks.html')
 
-
 def issue(request):
     return render(request, 'accounts/issue.html')
 
@@ -108,7 +101,6 @@ def stockRecommend(request):
 def news(request):
     return render(request, 'accounts/news.html')
 
-
 def analyze(request):
     return render(request, 'accounts/analyze.html')
 
@@ -119,27 +111,193 @@ def theme(request):
 def calc(request):
     return render(request, 'accounts/calc.html')
 
+def get_price(code, name, n):
+    url = f'http://finance.daum.net/api/charts/A{code}/days?limit={n}&adjusted=true'
 
-# def your_view(request):
-#     # 기사 목록을 가져오는 코드를 여기에 입력
-#     article_list = Article.objects.all().order_by('-published_date') # 최신 기사부터 가져오도록 정렬
-#     paginator = Paginator(article_list, 5)  # 페이지 당 5개의 기사를 보여준다.
-#
-#     page = request.GET.get('page')
-#     try:
-#         articles = paginator.page(page)
-#     except PageNotAnInteger:
-#         articles = paginator.page(1)
-#     except EmptyPage:
-#         articles = paginator.page(paginator.num_pages)
-#
-#     return render(request, 'news.html', {'articles': articles})
+    headers = {
+        'Accept': 'application/json, text/plain, */*',
+        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
+    }
+
+    headers['Referer'] = f'http://finance.daum.net/quotes/A{code}'
+
+    r = requests.get(url, headers=headers)
+    data = json.loads(r.text)
+
+    # 데이터가 없으면 None 반환
+    if 'data' not in data:
+        return None
+
+    df = pd.DataFrame(data['data'])
+    df.index = pd.to_datetime(df['candleTime'])
+
+    return df
+
+def plot_stock_prices(request):
+    stock_info_list = []
+
+    if request.method == 'POST':
+        form = StockInputForm(request.POST)
+        if form.is_valid():
+            # Split the input codes and names, and remove leading/trailing whitespaces
+            codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
+            names = [item.strip() for item in form.cleaned_data['names'].split(',')]
+
+            if len(codes) != len(names):
+                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
+
+            n = 50
+            plt.figure(figsize=(10, 6))
+
+            for code, name in zip(codes, names):
+                data = get_price(code, name, n)
+
+                if data is not None:
+                    returns = data['changeRate']
+                    plt.plot(data.index, returns, label=name)
+
+                    stock_info_list.append({
+                        'code': code,
+                        'name': name,
+                        'change_rate': data['changeRate'].tolist(),
+
+                    })
+
+                    # 데이터를 모델에 저장
+                    for index, row in data.iterrows():
+                        StockData.objects.create(
+                            code=code,
+                            name=name,
+                            date=index,
+                            change_rate=row['changeRate'],
+
+                        )
+
+            plt.title('주식 등락률 비교')
+            plt.xlabel('일자')
+            plt.ylabel('등락률(%)')
+            plt.axhline(0, color='black', linestyle='--', linewidth=1, label='Zero Line')
+            plt.legend()
+
+            y_ticks = [i / 100 for i in range(-10, 11, 1)]
+            plt.yticks(y_ticks)
+
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+            # 그래프 저장
+            plot_path = "./accounts/static/pic/stock_plot.png"
+
+            # 디렉토리 생성
+            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
+
+            plt.savefig(plot_path)
+            plt.close()
+
+            return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
+                                                                       'stock_info_list': stock_info_list,})
+
+    else:
+        form = StockInputForm()
+
+
+    return render(request, 'accounts/plot_stock_prices.html', {'form': form})
 
 
 
+def plot_get_stock_prices(request):
+    stock_info_list = []
 
+    if request.method == 'POST':
+        form = StockInputForm(request.POST)
+        if form.is_valid():
+            # Split the input codes and names, and remove leading/trailing whitespaces
+            codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
+            names = [item.strip() for item in form.cleaned_data['names'].split(',')]
 
+            if len(codes) != len(names):
+                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
 
+            n = 50
+            plt.figure(figsize=(10, 6))
 
+            for code, name in zip(codes, names):
+                data = get_price(code, name, n)
 
+                if data is not None:
+                    stock_info_list.append({
+                        'code': code,
+                        'name': name,
+                        'trade_price': data['tradePrice'].tolist(),
+                    })
 
+                    # 데이터를 모델에 저장
+                    for index, row in data.iterrows():
+                        StockData.objects.create(
+                            code=code,
+                            name=name,
+                            date=index,
+                            trade_price=row['tradePrice'],
+                        )
+
+                    # Plot stock price on the left y-axis
+                    plt.plot(data.index, data['tradePrice'], label=f"{name} 주가")
+
+                    # 여기에 주가 예측을 위한 코드를 추가하고 예측 그래프를 생성하여 저장
+                    # 예시로 prediction_image 필드를 사용하겠습니다.
+                    # prediction_image에는 주가 예측을 위한 이미지 파일의 경로를 저장하도록 합니다.
+                    StockData.objects.filter(code=code, name=name).update(prediction_image=prediction_image_path)
+
+            # 그래프 스타일 및 주요 설정
+            plt.title('주식 주가 비교')
+            plt.xlabel('일자')
+            plt.ylabel('주가')
+            plt.legend(loc='upper left')  # 위치 조정
+
+            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
+
+            # 그래프 저장
+            plot_path = "./accounts/static/pic/stock_price_plot.png"
+            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
+            plt.savefig(plot_path)
+            plt.close()
+
+            return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
+                                                                      'stock_info_list': stock_info_list,})
+
+    else:
+        form = StockInputForm()
+
+    return render(request, 'accounts/plot_stock_prices.html', {'form': form})
+
+def plot_get_stock_prices(request):
+    stock_info_list = []
+
+    if request.method == 'POST':
+        form = StockInputForm(request.POST)
+        if form.is_valid():
+            codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
+            names = [item.strip() for item in form.cleaned_data['names'].split(',')]
+
+            if len(codes) != len(names):
+                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': '코드와 이름의 수가 일치하지 않습니다.'})
+
+            n = 50
+            plt.figure(figsize=(10, 6))
+
+            for code, name in zip(codes, names):
+                # 데이터베이스에서 주식 정보 가져오기
+                stock_data = StockData.objects.filter(stock_cd=code).order_by('stock_dt')[:n]
+                if not stock_data.exists():
+                    continue
+
+                # Pandas DataFrame으로 변환
+                data = pd.DataFrame(list(stock_data.values()))
+                data['stock_dt'] = pd.to_datetime(data['stock_dt'])
+                data.set_index('stock_dt', inplace=True)
+
+                stock_info_list.append({
+                    'code': code,
+                    'name': name,
+                    'trade_price': data['close_price'].tolist(),  # 종가를 사용
+                    'change_rate': data['stock_rate'].tolist(),
+                })

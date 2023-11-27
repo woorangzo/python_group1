@@ -45,6 +45,13 @@
 <body>
 
     <div class="container-xxl position-relative bg-white d-flex p-0">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+
+
         <nav>
             <div class="container position-relative">
                 <div class="logo ms-auto">
@@ -73,17 +80,15 @@
                 </div>
 
                 <div class="col-md-3 text-end">
-                    {% if user.is_authenticated %}
-                    <!-- 회원 -->
-                        <a  href="/accounts/mypage/" role="button" style="font-size: 15px;">{{ user.username }}님</a>
-                    <!-- 마이페이지 버튼 -->
-                        <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
-                    {% else %}
-                    <!-- 회원가입 버튼 -->
-                        <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
                     <!-- 로그인 버튼 -->
-                        <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
-                    {% endif %}
+                    <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
+
+                    <!-- 회원가입 버튼 -->
+                    <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
+
+                    <!-- 마이페이지 버튼 -->
+                    <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
+
                 </div>
            </div>
             <div class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
@@ -93,41 +98,29 @@
                     </a>
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        <li class="nav-item ">
+                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
-                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
-                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
                                 주식 비교
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-                        </ul>
+                        </li>
                     </ul>
 
-                    <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
 
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
@@ -152,7 +145,7 @@
                                         <div style="position:relative; top:10px;">
 
                                             <nav>
-                                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                                <div class="nav nav-tabs nav_mg_30" id="nav-tab" role="tablist">
                                                     <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
                                                         data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
                                                         aria-selected="true">등락률 상위</button>

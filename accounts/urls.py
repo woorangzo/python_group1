@@ -47,13 +47,13 @@ urlpatterns = [
 
     path('calc/', views.calc),
 
+    path('detail/', views.detail),
 
 
 
 
 
-=========
->>>>>>>>> Temporary merge branch 2
+
 ]
 
 if settings.DEBUG:

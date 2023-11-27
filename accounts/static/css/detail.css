@@ -5,13 +5,12 @@ body {
 .wrap5 {
     position: relative;
     width: 100%;
-    min-height: 1200px;
-    height: auto;
+    min-height: 650px;
 }
 
 .container_ww {
     position: relative;
-    min-height: 1700px;
+    min-height: 650px;
     clear: both;
 }
 
@@ -151,13 +150,14 @@ body {
 .info-list div {
     display: block;
     width: 355px;
-    height: 50px;
+    height: 90px;
     border-bottom: 1px solid #dfdfdf;
     text-align: center;
     float: left;
 }
 
 .info-list div strong {
+    margin-top: 20px;
     display: block;
     font-size: 16px;
     line-height: 55px;
@@ -166,6 +166,7 @@ body {
 }
 
 .info-list div span {
+    margin-top: 20px;
     display: block;
     font-size: 14px;
     line-height: 55px;
