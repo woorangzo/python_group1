@@ -95,3 +95,11 @@ header, footer {
 .nav-item a:hover {
     color: #000;
 }
+
+.up {
+    color: #fc2f2f !important;
+}
+
+.dn {
+    color: #447aec !important;
+}

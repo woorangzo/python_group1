@@ -94,7 +94,12 @@ li{
 
 .content1 {
     position: relative;
-    clear: both;
+    width: 1200px;
+    background: #fff;
+    box-shadow: none;
+    border: 0;
+    margin: 70px 0 0;
+    padding: 0 20px;
 }
 
 .sub_content {
