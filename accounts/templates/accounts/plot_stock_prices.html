@@ -1,44 +1,44 @@
-<!DOCTYPE html>
-{% load static %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Prices Comparison</title>
-</head>
-<body>
+<!--<!DOCTYPE html>-->
+<!--{% load static %}-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Stock Prices Comparison</title>-->
+<!--</head>-->
+<!--<body>-->
 
-<h1>주식 비교</h1>
+<!--<h1>주식 비교</h1>-->
 
-<form method="post" action="{% url 'accounts:plot_stock_prices' %}">
-    {% csrf_token %}
-    {{ form.codes }}
-    {{ form.names }}
-    <button type="submit">검색</button>
-</form>
+<!--<form method="post" action="{% url 'accounts:plot_stock_prices' %}">-->
+<!--    {% csrf_token %}-->
+<!--    {{ form.codes }}-->
+<!--    {{ form.names }}-->
+<!--    <button type="submit">검색</button>-->
+<!--</form>-->
 
-{% if plot_path %}
-     <img src="{% static 'pic/stock_plot.png' %}" alt="주식 가격 비교">
-     <img src="{% static 'pic/stock_price_plot.png' %}" alt="주식 가격 비교">
+<!--{% if plot_path %}-->
+<!--     <img src="{% static 'pic/stock_plot.png' %}" alt="주식 가격 비교">-->
+<!--     <img src="{% static 'pic/stock_price_plot.png' %}" alt="주식 가격 비교">-->
 
-      <h2>주식 정보 리스트</h2>
-        <ul>
-            {% for stock_info in stock_info_list %}
-                <li>
-                    <strong>{{ stock_info.name }}</strong> ({{ stock_info.code }}):
-                    {% for change_rate in stock_info.change_rate %}
-                        {{ change_rate }}{% if not forloop.last %}, {% endif %}
-                    {% endfor %}
-                </li>
-            {% endfor %}
-        </ul>
-{% else %}
-    {% if error %}
-        <p>{{ error }}</p>
-    {% else %}
-        <p>No data available.</p>
-    {% endif %}
-{% endif %}
+<!--      <h2>주식 정보 리스트</h2>-->
+<!--        <ul>-->
+<!--            {% for stock_info in stock_info_list %}-->
+<!--                <li>-->
+<!--                    <strong>{{ stock_info.name }}</strong> ({{ stock_info.code }}):-->
+<!--                    {% for change_rate in stock_info.change_rate %}-->
+<!--                        {{ change_rate }}{% if not forloop.last %}, {% endif %}-->
+<!--                    {% endfor %}-->
+<!--                </li>-->
+<!--            {% endfor %}-->
+<!--        </ul>-->
+<!--{% else %}-->
+<!--    {% if error %}-->
+<!--        <p>{{ error }}</p>-->
+<!--    {% else %}-->
+<!--        <p>No data available.</p>-->
+<!--    {% endif %}-->
+<!--{% endif %}-->
 
-</body>
-</html>
+<!--</body>-->
+<!--</html>-->

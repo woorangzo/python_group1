@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 # 다중 스레드 환경에서 안전하게 Matplotlib 사용
 
@@ -45,8 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'single_page',
-
     'kpi_app',
+    'cachalot'
 ]
 
 MIDDLEWARE = [
