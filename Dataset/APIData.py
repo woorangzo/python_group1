@@ -21,6 +21,7 @@ def record_exists(stock_cd):
     count = cursor.fetchone()[0]
     return count > 0
 
+
 def insert_or_update_record(stock_cd, current_date, row):
     # Check if the record exists
     if record_exists(stock_cd):
@@ -74,6 +75,27 @@ update_interval = 1
 
 # 스케줄러 사용해서 지정한 시간과 날짜에 맞춰서 업데이트 되도록 설정
 schedule.every(update_interval).seconds.do(update_data).tag('update_data')
+
+
+# 등락률(stock_rate) 높은순서대로 10개 출력
+cursor.execute('SELECT * FROM daily_price ORDER BY stock_rate DESC LIMIT 10')
+top_10_high_records = cursor.fetchall()
+
+print("Top 10 Records with Highest stock_rate:")
+for record in top_10_high_records:
+    values = [str(value) for value in record[1:]]
+    print(values)
+
+# 등락률 하위 10개 출력
+cursor.execute('SELECT * FROM daily_price ORDER BY stock_rate LIMIT 10')
+top_10_low_records = cursor.fetchall()
+
+print("\nTop 10 Records with Lowest stock_rate:")
+for record in top_10_low_records:
+    values = [str(value) for value in record[1:]]
+    print(values)
+
+
 
 while True:
     try:

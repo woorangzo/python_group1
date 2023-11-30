@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator
 from accounts.models import Member
 
+
 class JoinForm(forms.Form):
     member_id = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
     member_pw = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
@@ -29,3 +30,7 @@ class JoinForm(forms.Form):
 
         return cleaned_data
 
+
+class StockInputForm(forms.Form):
+    codes = forms.CharField(label='Stock Codes', max_length=200)
+    names = forms.CharField(label='Stock Names', max_length=200)
