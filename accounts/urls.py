@@ -9,12 +9,17 @@ app_name = 'accounts'
 
 urlpatterns = [
     # Django에서 지원하는 views 라이브러리를 활용 (로그인, 로그아웃, 비밀번호 찾기 & 초기화 등)
-    path('login/', auth_views.LoginView.as_view(template_name="accounts/login.html", redirect_authenticated_user=True),
-         name="login"),
-    path('logout/', auth_views.LogoutView.as_view(), name="logout"),
+    # path('login/', auth_views.LoginView.as_view(template_name="accounts/login.html", redirect_authenticated_user=True),
+    #      name="login"),
+    path('login/', views.login, name="login"),
+    path('logout/',views.logout, name="logout"),
+    # path('logout/', auth_views.LogoutView.as_view(), name="logout"),
     path('join/', views.join, name="join"),
-    path('navbar/', auth_views.LoginView.as_view(template_name="accounts/navbar.html", redirect_authenticated_user=False),
-         name="navbar"),
+
+
+
+    # path('navbar/', auth_views.LoginView.as_view(template_name="accounts/navbar.html", redirect_authenticated_user=False),
+    #      name="navbar"),
     path('mypage/', views.mypage),
     path('relatedStocks/', views.relatedStocks),
     path('issue/', views.issue),
