@@ -40,13 +40,15 @@
     box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
 
+        .up {
+            color: #fc2f2f !important;
+        }
     </style>
 </head>
 
 <body style="margin:0 0;">
 <div class="container-xxl position-relative bg-white d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+       <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -99,41 +101,29 @@
                     </a>
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        <li class="nav-item ">
+                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
-                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
-                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
                                 주식 비교
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-                        </ul>
+                        </li>
                     </ul>
 
-                    <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
+                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
 
                     <form class="d-flex search-form ml-auto">
                         <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
@@ -151,11 +141,11 @@
                             data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                             aria-selected="true">뉴스리스트</button>
                     </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                            data-bs-target="#pills-profile" type="button" role="tab"
-                            aria-controls="pills-profile" aria-selected="false">키워드/이슈</button>
-                    </li>
+<!--                    <li class="nav-item" role="presentation">-->
+<!--                        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"-->
+<!--                            data-bs-target="#pills-profile" type="button" role="tab"-->
+<!--                            aria-controls="pills-profile" aria-selected="false">키워드/이슈</button>-->
+<!--                    </li>-->
                     <li class="nav-item" role="presentation">
                         <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
                             data-bs-target="#pills-contact" type="button" role="tab"
@@ -169,112 +159,46 @@
                             <div class="tab-content" >
                                 <div class="row g-4">
                                     <div class="col-sm-12 col-md-6 col-xl-4"  id="piles-home">
-                                        <div class="h-100 bg-light rounded p-4" style="margin-top: -40px;">
-                                            <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
-                                            <div class="d-flex align-items-center border-bottom py-3">
+                                        <div class="h-100 bg-light rounded p-4" style="position:relative; bottom:30px;">
+                                            <div class="d-flex align-items-center border-bottom py-3" style="margin-top: 52px;">
                                                 <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <div class="d-flex w-100 justify-content-between" style="width: 60px; height: 60px;">
                                                         <a class="mb-0" href="#" style="color:black;font-weight: bold;">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a><br>
                                                         <small>15 minutes ago</small><br><br>
                                                     </div>
                                                     <span>에코프로머티리얼즈(이하 에코프로머티)가 상장 이후 3거래일 동안 이틀 연속 상한가를...</span>
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
+                                            <div class="d-flex align-items-center border-bottom py-3" style="margin-top: 52px;">
                                                 <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <div class="d-flex w-100 justify-content-between" style="width: 60px; height: 60px;">
                                                         <a class="mb-0" href="#" style="color:black;font-weight: bold;">광주·대구시 "달빛철도, '복선·일반철도'로…고속철 집착안해"(종합)</a><br>
                                                         <small>15 minutes ago</small><br><br>
                                                     </div>
                                                     <span>정차역 많아 고속·일반철도 시간차 미미…복선 건설은 지속 건의 광주시와 대구시가 달 ...</span>
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
+                                            <div class="d-flex align-items-center border-bottom py-3" style="margin-top: 52px;">
                                                 <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <div class="d-flex w-100 justify-content-between" style="width: 60px; height: 60px;">
                                                         <a class="mb-0" href="#" style="color:black;font-weight: bold;">英 에너지기업, 韓에 1.5조 투자…신재생에너지 프로젝트 가속화 전망</a><br>
                                                         <small>15 minutes ago</small><br><br>
                                                     </div>
                                                     <span>尹 대통령 영국 국빈방문 계기, 2개 기업과 투자신고식 윤석열 대통령의 영국 국빈 방문...</span>
                                                 </div>
                                             </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
+                                            <div class="d-flex align-items-center border-bottom py-3" style="margin-top: 52px;">
                                                 <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <div class="d-flex w-100 justify-content-between" style="width: 60px; height: 60px;">
                                                         <a class="mb-0" href="#" style="color:black;font-weight: bold;">빚 갚을 돈 없는 자영업자들… 기댈 곳 ‘카드론 돌려막기’뿐</a><br>
                                                         <small>15 minutes ago</small><br><br>
                                                     </div>
                                                     <span>금융사 3곳 이상에서 돈을 빌린 다중 채무 자영업자의 연체액이 급증했다. 당장 대출금...</span>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-<!--                    <div class="pagination">-->
-<!--                        <span class="step-links">-->
-<!--                            {% if articles.has_previous %}-->
-<!--                                <a href="?page=1">&laquo; first</a>-->
-<!--                                <a href="?page={{ articles.previous_page_number }}">previous</a>-->
-<!--                            {% endif %}-->
-
-<!--                            <span class="current">-->
-<!--                                Page {{ articles.number }} of {{ articles.paginator.num_pages }}.-->
-<!--                            </span>-->
-
-<!--                            {% if articles.has_next %}-->
-<!--                                <a href="?page={{ articles.next_page_number }}">next</a>-->
-<!--                                <a href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>-->
-<!--                            {% endif %}-->
-<!--                        </span>-->
-<!--                    </div>-->
-
-                    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                        <div class="container-fluid p-4 px-4">
-                            <div class="tab-content" >
-                                <div class="row g-4">
-                                    <div class="col-sm-12 col-md-6 col-xl-4"  id="piles-home2">
-                                        <div class="h-100 bg-light rounded p-4" style="margin-top: -40px;">
-                                            <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
-                                            <div class="d-flex align-items-center border-bottom py-3">
+                                            <div class="d-flex align-items-center border-bottom py-3" style="margin-top: 52px;">
                                                 <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <a class="mb-0" href="#" style="color:black;font-weight: bold;">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a><br>
-                                                        <small>15 minutes ago</small><br><br>
-                                                    </div>
-                                                    <span>에코프로머티리얼즈(이하 에코프로머티)가 상장 이후 3거래일 동안 이틀 연속 상한가를...</span>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
-                                                <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <a class="mb-0" href="#" style="color:black;font-weight: bold;">광주·대구시 "달빛철도, '복선·일반철도'로…고속철 집착안해"(종합)</a><br>
-                                                        <small>15 minutes ago</small><br><br>
-                                                    </div>
-                                                    <span>정차역 많아 고속·일반철도 시간차 미미…복선 건설은 지속 건의 광주시와 대구시가 달 ...</span>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
-                                                <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
-                                                        <a class="mb-0" href="#" style="color:black;font-weight: bold;">英 에너지기업, 韓에 1.5조 투자…신재생에너지 프로젝트 가속화 전망</a><br>
-                                                        <small>15 minutes ago</small><br><br>
-                                                    </div>
-                                                    <span>尹 대통령 영국 국빈방문 계기, 2개 기업과 투자신고식 윤석열 대통령의 영국 국빈 방문...</span>
-                                                </div>
-                                            </div>
-                                            <div class="d-flex align-items-center border-bottom py-3">
-                                                <img class="rounded-circle flex-shrink-0" src="{% static '/img/user.jpg/' %}" alt="" style="width: 60px; height: 60px; position: relative;top: 70px;left: 66rem;">
-                                                <div class="w-100 ms-3">
-                                                    <div class="d-flex w-100 justify-content-between">
+                                                    <div class="d-flex w-100 justify-content-between" style="width: 60px; height: 60px;">
                                                         <a class="mb-0" href="#" style="color:black;font-weight: bold;">빚 갚을 돈 없는 자영업자들… 기댈 곳 ‘카드론 돌려막기’뿐</a><br>
                                                         <small>15 minutes ago</small><br><br>
                                                     </div>
@@ -292,7 +216,7 @@
                         <span class="border border-primary" style="position: relative; top: 65px;">
                         <div class="container">
                             <div class="circle_chart">
-                                <svg viewBox="0 0 520 500" width="520" height="500" class="bubble_chart-svg" style="position: relative; right: 90px;">
+                                <svg viewBox="0 0 520 500" width="520" height="500" class="bubble_chart-svg" style="position: relative; right: 130px;">
                                     <g class="node" transform="translate(168.12390518393835 222.44094220301767)" style="cursor: pointer;">
                                     <g class="graph"><circle r="76.76696988791615" id="circle_0_R1" style="fill: rgb(62, 17, 224);"></circle>
                                         <text dy="0.3em" id="text_0_R1" style="text-anchor: middle; font-family: &quot;Noto Sans KR&quot;, sans-serif; font-size: 34px; fill: rgb(255, 255, 255); pointer-events: none;">HBM</text>
@@ -349,330 +273,72 @@
                             </div>
 
                             <div class="col-sm-12 col-xl-6">
-                                <div class="bg-light rounded h-100 p-4 table1" style="margin-top: -185px; width: 586px; margin-left: 655px;">
-                                    <nav>
-                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                                                aria-selected="true">관련 종목</button>
-
-                                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-profile" type="button" role="tab"
-                                                aria-controls="nav-profile" aria-selected="false">수익률 상위 종목</button>
-
-                                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                                data-bs-target="#nav-contact" type="button" role="tab"
-                                                aria-controls="nav-contact" aria-selected="false">등락률 상위 종목</button>
-                                        </div>
-                                    </nav>
-<!--                                    <div class="tab-content pt-3" id="nav-tabContent">-->
-<!--                                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">-->
-<!--                                            <table class= "table table-striped">-->
-<!--                                                <thead>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="col"></th>-->
-<!--                                                    <th scope="col">헤드라인</th>-->
-<!--                                                    <th scope="col">내용</th>-->
-<!--                                                    <th scope="col">게시일</th>-->
-<!--                                                  </tr>-->
-<!--                                                </thead>-->
-<!--                                                <tbody>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="row">1</th>-->
-<!--                                                    <td><a href="#">Jacob</a></td>-->
-<!--                                                    <td>Otto</td>-->
-<!--                                                    <td>@mdo</td>-->
-<!--                                                  </tr>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="row">2</th>-->
-<!--                                                    <td><a href="#">Jacob</a></td>-->
-<!--                                                    <td>Thornton</td>-->
-<!--                                                    <td>@fat</td>-->
-<!--                                                  </tr>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="row">3</th>-->
-<!--                                                    <td><a href="#">Jacob</a></td>-->
-<!--                                                    <td>Thornton</td>-->
-<!--                                                    <td>@twitter</td>-->
-<!--                                                  </tr>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="row">4</th>-->
-<!--                                                    <td><a href="#">Jacob</a></td>-->
-<!--                                                    <td>Thornton</td>-->
-<!--                                                    <td>@fat</td>-->
-<!--                                                  </tr>-->
-<!--                                                  <tr>-->
-<!--                                                    <th scope="row">5</th>-->
-<!--                                                    <td><a href="#">Jacob</a></td>-->
-<!--                                                    <td>Thornton</td>-->
-<!--                                                    <td>@fat</td>-->
-<!--                                                  </tr>-->
-<!--                                                </tbody>-->
-<!--                                          </table>-->
-<!--                                        </div>-->
-<!--                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">-->
-
-<!--                                            <table class="table1">-->
-<!--                                                <thead>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="col"></th>-->
-<!--                                                    <th scope="col">종목</th>-->
-<!--                                                    <th scope="col">등락률</th>-->
-<!--                                                    <th scope="col">거래량</th>-->
-<!--                                                    </tr>-->
-<!--                                                </thead>-->
-<!--                                                <tbody>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">1</th>-->
-<!--                                                        <td>대한항공</td>-->
-<!--                                                        <td>+30.17%</td>-->
-<!--                                                        <td>32,354,424</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">2</th>-->
-<!--                                                        <td>아시아나항공</td>-->
-<!--                                                        <td>+20.17%</td>-->
-<!--                                                        <td>12,178,296</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">3</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">4</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">5</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">6</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">7</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">8</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">9</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                    <tr>-->
-<!--                                                    <th scope="row">10</th>-->
-<!--                                                        <td>제주항공</td>-->
-<!--                                                        <td>+10.17%</td>-->
-<!--                                                        <td>9,825,611</td>-->
-<!--                                                    </tr>-->
-<!--                                                </tbody>-->
-<!--                                            </table>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-
+                                <div class="bg-light rounded h-100 p-4 table1" style="margin-top: -170px; width: 760px; margin-left: 524px;">
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        <h5>관련 뉴스</h5>
+                                    </div>
                                     <div class="tab-content pt-3" id="nav-tabContent">
                                         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 
-                                            <table class="table1">
+                                            <table style="width:680px;">
                                                 <thead>
-                                                    <tr>
+                                                  <tr>
+                                                    <th scope="col">헤드라인</th>
 
-                                                    <th scope="col">종목</th>
-                                                    <th scope="col">등락률</th>
-                                                    <th scope="col">거래량</th>
-                                                    </tr>
+                                                    <th scope="col">게시일</th>
+                                                  </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>대한항공</td>
-                                                        <td>+30.17%</td>
-                                                        <td>32,354,424</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>아시아나항공</td>
-                                                        <td>+20.17%</td>
-                                                        <td>12,178,296</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>티웨이항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>진에어</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>에어부산</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td><a href="#">이틀 연속 상한가 친 에코프러머티…투자주의 종목 지정</a></td>
 
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-
-                                            <table class="table1">
-                                                <thead>
-                      <tr>
-                        <th scope="col">헤드라인</th>
-                        <th scope="col">내용</th>
-                        <th scope="col">게시일</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td><a href="#">Jacob</a></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Jacob</a></td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Jacob</a></td>
-                        <td>Thornton</td>
-                        <td>@twitter</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Jacob</a></td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <td><a href="#">Jacob</a></td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                    </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
-                                            <table class="table1">
-                                                <thead>
-                                                    <tr>
-                                                    <th scope="col">종목</th>
-                                                    <th scope="col">등락률</th>
-                                                    <th scope="col">거래량</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>대한항공</td>
-                                                        <td>+30.17%</td>
-                                                        <td>32,354,424</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>아시아나항공</td>
-                                                        <td>+20.17%</td>
-                                                        <td>12,178,296</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
-                                                    <tr>
-
-                                                        <td>제주항공</td>
-                                                        <td>+10.17%</td>
-                                                        <td>9,825,611</td>
-                                                    </tr>
+                                                    <td>23/11/24</td>
+                                                  </tr>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>stockRecommend</title>
+    <title>Analyze</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,15 +34,9 @@
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/stockRecommend.css' %}" rel="stylesheet">
-
-    <style>
-        .up {
-            color: #fc2f2f !important;
-        }
-    </style>
-</head>
 <body>
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="container-xxl position-relative bg-white d-flex p-0">
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -95,26 +89,38 @@
                     </a>
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item ">
-                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
+                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
+
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
+                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
+
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 주식 비교
                             </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
+                            </ul>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                        </li>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
+                        </ul>
                     </ul>
 
                 <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
@@ -141,90 +147,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for stock in top_5_stocks %}
                         <tr>
                             <td scope="row">
-                                1
-                                <button id="button1" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton1" style="display: none;" class="btn btn-primary">닫기</button>
+                                Top{{ loop.counter }}
+                                <button id="button{{ forloop.counter }}" style="display: '';" class="btn btn-primary">보기</button>
+                                <button id="cbutton{{ forloop.counter }}" style="display: none;" class="btn btn-primary">닫기</button>
                             </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
+                            <td>{{ stock.stock_cd }}</td>
+                            <td>{{ stock.stock_nm }}</td>
+                            <td>{{ stock.last_actual_close }} / {{ stock.predicted_close }}</td>
+                            <td>{{ stock.change_rate }}%</td>
+                            <td>{{ stock.last_actual_volume }}</td>
                         </tr>
-                        <tr>
-                            <td scope="row">
-                                2
-                                <button id="button2" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton2" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">
-                                3
-                                <button id="button3" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton3" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">
-                                4
-                                <button id="button4" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton4" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">
-                                5
-                                <button id="button5" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton5" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
-                        <tr>
-                            <td scope="row">
-                                6
-                                <button id="button6" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton6" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>
-                                1
-                            </td>
-                            <td >1</td>
-                            <td>1</td>
-                            <td>1</td>
-                            <td>1</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
