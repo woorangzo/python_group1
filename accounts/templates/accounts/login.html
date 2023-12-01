@@ -9,8 +9,7 @@
 <meta content="" name="keywords">
 <meta content="" name="description">
 
-<!-- Favicon -->
-<link href="img/favicon.ico" rel="icon">
+
 
 <!-- Google Web Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,91 +54,7 @@
 
 <body style="margin:0 0;">
 <div class="container-xxl position-relative bg-white d-flex p-0">
-       <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
-        </div>
-
-
-        <nav>
-            <div class="container position-relative">
-                <div class="logo ms-auto">
-                    <img src="{% static 'img/woorangzo.png' %}" alt="로고" style="width: 130px; height: auto;" onclick="redirectToHome()">
-                </div>
-
-                <!--KOSPI-->
-                <div id="kpi-info" class="info position-absolute top-0 end-0" style="width: 190px;">
-                    <span class="label label-default">KOSPI</span>
-                    <div class="con">
-                        <strong id="kpi-value">Loading...</strong>
-                        <span class="up" id="kpi-change"></span>
-                        <span class="up" id="kpi-percent"></span>
-                    </div>
-                </div>
-
-
-                <!--KOSDAQ-->
-                <div id="kosdaq-info" class="info position-absolute top-0 end-0" style="width: 190px; display: none;">
-                    <span class="label label-default">KOSDAQ</span>
-                    <div class="con">
-                        <strong id="kosdaq-value">Loading...</strong>
-                        <span class="up" id="kosdaq-change"></span>
-                        <span class="up" id="kosdaq-percent"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-3 text-end">
-                    <!-- 로그인 버튼 -->
-                    <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
-
-                    <!-- 회원가입 버튼 -->
-                    <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
-
-                    <!-- 마이페이지 버튼 -->
-                    <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
-
-                </div>
-           </div>
-            <div class="d-flex flex-wrap align-items-center justify-content-between py-3 mb-4 border-bottom">
-                <div class="col-md-3 mb-2 mb-md-0">
-                    <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
-                    </a>
-                </div>
-                    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item ">
-                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
-                                AI 정보 분석
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
-                                AI 종목 추천
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
-                                주식 비교
-                            </a>
-                        </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
-                                뉴스레터
-                            </a>
-                        </li>
-                    </ul>
-
-                <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
-
-                    <form class="d-flex search-form ml-auto">
-                        <input class="form-control me-2" type="search" placeholder="종목명 종목정보를 입력하세요" aria-label="Search">
-                        <button class="btn btn-outline-success bg-primary text-white custom-btn" type="submit"> 검색 </button>
-                    </form>
-                </div>
-            </nav>
-
-
+    {% include 'accounts/header.html' %}
             <div class="container-fluid">
                 <div class="row h-100 align-items-center justify-content-center" style="min-height: 80vh;">
                     <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4" style="width: 40rem;">
@@ -150,37 +65,27 @@
                                 </a>
                                 <h4>로그인</h4>
                             </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingText" placeholder="ID">
-                                <label for="floatingText">ID</label>
-                                <div id="idError" class="error-message"></div>
-                            </div>
-                            <div class="form-floating mb-4">
-                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                                <label for="floatingPassword">Password</label>
-                                <div id="passwordError" class="error-message"></div>
-                            </div>
-                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4" onclick="return validateLoginForm()">로그인</button>
-                            <p class="text-center mb-0">계정이 없으신가요?디질래? <a href="{% url 'accounts:join' %}">회원가입</a></p>
+                            <form method="post" action="{% url 'accounts:login' %}">
+                                {% csrf_token %}
+                                <div class="form-floating mb-3">
+                                    <input type="text" class="form-control" id="floatingText" name="ID">
+                                    <label for="floatingText">ID</label>
+                                    <div id="idError" class="error-message"></div>
+                                </div>
+                                <div class="form-floating mb-4">
+                                    <input type="password" class="form-control" id="floatingPassword" name="Password">
+                                    <label for="floatingPassword">Password</label>
+                                    <div id="passwordError" class="error-message"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary py-3 w-100 mb-4" onclick="return validateLoginForm()">로그인</button>
+                                <p class="text-center mb-0">계정이 없으신가요? 디질래? <a href="{% url 'accounts:join' %}">회원가입</a></p>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-
-    <!-- Sign Up End -->
-
-            <footer>
-                <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="margin-left: -15rem; margin-right: -18rem">
-                    <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-                </div>
-            </footer>
-            <!-- Footer End -->
-
-        <!-- Content End -->
-
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <div>
+   {% include 'accounts/footer.html' %}
     </div>
 
 <!-- JavaScript Libraries -->

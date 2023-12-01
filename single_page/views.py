@@ -1,10 +1,8 @@
-import random
-
-from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 
 def mainview(request):
     return render(request, 'accounts/index.html')
+
 
 

@@ -5,11 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중">
+      <change afterPath="$PROJECT_DIR$/accounts/single_page/templates/accounts/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/single_page/templates/accounts/header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/templates/accounts/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/templates/accounts/footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/single_page/templates/accounts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21_오후_9_29_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__10_28__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__9_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오전_9_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오후_10_28_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23__9_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23_오전_9_07_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/single_page/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/static/css/analyze.css" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/static/css/analyze.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/blank.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/mypage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/newsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/newsDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_page/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +49,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -60,19 +90,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/gb_khn_6030/jango/woorangzo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "Merging honyeon",
+    "last_opened_file_path": "C:/gb_khn_6030/jango/woorangzo/accounts/single_page/templates/accounts",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\gb_khn_6030\jango\woorangzo\accounts\single_page\templates\accounts" />
+      <recent name="C:\gb_khn_6030\jango\woorangzo\single_page\templates\accounts" />
       <recent name="D:\woorangzo\accounts\templates\accounts" />
       <recent name="D:\woorangzo\single_page" />
       <recent name="D:\woorangzo" />
@@ -232,7 +264,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/honyeon" />
+                        <option value="origin/ksb" />
                       </list>
                     </value>
                   </entry>
@@ -264,5 +296,15 @@
     <MESSAGE value="[ver 0.1] 종목추천 페이지 초안" />
     <MESSAGE value="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중" />
     <option name="LAST_COMMIT_MESSAGE" value="[ver 0.6] 뉴스페이지 수정, 관련주 비교 수정중" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/single_page/urls.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
