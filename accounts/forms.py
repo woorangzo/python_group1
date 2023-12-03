@@ -3,14 +3,15 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MaxValueValidator
 from accounts.models import Member
 
+
 class JoinForm(forms.Form):
-    member_id = forms.CharField(max_length=100)
-    member_pw = forms.CharField(max_length=100)
-    member_repw = forms.CharField(max_length=100)
-    phone = forms.CharField(max_length=15, required=False)
-    username = forms.CharField(max_length=20)
-    email = forms.EmailField(required=False)
-    jumin = forms.CharField(max_length=100)
+    member_id = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    member_pw = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    member_repw = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    phone = forms.CharField(max_length=15, required=False, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    email = forms.EmailField(required=False, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    jumin = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
 
     def clean_name(self):
         member_id = self.cleaned_data['member_id']
@@ -28,3 +29,8 @@ class JoinForm(forms.Form):
             raise forms.ValidationError("비밀번호가 일치하지 않습니다.")
 
         return cleaned_data
+
+
+class StockInputForm(forms.Form):
+    codes = forms.CharField(label='Stock Codes', max_length=200)
+    names = forms.CharField(label='Stock Names', max_length=200)
