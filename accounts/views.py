@@ -486,7 +486,7 @@ def stock_compare(request):
         ax.set_xticklabels([date.strftime('%Y-%m-%d') for date in date_range])
 
         # y축 설정: 퍼센트 단위로 표시, 간격은 10
-        ax.set_yticks(range(0, 51, 10))
+        ax.set_yticks(range(-30, 51, 10))  # -30%부터 50%까지 10% 간격으로 설정
         ax.set_ylabel('등락률 (%)')
 
         ax.set_xlabel('날짜')
