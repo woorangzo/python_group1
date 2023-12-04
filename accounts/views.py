@@ -2,7 +2,7 @@ import random
 
 from django.http import JsonResponse
 from django.contrib.auth.models import User
-from django.contrib.auth.hashers import  check_password
+from django.contrib.auth.hashers import check_password, make_password
 from django.contrib import auth
 from django.urls import reverse
 from django.views.generic import TemplateView
@@ -19,8 +19,9 @@ def join(request):
             member_data = form.cleaned_data
             if member_data['member_pw'] == member_data['member_repw']:
                 try:
-                    masked_password = '*' * len(member_data['member_pw'])
+                    # masked_password = '*' * len(member_data['member_pw'])
                     masked_regisNum = '*' * len(member_data['regisNum'])
+                    masked_password = make_password(member_data['member_pw'])
 
                     # MySQL connection setup
                     mydb = mysql.connector.connect(
@@ -91,10 +92,16 @@ def login(request):
                 mc.execute(sql, (member_id,))
                 user_data = mc.fetchone()
 
-                if user_data and check_password(password, user_data['member_pw']):
+                print("User data from DB:", user_data)  # 디버그 메시지 추가
+
+                if user_data and check_password(password, user_data[1]):
                     # Authentication successful
-                    return redirect('singlepage:index')
+                    print('Authentication successful')
+                    # 세션에 사용자 정보 저장
+                    request.session['user_data'] = user_data[0]
+                    return redirect('/')
                 else:
+                    print("Login failed: Username or password is incorrect")
                     return render(request, 'accounts/login.html', {'error': 'Username or password is incorrect'})
 
         except Error as e:
@@ -104,6 +111,7 @@ def login(request):
             mydb.close()
     else:
         return render(request, 'accounts/login.html')
+
 
 
 def logout(request):
@@ -166,6 +174,7 @@ def calc(request):
 #         articles = paginator.page(paginator.num_pages)
 #
 #     return render(request, 'news.html', {'articles': articles})
+
 
 
 
