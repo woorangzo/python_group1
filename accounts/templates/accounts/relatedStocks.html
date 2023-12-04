@@ -560,7 +560,7 @@
                     console.log('이미지 URL:', data.your_image);
 
                     // 이미지 소스 업데이트
-                    $('#stockImage1').attr('src', data.your_image);
+                    $('#stockImage1').attr('src', data.your_image + '?rand=' + Math.random());
 
                     // 테이블 데이터 업데이트
                     var tableHtml = '<table class="table table-striped"><thead><tr><th scope="col"></th><th scope="col">종목명</th><th scope="col">거래량</th><th scope="col">등락률</th><th scope="col">저가</th><th scope="col">고가</th></tr></thead><tbody>';
