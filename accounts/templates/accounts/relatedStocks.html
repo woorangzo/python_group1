@@ -375,43 +375,43 @@
                         <div class="tab-pane fade show active" id="nav-home2" role="tabpanel" aria-labelledby="nav-home-tab">
                             <div class="container-fluid p-4">
                                 <div class="table-responsive">
-                                    <table class="table table-striped">
+                                    <table class="table table-striped" id="stockTable">
                                         <thead>
                                             <tr>
                                                 <th scope="col"></th>
                                                 <th scope="col">종목명</th>
                                                 <th scope="col">거래량</th>
                                                 <th scope="col">등락률</th>
-                                                <th scope="col">전일대비</th>
-                                                <th scope="col">시가총액</th>
+                                                <th scope="col">저가</th>
+                                                <th scope="col">고가</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <th scope="row">1</th>
-                                                <td>대한항공</td>
-                                                <td>32,354,424</td>
-                                                <th scope="row">+30.17%</th>
-                                                <td>32,354,424</td>
-                                                <td>32,354,424</td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
 
                                             <tr>
-                                                <th scope="row">2</th>
-                                                <td>아시아나항공</td>
-                                                <td>12,178,296</td>
-                                                <th scope="row">+20.17%</th>
-                                                <td>12,178,296</td>
-                                                <td>12,178,296</td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
 
                                             <tr>
-                                                <th scope="row">3</th>
-                                                <td>제주항공</td>
-                                                <td>9,825,611</td>
-                                                <th scope="row">+10.17%</th>
-                                                <td>9,825,611</td>
-                                                <td>9,825,611</td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
+                                                <th scope="row"></th>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -422,8 +422,9 @@
                                 <div class="col-sm-12 col-xl-6">
                                     <div class="bg-light text-center rounded p-4" style="width: 50rem; position: relative; left: 14rem;">
                                         <div class="d-flex align-items-center justify-content-between mb-4">
-                                            <h5 class="mb-0">관련주 가격 비교</h5>
+                                            <h5 class="mb-0">관련주 등락률 비교</h5>
                                         </div>
+                                        <img id="stockImage1" src="{% static 'pic/stock_price_plot.png' %}" alt="Stock Chart" style="width: 100%; height: auto;">
                                         <canvas id="salse-revenue"></canvas>
                                     </div>
                                 </div>
@@ -432,59 +433,57 @@
                         <div class="tab-pane fade" id="nav-profile2" role="tabpanel" aria-labelledby="nav-profile-tab">
                             <div class="container-fluid p-4">
                                 <div class="table-responsive">
-                                    <table class="table table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col"></th>
-                                                <th scope="col">종목명</th>
-                                                <th scope="col">거래량</th>
-                                                <th scope="col">등락률</th>
-                                                <th scope="col">전일대비</th>
-                                                <th scope="col">시가총액</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- 테이블 내용은 여기에 추가 -->
-                                            <tr>
-                                                <th scope="row">1</th>
-                                                <td>대한항공</td>
-                                                <td>32,354,424</td>
-                                                <th scope="row">+30.17%</th>
-                                                <td>32,354,424</td>
-                                                <td>32,354,424</td>
-                                            </tr>
+<!--                                    <table class="table table-striped">-->
+<!--                                        <thead>-->
+<!--                                            <tr>-->
+<!--                                                <th scope="col"></th>-->
+<!--                                                <th scope="col">종목명</th>-->
+<!--                                                <th scope="col">거래량</th>-->
+<!--                                                <th scope="col">등락률</th>-->
+<!--                                                <th scope="col">저가</th>-->
+<!--                                                <th scope="col">고가</th>-->
+<!--                                            </tr>-->
+<!--                                        </thead>-->
+<!--                                        <tbody>-->
+<!--                                            &lt;!&ndash; 테이블 내용은 여기에 추가 &ndash;&gt;-->
+<!--                                            <tr>-->
+<!--                                                <th scope="row">1</th>-->
+<!--                                                <td>대한항공</td>-->
+<!--                                                <td>32,354,424</td>-->
+<!--                                                <th scope="row">+30.17%</th>-->
+<!--                                                <td>32,354,424</td>-->
+<!--                                                <td>32,354,424</td>-->
+<!--                                            </tr>-->
 
-                                            <tr>
-                                                <th scope="row">2</th>
-                                                <td>아시아나항공</td>
-                                                <td>12,178,296</td>
-                                                <th scope="row">+20.17%</th>
-                                                <td>12,178,296</td>
-                                                <td>12,178,296</td>
-                                            </tr>
+<!--                                            <tr>-->
+<!--                                                <th scope="row">2</th>-->
+<!--                                                <td>아시아나항공</td>-->
+<!--                                                <td>12,178,296</td>-->
+<!--                                                <th scope="row">+20.17%</th>-->
+<!--                                                <td>12,178,296</td>-->
+<!--                                                <td>12,178,296</td>-->
+<!--                                            </tr>-->
 
-                                            <tr>
-                                                <th scope="row">3</th>
-                                                <td>제주항공</td>
-                                                <td>9,825,611</td>
-                                                <th scope="row">+10.17%</th>
-                                                <td>9,825,611</td>
-                                                <td>9,825,611</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+<!--                                            <tr>-->
+<!--                                                <th scope="row">3</th>-->
+<!--                                                <td>제주항공</td>-->
+<!--                                                <td>9,825,611</td>-->
+<!--                                                <th scope="row">+10.17%</th>-->
+<!--                                                <td>9,825,611</td>-->
+<!--                                                <td>9,825,611</td>-->
+<!--                                            </tr>-->
+<!--                                        </tbody>-->
+<!--                                    </table>-->
                                 </div>
                                 <br>
                                 <hr>
                                 <br>
-                                <div class="col-sm-12 col-xl-6" >
-                                    <div class="bg-light text-center rounded p-4" style="width: 50rem; position: relative; left: 14rem;">
-                                        <div class="d-flex align-items-center justify-content-between mb-4" >
-                                            <h5 class="mb-0">관련주 비교</h5>
-                                        </div>
-                                        <canvas id="worldwide-sales"></canvas>
-                                        <img id="stockImage" src="" alt="Stock Chart">
-                                    </div>
+<!--                                <div class="col-sm-12 col-xl-6" >-->
+<!--                                        <div class="d-flex align-items-center justify-content-between mb-4" >-->
+<!--                                            <h5 class="mb-0">관련주 비교</h5>-->
+<!--                                        </div>-->
+<!--                                        <canvas id="worldwide-sales"></canvas>-->
+<!--                                    </div>-->
                                 </div>
                             </div>
                         </div>
@@ -537,29 +536,52 @@
     }
 </script>
 
+
 <!-- 주식 업종 선택 시 AJAX 호출 -->
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-     $(document).ready(function() {
-        var stockCompareUrl = "{% url 'accounts:stock_compare' %}";
+    $(document).ready(function () {
+    var stockCompareUrl = "{% url 'accounts:stock_compare' %}";
 
-        $('input[name="stock"]').change(function() {
-            var selectedCategory = $('input[name="stock"]:checked').next().text();
+    $('input[name="stock"]').change(function () {
+        if ($(this).is(':checked')) {
+            var selectedCategory = $(this).next().text();
             $.ajax({
                 type: 'GET',
                 url: stockCompareUrl,
+                headers: {'X-Requested-With': 'XMLHttpRequest'},
                 data: {
                     'selected_category': selectedCategory,
                 },
-                success: function(data) {
-                    console.log(data);
+                success: function (data) {
+                    console.log('AJAX 성공:', data);
+
+                    // 이미지 URL을 기록
+                    console.log('이미지 URL:', data.your_image);
+
+                    // 이미지 소스 업데이트
+                    $('#stockImage1').attr('src', data.your_image);
+
+                    // 테이블 데이터 업데이트
+                    var tableHtml = '<table class="table table-striped"><thead><tr><th scope="col"></th><th scope="col">종목명</th><th scope="col">거래량</th><th scope="col">등락률</th><th scope="col">저가</th><th scope="col">고가</th></tr></thead><tbody>';
+
+                    for (var i = 0; i < data.stocks.length; i++) {
+                        var stock = data.stocks[i];
+                        tableHtml += '<tr><th scope="row">' + (i + 1) + '</th><td>' + stock.stock_nm + '</td><td>' + stock.stock_volume + '</td><th scope="row">' + stock.stock_rate + '</th><td>' + stock.low_price + '</td><td>' + stock.high_price + '</td></tr>';
+                    }
+
+                    tableHtml += '</tbody></table>';
+
+                    // 테이블 업데이트
+                    $('#stockTable').html(tableHtml);
                 },
-                error: function(error) {
-                    console.log('Error:', error);
+                error: function (error) {
+                    console.log('AJAX 오류:', error);
                 }
             });
-        });
+        }
     });
+});
 </script>
 </body>
 </html>
