@@ -58,7 +58,7 @@ all_stock_query = """
 """
 all_stock_names = pd.read_sql(all_stock_query, conn)['stock_nm'].tolist()
 random.seed(42)  # 일정한 결과를 얻기 위해 시드 설정
-selected_stock_names = random.sample(all_stock_names, 10) # 종목 무작위 선택 개수
+selected_stock_names = random.sample(all_stock_names, 5) # 종목 무작위 선택 개수
 
 # 모든 종목에 대한 가격 변동률 정보 저장할 리스트
 all_stock_changes = []
@@ -66,6 +66,9 @@ all_stock_changes = []
 # 최근 1년치 데이터 선택 / 1년전 날짜 구하기
 recent_data_start = pd.Timestamp.now() - pd.DateOffset(years=1)
 recent_data_start_str = recent_data_start.strftime('%Y-%m-%d')
+
+# 완료된 종목 수를 추적하는 completed_stocks 변수 초기화
+completed_stocks = 0
 
 # 모든 종목에 대한 학습 및 예측
 for stock_name in selected_stock_names:
@@ -88,9 +91,15 @@ for stock_name in selected_stock_names:
     scaled_data = closing_prices / closing_prices.max()  # 최대 종가로 스케일링
 
     # LSTM 모델 학습
+    print(f"종목 '{stock_name}'의 LSTM 모델 학습 중...")
     lstm_model = train_lstm_model(scaled_data)
+    print(f"종목 '{stock_name}'의 LSTM 모델 학습 완료.")
+
+    completed_stocks += 1
+    print(f"진행 상황: {completed_stocks}/{len(selected_stock_names)}")
 
     # 다음날 예측 수행
+    print(f"종목 '{stock_name}'의 다음날 예측 중...")
     future_days = 1
     prediction = []
     last_sequence = scaled_data[-10:].reshape(1, 10, 1)
@@ -100,7 +109,7 @@ for stock_name in selected_stock_names:
         prediction.append(next_day_prediction)
         last_sequence = np.append(last_sequence[:, 1:, :], [[[next_day_prediction]]], axis=1)
 
-    # 역 스케일링을 통해 실제 예측f된 종가 획득
+    # 역 스케일링을 통해 실제 예측된 종가 획득
     predicted_close = prediction[-1] * closing_prices.max()
 
     # 추가된 부분: 각 주식에 대한 정보를 한 번씩만 저장
@@ -169,22 +178,10 @@ conn.commit()
 # 모든 종목 정보
 for idx, stock in enumerate(sorted_stock_changes, start=1):
     stock_name, last_actual_stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_filename = stock
-    # print(f"종목 이름: {stock_name}")
-    # print(f"종목 코드: {last_actual_stock_cd}")
-    # print(f"마지막 날 종가: {last_actual_close}")
-    # print(f"예측된 다음 날 종가: {predicted_close}")
-    # print(f"예측 등락률: {change_rate:.2f}%")  # 예측 등락률 출력
-    # print(f"마지막 날 거래량: {last_actual_volume}")
-    # print("\n")
-
-    # plt.show()
-
-
-def get_sorted_stock_changes():
-    return sorted_stock_changes
-
-# MySQL 연결 종료
 conn.close()
 
+# 모든 종목의 학습 및 예측이 완료된 후, n개 종목의 학습 예측 완료 메시지 출력
+n = len(selected_stock_names)
+print(f"{n}개 종목의 학습 및 예측이 완료되었습니다.")
 
 
