@@ -4,13 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[Ver 1.0] 중간 합병">
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[Ver 1.4] 주식 학습 예측">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21__9_29__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-21_오후_9_29_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__10_28__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__9_17__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오전_9_17_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오후_10_28_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23__9_07__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23_오전_9_07_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/StockInfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/StockInfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dataset/StockTable.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/StockTable.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/listup.py" beforeDir="false" afterPath="$PROJECT_DIR$/listup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/alltest10.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock/alltest10.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/CMG제약_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/EMB_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/고스트스튜디오_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/나노팀_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/대한광통신_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/미래에셋증권2우B_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/삼성전기우_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/엔피케이_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/정상제이엘에스_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/제일연마_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/stock/static/img/태경산업_prediction.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/templates/stock/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/stock/templates/stockRecommend.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stock/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +52,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -77,27 +104,49 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "jiyeon",
-    "last_opened_file_path": "D:/woorangzo/accounts/templates/accounts",
+    "git-widget-placeholder": "kch",
+    "last_opened_file_path": "C:/kch/python/woorangzo/stock/templates",
     "node.js.selected.package.tslint": "(autodetect)",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\kch\python\woorangzo\stock\templates" />
       <recent name="D:\woorangzo\accounts\templates\accounts" />
       <recent name="D:\woorangzo\single_page" />
       <recent name="D:\woorangzo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\kch\python\woorangzo\stock\templates" />
       <recent name="D:\woorangzo\woorangzo" />
       <recent name="D:\woorangzo\dashmin-1.0.0\templates" />
       <recent name="D:\woorangzo\dashmin-1.0.0\static" />
       <recent name="D:\woorangzo\dashmin\static" />
-      <recent name="D:\woorangzo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.prediction">
+    <configuration name="StockInfo" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="woorangzo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Dataset" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/StockInfo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="StockTable" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="woorangzo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -120,9 +169,76 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="prediction" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="woorangzo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock/prediction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="urls" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="woorangzo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock/urls.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="views" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="woorangzo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stock" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stock/views.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.prediction" />
         <item itemvalue="Python.StockTable" />
+        <item itemvalue="Python.StockInfo" />
+        <item itemvalue="Python.views" />
+        <item itemvalue="Python.urls" />
       </list>
     </recent_temporary>
   </component>
@@ -239,7 +355,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700815140898</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="[Ver 1.4] 주식 학습 예측">
+      <option name="closed" value="true" />
+      <created>1701420770603</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1701420770603</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -253,7 +377,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/honyeon" />
+                        <option value="origin/kch" />
                       </list>
                     </value>
                   </entry>
@@ -279,11 +403,7 @@
     <MESSAGE value="[Ver 0.1]회원가입 페이지 프론트 수정" />
     <MESSAGE value="[ver 0.7] stockinfo 테이블 수정(시장종목추가)" />
     <MESSAGE value="[Ver 1.0] 중간 합병" />
-    <option name="LAST_COMMIT_MESSAGE" value="[Ver 1.0] 중간 합병" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/woorangzo$StockTable.coverage" NAME="StockTable Coverage Results" MODIFIED="1700802327468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
-    <SUITE FILE_PATH="coverage/woorangzo$CategoryInfo.coverage" NAME="CategoryInfo Coverage Results" MODIFIED="1700802582132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
-    <SUITE FILE_PATH="coverage/woorangzo$StockInfo.coverage" NAME="StockInfo Coverage Results" MODIFIED="1700803118294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
+    <MESSAGE value="[Ver 1.4] 주식 학습 예측" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Ver 1.4] 주식 학습 예측" />
   </component>
 </project>

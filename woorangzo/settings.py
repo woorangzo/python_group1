@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'single_page',
 
     'kpi_app',
+    'stock',
 ]
 
 MIDDLEWARE = [
@@ -145,4 +146,5 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'accounts', 'static'),
+    os.path.join(BASE_DIR, 'stock', 'static'),
 ]

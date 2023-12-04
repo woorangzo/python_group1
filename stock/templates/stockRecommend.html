@@ -147,19 +147,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for stock in top_5_stocks %}
+                        {% for stock in top_5_stocks_data %}
                         <tr>
                             <td scope="row">
-                                Top{{ loop.counter }}
-                                <button id="button{{ forloop.counter }}" style="display: '';" class="btn btn-primary">보기</button>
-                                <button id="cbutton{{ forloop.counter }}" style="display: none;" class="btn btn-primary">닫기</button>
-                            </td>
-                            <td>{{ stock.stock_cd }}</td>
-                            <td>{{ stock.stock_nm }}</td>
-                            <td>{{ stock.last_actual_close }} / {{ stock.predicted_close }}</td>
-                            <td>{{ stock.change_rate }}%</td>
-                            <td>{{ stock.last_actual_volume }}</td>
+                            Top{{ forloop.counter }}
+                            <button id="button{{ forloop.counter }}" class="btn btn-primary view-button">보기</button>
+                            <button id="cbutton{{ forloop.counter }}" style="display: none;" class="btn btn-primary close-button">닫기</button>
+                        </td>
+                            <td>{{ stock.1 }}</td>
+                            <td>{{ stock.0 }}</td>
+                            <td>{{ stock.2 }} / {{ stock.3 }}</td>
+                            <td>{{ stock.4 }}%</td>
+                            <td>{{ stock.5 }}</td>
                         </tr>
+                        <!-- 그래프 -->
+                        <tr>
+                            <td colspan="6">
+                                <div class="graph-div" id="graph{{ forloop.counter }}" style="display: none;">
+                                    <img src="{{ stock.6 }}" alt="Stock Graph">
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- 그래프 -->
                         {% endfor %}
                     </tbody>
                 </table>
@@ -286,6 +295,24 @@
         // 상단 체크박스 선택 시 모든 체크박스 선택/해제
         $('#selectAll').change(function () {
             $('input[type="checkbox"]').prop('checked', $(this).prop('checked'));
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".view-button").click(function () {
+            var index = $(this).attr('id').substr(-1);
+            $("#graph" + index).show();
+            $("#button" + index).hide();
+            $("#cbutton" + index).show();
+        });
+
+        $(".close-button").click(function () {
+            var index = $(this).attr('id').substr(-1);
+            $("#graph" + index).hide();
+            $("#button" + index).show();
+            $("#cbutton" + index).hide();
         });
     });
 </script>

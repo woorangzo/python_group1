@@ -20,7 +20,7 @@ urlpatterns = [
     path('mypage/', views.mypage),
     path('relatedStocks/', views.relatedStocks),
     path('issue/', views.issue),
-    path('stockRecommend/', views.stockRecommend),
+    # path('stockRecommend/', views.stockRecommend),
     path('news/', views.news),
     path('analyze/', views.analyze),
     path('theme/', views.theme),

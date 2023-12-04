@@ -93,8 +93,8 @@ def issue(request):
     return render(request, 'accounts/issue.html')
 
 
-def stockRecommend(request):
-    return render(request, 'accounts/stockRecommend.html')
+# def stockRecommend(request):
+#     return render(request, 'accounts/stockRecommend.html')
 
 
 def news(request):
