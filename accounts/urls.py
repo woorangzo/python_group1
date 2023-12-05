@@ -1,37 +1,21 @@
 from django.urls import path
-from django.contrib.auth import views as auth_views
-
-
-from . import views
-from .views import join, logout
+from .views import custom_login, custom_logout, custom_join, mypage, relatedStocks, issue, stockRecommend, news, \
+    analyze, theme, calc, index
 
 app_name = 'accounts'
 
 urlpatterns = [
-    # Django에서 지원하는 views 라이브러리를 활용 (로그인, 로그아웃, 비밀번호 찾기 & 초기화 등)
-    # path('login/', auth_views.LoginView.as_view(template_name="accounts/login.html", redirect_authenticated_user=True),
-    #      name="login"),
-    path('login/', views.login, name="login"),
-    path('logout/',views.logout, name="logout"),
-    # path('logout/', auth_views.LogoutView.as_view(), name="logout"),
-    path('join/', views.join, name="join"),
-
-
-
-    # path('navbar/', auth_views.LoginView.as_view(template_name="accounts/navbar.html", redirect_authenticated_user=False),
-    #      name="navbar"),
-    path('mypage/', views.mypage),
-    path('relatedStocks/', views.relatedStocks),
-    path('issue/', views.issue),
-    path('stockRecommend/', views.stockRecommend),
-    path('news/', views.news),
-    path('analyze/', views.analyze),
-    path('theme/', views.theme),
-    path('calc/', views.calc),
-
-
-
-
-
+    path('login/', custom_login, name='login'),
+    path('logout/', custom_logout, name='logout'),
+    path('join/', custom_join, name="join"),
+    path('mypage/', mypage, name='mypage'),
+    path('relatedStocks/', relatedStocks, name='relatedStocks'),
+    path('issue/', issue, name='issue'),
+    path('stockRecommend/', stockRecommend, name='stockRecommend'),
+    path('news/', news, name='news'),
+    path('analyze/', analyze, name='analyze'),
+    path('theme/', theme, name='theme'),
+    path('calc/', calc, name='calc'),
+    path('index/', index, name='index'),
 
 ]
