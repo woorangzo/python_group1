@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'single_page',
-
     'kpi_app',
 ]
 
@@ -53,6 +52,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_SECURE = True
 ROOT_URLCONF = 'woorangzo.urls'
 
 TEMPLATES = [
@@ -84,10 +85,16 @@ DATABASES = {
         'NAME': 'woorangzo',
         'USER': 'woorangzo',
         'PASSWORD': '1234',
-        'HOST': 'localhost', # MySQL 서버 호스트
-        'PORT': '3306', # MySQL 포트 번호
+        'HOST': 'localhost',  # MySQL 서버 호스트
+        'PORT': '3306',  # MySQL 포트 번호
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        },
     }
 }
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 
 
 # Password validation
@@ -114,6 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LOGIN_REDIRECT_URL = 'accounts:index'
+LOGOUT_REDIRECT_URL = 'accounts:login'
+
 TIME_ZONE = 'UTC'
 
 USE_I18N = True
@@ -124,13 +134,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    'D:\\woorangzo\\static',
+    'D:\woorangzo\static',
 ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
