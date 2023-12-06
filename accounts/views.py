@@ -5,10 +5,7 @@ from django.urls import reverse
 
 
 from django.views.generic import TemplateView
-
 from accounts.forms import JoinForm
-
-
 from .forms import StockInputForm
 from .models import StockData, Member
 import matplotlib.pyplot as plt
@@ -68,13 +65,11 @@ def logout(request):
     if request.method == "POST":
         auth.logout(request)
         return redirect('home')
-    return render(request,'accounts/join.html')
-
-def logout(request):
-    if request.method == "POST":
-        auth.logout(request)
-        return redirect('home')
     return render(request, 'accounts/join.html')
+
+def detail(request):
+    return render(request, 'accounts/detail.html')
+
 
 
 def mainview(request):
@@ -92,12 +87,13 @@ def mypage(request):
 def relatedStocks(request):
     return render(request, 'accounts/relatedStocks.html')
 
+
 def issue(request):
     return render(request, 'accounts/issue.html')
 
 
-def stockRecommend(request):
-    return render(request, 'accounts/stockRecommend.html')
+# def stockRecommend(request):
+#     return render(request, 'accounts/stockRecommend.html')
 
 
 def analyze(request):
