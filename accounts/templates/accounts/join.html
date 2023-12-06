@@ -33,19 +33,12 @@
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
-    <style>
-        .up {
-            color: #fc2f2f !important;
-        }
-    </style>
-
 </head>
 
 <body style="margin:0 0;">
 <div class="container-xxl position-relative bg-white d-flex p-0">
-    {% include 'accounts/header.html' %}
-
-    <div class="container-fluid">
+   {% include 'accounts/header.html' %}
+   <div class="container-fluid">
         <div class="row h-100 align-items-center justify-content-center" style="min-height: 80vh;">
             <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
@@ -75,8 +68,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="{{ form.member_nm.id_for_label }}">이름</label>
-                            {{ form.member_nm }}
+                            <label for="{{ form.username.id_for_label }}">이름</label>
+                            {{ form.username }}
                         </div>
 
                         <div class="mb-3">
@@ -100,13 +93,14 @@
                         {% endif %}
 
                         <p class="text-center mb-0" style="font-size: 14px;">이미 계정이 있으신가요? <a
-                                href="{% url 'accounts:login' %}" class="text-primary">로그인</a></p>
+                                 href="{% url 'accounts:login' %}" class="text-primary">로그인</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Sign Up End -->
 
 </div>
 {% include 'accounts/footer.html' %}
@@ -125,6 +119,7 @@
 
 <!-- Template Javascript -->
 <script src="{% static 'js/main.js' %}"></script>
+
 
 <!-- logo -->
 <script>
