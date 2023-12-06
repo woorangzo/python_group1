@@ -35,15 +35,9 @@
 
     <link href="{% static 'css/analyze.css' %}" rel="stylesheet">
     <style>
-        .content {
-    position: relative;
-    width: 1200px;
-    background: #fff;
-    box-shadow: none;
-    border: 0;
-    margin: 70px 0 0;
-    padding: 0 20px;
-}
+        .custom-btn {
+        top: 183px;
+        }
     </style>
 </head>
 
@@ -103,38 +97,26 @@
                     </a>
                 </div>
                     <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        <li class="nav-item ">
+                            <a class="nav-link " id="navbarDropdown" href="/accounts/analyze/" style="font-size: 18px;">
                                 AI 정보 분석
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/analyze/">종목 분석</a></li>
-                                <li><a class="dropdown-item" href="/accounts/theme/">업종/테마</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/accounts/stockRecommend/"  href="/accounts/stockRecommend/" id="navbarDropdown" style="font-size: 18px;">
                                 AI 종목 추천
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/issue/">이슈 추천</a></li>
-                                <li><a class="dropdown-item" href="/accounts/stockRecommend/">종목 추천</a></li>
-
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/relatedStocks/" style="font-size: 18px;">
                                 주식 비교
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="/accounts/relatedStocks/">관련주</a></li>
-                            </ul>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 18px;">
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" id="navbarDropdown"  href="/accounts/news/" style="font-size: 18px;">
                                 뉴스레터
                             </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="/accounts/news/">뉴스리스트</a></li>
-                        </ul>
+                        </li>
                     </ul>
 
                 <a class="btn- red CalculatorBtn" onclick="openInvestmentCalculator()" style="position: absolute; top:132px; left:1212px;">투자계산기</a>
@@ -164,7 +146,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="content">
+                <div class="content1">
                     <div class="sub_content">
                         <div class="sub_section">
                             <div class="left">
@@ -206,7 +188,7 @@
                                                 <tbody>
                                                     <tr>
                                                         <td>
-                                                            <a href="#">일정관리</a>
+                                                            <a href="/accounts/detail/">일정관리</a>
                                                         </td>
                                                         <td>
                                                             12,900

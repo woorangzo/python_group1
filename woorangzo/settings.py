@@ -12,6 +12,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import os
 from pathlib import Path
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'unique-snowflake',
+    }
+}
 
 # 다중 스레드 환경에서 안전하게 Matplotlib 사용
 
@@ -47,6 +53,7 @@ INSTALLED_APPS = [
     'single_page',
 
     'kpi_app',
+    'cachalot'
     'stock',
 ]
 
@@ -133,7 +140,9 @@ USE_TZ = False
 
 STATIC_URL = 'static/'
 
-
+STATICFILES_DIRS = [
+    'D:\\woorangzo\\static',
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -147,3 +156,5 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'accounts', 'static'),
     os.path.join(BASE_DIR, 'stock', 'static', 'img'),
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')

@@ -44,14 +44,24 @@ def insert_new_record(stock_cd, current_date, row):
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     ''', (str(stock_cd), current_date, row['시가'], row['고가'], row['저가'], row['종가'], row['거래량'], row['등락률']))
 
+def top_10_by_category(category_nm):
+    query = f'''
+        SELECT dp.*
+        FROM daily_price dp
+        JOIN category_info ci ON dp.stock_cd = ci.stock_cd
+        WHERE ci.category_nm = %s
+        ORDER BY dp.stock_rate DESC
+        LIMIT 10;
+    '''
+    cursor.execute(query, (category_nm,))
+    top_10_records = cursor.fetchall()
+    return top_10_records
+
 def update_data():
     current_date = datetime.now().strftime("%Y%m%d")
 
-
     df_kospi = stock.get_market_ohlcv(current_date, market="KOSPI")
     df_kosdaq = stock.get_market_ohlcv(current_date, market="KOSDAQ")
-    # df_Kospicap = stock.get_market_cap(current_date,current_date, market="KOSPI")
-    # df_Kosdaqcap = stock.get_market_cap(current_date,current_date, market="KOSDAQ")
 
     for index, row in df_kospi.iterrows():
         insert_or_update_record(index, current_date, row)
@@ -60,6 +70,20 @@ def update_data():
         insert_or_update_record(index, current_date, row)
 
     print(f"Data updated for {current_date}")
+
+    # 업종별 top 10 출력
+    cursor.execute('SELECT DISTINCT category_nm FROM category_info;')
+    categories = cursor.fetchall()
+
+    for category in categories:
+        category_nm = category[0]
+        top_10_records = top_10_by_category(category_nm)
+
+        print(f"\nTop 10 등락률 in {category_nm}:")
+        for record in top_10_records:
+            values = [str(value) for value in record[1:]]
+            print(values)
+
     mydb.commit()
 
 # 주식 조회시간 : 09~16:00까지
@@ -74,30 +98,6 @@ update_interval = 1
 
 # 스케줄러 사용해서 지정한 시간과 날짜에 맞춰서 업데이트 되도록 설정
 schedule.every(update_interval).seconds.do(update_data).tag('update_data')
-# try:
-#     # 최신 버전에서는 이 방식을 사용
-#     schedule.every().seconds.do(update_data).tag('update_data')
-# except AttributeError:
-#     # 예전 버전에서는 이 방식을 사용
-#     schedule.every(update_interval).seconds.do(update_data).tag('update_data')
-
-# 등락률(stock_rate) 높은순서대로 10개 출력
-cursor.execute('SELECT * FROM daily_price ORDER BY stock_rate DESC LIMIT 10')
-top_10_high_records = cursor.fetchall()
-
-print("Top 10 Records with Highest stock_rate:")
-for record in top_10_high_records:
-    values = [str(value) for value in record[1:]]
-    print(values)
-
-# 등락률 하위 10개 출력
-cursor.execute('SELECT * FROM daily_price ORDER BY stock_rate LIMIT 10')
-top_10_low_records = cursor.fetchall()
-
-print("\nTop 10 Records with Lowest stock_rate:")
-for record in top_10_low_records:
-    values = [str(value) for value in record[1:]]
-    print(values)
 
 while True:
     try:
@@ -113,5 +113,3 @@ while True:
         print(f"An error occurred: {str(e)}")
 
     time.sleep(update_interval)
-
-
