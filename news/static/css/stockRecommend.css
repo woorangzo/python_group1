@@ -1,0 +1,16 @@
+.table thead tr th {
+    text-align: center;
+}
+
+.table tbody tr td {
+    text-align: center;
+}
+
+.table tbody tr td button {
+    text-align: right !important;
+}
+
+.col-xl {
+    float: 0 0 auto;
+    width: 100%;
+}

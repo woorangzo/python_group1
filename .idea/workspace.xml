@@ -4,25 +4,161 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[ver 0.8] merge 전 데이터 백업">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-20__6_22__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-20_오후_6_22_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__10_28__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22__9_17__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오전_9_17_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-22_오후_10_28_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23__9_07__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_2023-11-23_오전_9_07_[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[Ver 1.4] 크롤링 오류 수정 / 중복 값 제거 수정">
+      <change afterPath="$PROJECT_DIR$/news/static/css/analyze.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/css/stockRecommend.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/css/thema.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/analyze.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/calc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/stockRecommend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/thema.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/validation_join.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/js/validation_login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/static/pic/stock_plot.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/templates/news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/templates/newsDetail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dataset/APIData.py" beforeDir="false" afterPath="$PROJECT_DIR$/Dataset/APIData.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/migrations/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/img/testimonial-1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/img/testimonial-1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/img/testimonial-2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/img/testimonial-2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/img/user.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/img/user.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/img/woorangzo.png" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/img/woorangzo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/chart/chart.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/chart/chart.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/easing/easing.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/easing/easing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/easing/easing.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/easing/easing.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/ajax-loader.gif" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/ajax-loader.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.carousel.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.carousel.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.carousel.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.theme.default.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.theme.default.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.theme.default.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.theme.default.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.theme.green.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.theme.green.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.theme.green.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.theme.green.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/assets/owl.video.play.png" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/assets/owl.video.play.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/owl.carousel.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/owl.carousel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/owlcarousel/owl.carousel.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/owlcarousel/owl.carousel.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/js/moment-timezone.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/js/moment-timezone.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/js/moment.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/js/moment.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/waypoints/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/waypoints/links.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/lib/waypoints/waypoints.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/lib/waypoints/waypoints.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_accordion.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_accordion.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_badge.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_badge.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_breadcrumb.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_breadcrumb.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_button-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_button-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_card.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_card.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_close.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_close.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_containers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_containers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_dropdown.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_dropdown.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_functions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_functions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_mixins.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_modal.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_modal.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_nav.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_nav.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_navbar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_navbar.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_offcanvas.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_offcanvas.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_popover.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_popover.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_progress.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_progress.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_root.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_root.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_spinners.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_spinners.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_tables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_tables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_toasts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_toasts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_tooltip.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_tooltip.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_transitions.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_transitions.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_type.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_type.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/bootstrap-grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/bootstrap-grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/bootstrap-reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/bootstrap-reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/bootstrap-utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/bootstrap-utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/bootstrap.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/bootstrap.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_floating-labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_floating-labels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_form-check.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_form-check.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_form-control.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_form-control.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_form-range.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_form-range.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_form-select.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_form-select.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_form-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_form-text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_input-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_input-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_labels.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_labels.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/forms/_validation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/forms/_validation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_colored-links.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_colored-links.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_position.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_position.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_ratio.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_ratio.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_stretched-link.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_stretched-link.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_text-truncation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_text-truncation.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/helpers/_visually-hidden.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/helpers/_visually-hidden.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_alert.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_alert.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_border-radius.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_border-radius.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_box-shadow.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_box-shadow.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_breakpoints.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_breakpoints.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_buttons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_buttons.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_caret.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_caret.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_clearfix.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_clearfix.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_color-scheme.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_color-scheme.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_container.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_container.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_deprecate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_deprecate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_forms.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_forms.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_gradients.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_gradients.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_list-group.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_list-group.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_lists.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_lists.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_pagination.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_pagination.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_reset-text.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_reset-text.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_resize.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_resize.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_table-variants.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_table-variants.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_text-truncate.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_text-truncate.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_transition.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_transition.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_utilities.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_utilities.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/mixins/_visually-hidden.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/mixins/_visually-hidden.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/utilities/_api.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/utilities/_api.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/static/scss/bootstrap/scss/vendor/_rfs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/news/static/scss/bootstrap/scss/vendor/_rfs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/templates/accounts/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/news.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/newsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/newsDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crawling.py" beforeDir="false" afterPath="$PROJECT_DIR$/crawling.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/woorangzo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -68,32 +204,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;hansam&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/gb_khn_6030/jango/woorangzo&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "sehwan",
+    "last_opened_file_path": "C:/Users/sehwan/Desktop/woorangzo/news",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\sehwan\Desktop\woorangzo\news" />
       <recent name="D:\woorangzo\accounts\templates\accounts" />
       <recent name="D:\woorangzo\single_page" />
       <recent name="D:\woorangzo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sehwan\Desktop\woorangzo\news\templates" />
       <recent name="D:\woorangzo\woorangzo" />
       <recent name="D:\woorangzo\dashmin-1.0.0\templates" />
       <recent name="D:\woorangzo\dashmin-1.0.0\static" />
       <recent name="D:\woorangzo\dashmin\static" />
-      <recent name="D:\woorangzo" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.APIData">
+  <component name="RunManager" selected="Python.crawling">
     <configuration name="APIData" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="woorangzo" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -106,6 +248,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/APIData.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -127,7 +270,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Dataset/StockTable.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="crawling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="woorangzo" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/crawling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -138,6 +304,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.crawling" />
         <item itemvalue="Python.APIData" />
         <item itemvalue="Python.StockTable" />
         <item itemvalue="Python.StockTable" />
@@ -152,6 +319,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700183712093</updated>
+      <workItem from="1701655447556" duration="48984000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <option name="closed" value="true" />
@@ -201,8 +369,19 @@
       <option name="project" value="LOCAL" />
       <updated>1701217836357</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="[Ver 1.4] 크롤링 오류 수정 / 중복 값 제거 수정">
+      <option name="closed" value="true" />
+      <created>1701666696195</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701666696195</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -230,6 +409,23 @@
     <MESSAGE value="[Ver 0.1]메인화면 사이드바 생성, 관련주 업종 수정" />
     <MESSAGE value="ai추천 페이지 추가" />
     <MESSAGE value="[ver 0.8] merge 전 데이터 백업" />
-    <option name="LAST_COMMIT_MESSAGE" value="[ver 0.8] merge 전 데이터 백업" />
+    <MESSAGE value="[Ver 1.4] 크롤링 오류 수정 / 중복 값 제거 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="[Ver 1.4] 크롤링 오류 수정 / 중복 값 제거 수정" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/single_page/urls.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/woorangzo$StockTable.coverage" NAME="StockTable Coverage Results" MODIFIED="1700637673249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
+    <SUITE FILE_PATH="coverage/woorangzo$CategoryInfo.coverage" NAME="CategoryInfo Coverage Results" MODIFIED="1700794579890" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
+    <SUITE FILE_PATH="coverage/woorangzo$StockInfo.coverage" NAME="StockInfo Coverage Results" MODIFIED="1700637670269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Dataset" />
+    <SUITE FILE_PATH="coverage/woorangzo$crawling.coverage" NAME="crawling Coverage Results" MODIFIED="1701674817011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

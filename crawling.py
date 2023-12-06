@@ -93,7 +93,7 @@ def crawl_issue(keywords):
                         issue_news_office = issue_news.find('a', class_='info press').get_text()  # 언론사
                         issue_news_title = issue_news.find('a', class_='news_tit')['title']  # 뉴스 제목
                         issue_news_content = issue_news.find('a', class_='api_txt_lines dsc_txt_wrap').get_text()[
-                                             0:80]  # 뉴스 내용
+                                             0:80]+'...'  # 뉴스 내용
                         if (news_id,) not in prev_data:
                             data.append((news_id, issue_news_office, issue_news_title, issue_news_content, keyword))
                     except IndexError:
@@ -127,7 +127,7 @@ def update_issue():
     data = []
     for keyword in keywords:
         data.append(keyword[0])
-    print(data)
+
     result = crawl_issue(data)
     return crawl_news_detail(result)
 

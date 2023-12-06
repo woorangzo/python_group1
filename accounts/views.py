@@ -100,9 +100,6 @@ def stockRecommend(request):
     return render(request, 'accounts/stockRecommend.html')
 
 
-def news(request):
-    return render(request, 'accounts/news.html')
-
 def analyze(request):
     return render(request, 'accounts/analyze.html')
 
@@ -303,8 +300,3 @@ def plot_get_stock_prices(request):
                     'trade_price': data['close_price'].tolist(),  # 종가를 사용
                     'change_rate': data['stock_rate'].tolist(),
                 })
-
-
-
-def newsDetail(request):
-    return render(request, 'accounts/newsDetail.html')
