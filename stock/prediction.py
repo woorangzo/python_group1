@@ -10,6 +10,11 @@ import matplotlib.pyplot as plt
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 
+from matplotlib import font_manager, rc
+font_path = "C:/Windows/Fonts/malgun.TTF"
+font = font_manager.FontProperties(fname=font_path).get_name()
+rc('font', family=font)
+
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # TensorFlow의 DNN 옵션을 비활성화
 
 # LSTM 모델 학습을 위한 함수 정의
@@ -44,24 +49,20 @@ conn = pymysql.connect(
 )
 
 # 데이터 초기화
-# stock_predictions 테이블 초기화
-truncate_query = "TRUNCATE TABLE stock_predictions"
+# stock_prediction 테이블 초기화
+truncate_query = "TRUNCATE TABLE stock_prediction"
 cursor = conn.cursor()
 cursor.execute(truncate_query)
 conn.commit()
 
-# stock_info 테이블에서 종목명 조회
-# 종목 무작위 선택
+# stock_info 테이블에서 모든 종목명 조회
 all_stock_query = """
     SELECT DISTINCT stock_nm
     FROM stock_info
 """
 all_stock_names = pd.read_sql(all_stock_query, conn)['stock_nm'].tolist()
-random.seed(42)  # 일정한 결과를 얻기 위해 시드 설정
-selected_stock_names = random.sample(all_stock_names, 5) # 종목 무작위 선택 개수
+selected_stock_names = all_stock_names
 
-# 모든 종목에 대한 가격 변동률 정보 저장할 리스트
-all_stock_changes = []
 
 # 최근 1년치 데이터 선택 / 1년전 날짜 구하기
 recent_data_start = pd.Timestamp.now() - pd.DateOffset(years=1)
@@ -85,6 +86,9 @@ for stock_name in selected_stock_names:
     df = pd.read_sql(sql_query, conn)
     df['stock_dt'] = pd.to_datetime(df['stock_dt'])
     df = df.set_index('stock_dt')
+
+    # 결측치 보간
+    df.interpolate(method='linear', inplace=True)
 
     # 종가를 사용하여 스케일링 수행
     closing_prices = df['close_price'].values.reshape(-1, 1)
@@ -121,20 +125,23 @@ for stock_name in selected_stock_names:
 
     # 이미지를 파일로 저장
     plt.figure(figsize=(10, 6))
-    plt.plot(df.index, df['close_price'], label='Actual Close Price')
+    plt.plot(df.index, df['close_price'], label='종가')
 
     next_day = df.index[-1] + pd.DateOffset(1)
 
-    plt.plot(next_day, predicted_close, 'ro', label='Predicted Close Price')  # 예측값 빨간 동그라미로 표시
-    plt.xlabel('Date')
-    plt.ylabel('Close Price')
-    plt.title(f"Stock Price Prediction for {stock_name}")
+    plt.plot(next_day, predicted_close, 'ro', label='다음날 예측 종가')  # 예측값 빨간 동그라미로 표시
+    plt.axhline(y=last_actual_close, color='red', linestyle='--', label='마지막 종가')  # 마지막 종가 빨간 선(가로)으로 표시
+    # plt.plot([df.index[-1], next_day], [last_actual_close, predicted_close], 'r--')  # 선으로 마지막 종가와 예측값 연결
+
+    plt.xlabel('날짜')
+    plt.ylabel('주가')
+    plt.title(f"{stock_name}")
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
 
-    absolute_path = r'C:\kch\python\woorangzo\stock\stock\static\img'
-    graph_filename = os.path.join(absolute_path, f"{stock_name}_prediction.png")
+    original_absolute_path = r'C:\kch\python\woorangzo\stock\stock\static\img'
+    graph_filename = os.path.join(original_absolute_path, f"{stock_name}_prediction.png")
     plt.savefig(graph_filename)
     plt.close()  # 각 그래프 생성 후 닫기
 
@@ -142,11 +149,11 @@ for stock_name in selected_stock_names:
     with open(graph_filename, 'rb') as file:
         binary_data = file.read()
 
-    # stock_predictions 테이블에 한 번씩만 저장
+    # stock_prediction 테이블에 한 번씩만 저장
     cursor = conn.cursor()
 
     insert_query = """
-        INSERT INTO stock_predictions (stock_nm, stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_path)
+        INSERT INTO stock_prediction (stock_nm, stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_path)
         VALUES (%s, %s, %s, %s, %s, %s, %s)
     """
     cursor.execute(insert_query, (
@@ -155,30 +162,6 @@ for stock_name in selected_stock_names:
 
     # 커밋
     conn.commit()
-
-# 가격 변동률 기준 내림차순으로 정렬
-sorted_stock_changes = sorted(all_stock_changes, key=lambda x: x[4], reverse=True)
-
-# 모든 종목 정보를 데이터베이스에 저장
-for stock in sorted_stock_changes:
-    stock_name, last_actual_stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_filename = stock
-
-    # SQL INSERT 문 실행
-    insert_query = f"""
-                    INSERT INTO stock_predictions (stock_nm, stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_path)
-                    VALUES ('{stock_name}', '{last_actual_stock_cd}', {last_actual_close}, {predicted_close}, {change_rate}, {last_actual_volume}, '{graph_filename}')
-                """
-
-    # 쿼리 실행
-    cursor.execute(insert_query)
-
-# 커밋
-conn.commit()
-
-# 모든 종목 정보
-for idx, stock in enumerate(sorted_stock_changes, start=1):
-    stock_name, last_actual_stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_filename = stock
-conn.close()
 
 # 모든 종목의 학습 및 예측이 완료된 후, n개 종목의 학습 예측 완료 메시지 출력
 n = len(selected_stock_names)

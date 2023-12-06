@@ -14,7 +14,7 @@ def stock_recommendation_view(request):
     cursor = conn.cursor()
     top_5_stocks_query = """
         SELECT stock_nm, stock_cd, last_actual_close, predicted_close, change_rate, last_actual_volume, graph_path
-        FROM stock_predictions
+        FROM stock_prediction
         ORDER BY change_rate DESC
         LIMIT 5
     """
