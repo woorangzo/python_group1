@@ -1,0 +1,240 @@
+body {
+    background-color: #fff;
+}
+
+.wrap5 {
+    position: relative;
+    width: 100%;
+    min-height: 650px;
+}
+
+.container_ww {
+    position: relative;
+    min-height: 650px;
+    clear: both;
+}
+
+.container_gg {
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0 0 30px;
+}
+
+.itemTop {
+    position: relative;
+    min-height: 57px;
+    margin-top: 30px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.itemTop > .itemInfo {
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.dataname {
+    display: inline-block;
+}
+
+.dataname span {
+    font-size: 36px;
+    color: #333;
+    font-weight: 700;
+    text-indent: 5px;
+}
+
+.dataprice {
+    display: inline-block;
+    padding-left: 18px;
+}
+
+.dataprice span {
+    font-size: 33px;
+    font-weight: 700;
+}
+
+.dn {
+    color: #447aec !important;
+}
+
+.dataper {
+    display: inline-block;
+    padding-left: 16px;
+}
+
+.dataper span {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.datatime {
+    display: inline-block;
+    padding-left: 10px;
+}
+
+.datatime span {
+    font-size: 13px;
+    color: #666;
+}
+
+.content_ii {
+    width: 1200px;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    margin: 50px 0 0;
+    padding: 0 20px;
+
+}
+
+.sub-content {
+    position: relative;
+    width: 100%;
+    float: left;
+    clear: both;
+}
+
+.sub-section {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.1);
+    padding: 40px 35px 45px;
+    overflow: hidden;
+}
+
+.mt-0 {
+    margin-top: 0 !important;
+}
+
+.aisignal_w {
+    display: block;
+}
+
+.tada-top {
+    display: block;
+    overflow: hidden;
+}
+
+.dataleft {
+    position: relative;
+    display: block;
+    width: calc(40% - 20px);
+    float: left;
+}
+
+.infodata {
+    display: block;
+    float: left;
+}
+
+.mt-10 {
+    margin-top: 10px !important ;
+}
+
+.info-list {
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+.info-list div {
+    display: block;
+    width: 355px;
+    height: 90px;
+    border-bottom: 1px solid #dfdfdf;
+    text-align: center;
+    float: left;
+}
+
+.info-list div strong {
+    margin-top: 20px;
+    display: block;
+    font-size: 16px;
+    line-height: 55px;
+    font-weight: 700;
+    float: right;
+}
+
+.info-list div span {
+    margin-top: 20px;
+    display: block;
+    font-size: 14px;
+    line-height: 55px;
+    float: left;
+    font-weight: 300;
+    color: #333;
+}
+
+.up {
+    color: #fc2f2f !important;
+}
+
+.dataright {
+    position: relative;
+    display: block;
+    width: calc(60% - 20px);
+    float: right;
+}
+
+.tabl_www {
+    margin-top: 30px;
+    display: block;
+    width: 100%;
+    float: left;
+}
+
+.table-nboder {
+    width: 1000px;
+    border-top: 0;
+    vertical-align: middle;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.info5 {
+    background: #dfdfdf;
+}
+
+
+
+.tabl_www tbody tr th {
+    border-left: 1px solid #999;
+    border-right: 1px solid #999;
+    border-top: 1px solid #999;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+
+.tabl_www tbody tr td {
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    padding: 7px 3px 8px;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.42857143;
+    vertical-align: top;
+}
+
+.bpboder th {
+    border-bottom: 1px solid #999;
+}
+
+.bpboder td {
+    border-bottom: 1px solid #999;
+}
