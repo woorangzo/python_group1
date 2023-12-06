@@ -3,7 +3,7 @@ from django.db import models
 
 class CustomUser(AbstractUser):
     phone = models.CharField(max_length=15, unique=True)
-    realname = models.CharField(max_length=20)
+    member_nm = models.CharField(max_length=20)
     email = models.EmailField(max_length=255, null=True, blank=True)
     regisNum = models.CharField(max_length=14)  # 주민등록번호 마스킹
     created_at = models.DateTimeField(auto_now_add=True)
