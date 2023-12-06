@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'single_page',
 
     'kpi_app',
-    'cachalot'
+    'news',
     'stock',
 ]
 

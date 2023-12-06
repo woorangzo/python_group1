@@ -2,7 +2,8 @@
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
-from .views import join, plot_stock_prices, plot_get_stock_prices
+from .views import join, plot_stock_prices, stock_compare
+
 
 
 
@@ -19,23 +20,18 @@ urlpatterns = [
          name="navbar"),
     path('mypage/', views.mypage),
     path('issue/', views.issue),
-    # path('stockRecommend/', views.stockRecommend),
     path('analyze/', views.analyze),
     path('theme/', views.theme),
     path('calc/', views.calc),
     path('blank/', views.blank),
     path('join/', join, name="join"),
-    path('detail/', views.detail),
+    # path('detail/', views.detail),
     path('', views.mainview, name='mainview'),
     path('plot_stock_prices/', plot_stock_prices, name='plot_stock_prices'),
-    # path('plot_get_stock_prices/', plot_get_stock_prices, name='plot_get_stock_prices'),
-    path('plot_get_stock_prices/', plot_get_stock_prices, name='plot_get_stock_prices'),
-    # path('plot_industry_stock_prices/', plot_industry_stock_prices, name='plot_industry_stock_prices'),
     path('', views.mainview),
     path('blank/', views.blank),
     path('mypage/', views.mypage),
     path('relatedStocks/', views.relatedStocks),
-    path('stockRecommend/', views.stockRecommend),
     path('analyze/', views.analyze),
     path('relatedStocks/', views.relatedStocks, name='relatedStocks'),
     path('stock_compare', stock_compare, name='stock_compare')
