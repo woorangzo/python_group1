@@ -80,16 +80,19 @@
                 </div>
 
                 <div class="col-md-3 text-end">
-                    {% if user.is_authenticated %}
-                    <!-- 회원 -->
-                        <a  href="/accounts/mypage/" role="button" style="font-size: 15px;">{{ user.username }}님</a>
-                    <!-- 마이페이지 버튼 -->
-                        <a href="/accounts/mypage/" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
+                    {% if request.user.is_authenticated %}
+                        <!-- 회원 -->
+                        <a href="{% url 'accounts:mypage' %}" role="button" style="font-size: 15px;">{{ request.user.username }}님</a>
+                        <!-- 마이페이지 버튼 -->
+                        <a href="{% url 'accounts:mypage' %}" class="btn btn-outline-primary me-2" style="font-size: 13px;">마이페이지</a>
+                        <!-- 로그아웃 버튼 -->
+                        <a href="{% url 'accounts:logout' %}" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그아웃</a>
                     {% else %}
-                    <!-- 회원가입 버튼 -->
-                        <a href="/accounts/join/" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
-                    <!-- 로그인 버튼 -->
-                        <a href="/accounts/login/" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
+                        <!-- 회원가입 버튼 -->
+                        <a href="{% url 'accounts:join' %}" class="btn btn-outline-primary me-2" style="font-size: 13px;">회원가입</a>
+                        <!-- 로그인 버튼 -->
+                        <a href="{% url 'accounts:login' %}" class="btn btn-outline-primary me-2" style="font-size: 13px;">로그인</a>
+
                     {% endif %}
                 </div>
            </div>

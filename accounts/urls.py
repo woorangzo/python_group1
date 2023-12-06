@@ -1,4 +1,3 @@
-
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
@@ -6,6 +5,8 @@ from .views import join, plot_stock_prices, stock_compare
 
 
 
+from .views import custom_login, custom_logout, custom_join, mypage, relatedStocks, issue, stockRecommend, news, \
+    analyze, theme, calc, index, update_user
 
 app_name = 'accounts'
 

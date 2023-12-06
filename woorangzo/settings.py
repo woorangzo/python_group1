@@ -24,8 +24,6 @@ CACHES = {
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# MEDIA_ROOT = BASE_DIR / 'woorangzo'
-# MEDIA_URL = '/woorangzo/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -37,7 +35,6 @@ SECRET_KEY = 'django-insecure-5k_i@q6_wp7^sa^can9613@tea4qw_2t_!-e7(@d4!@pu2zs+9
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 
 # Application definition
@@ -67,6 +64,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_SECURE = True
 ROOT_URLCONF = 'woorangzo.urls'
 
 TEMPLATES = [
@@ -98,10 +97,16 @@ DATABASES = {
         'NAME': 'woorangzo',
         'USER': 'woorangzo',
         'PASSWORD': '1234',
-        'HOST': 'localhost', # MySQL 서버 호스트
-        'PORT': '3306', # MySQL 포트 번호
+        'HOST': 'localhost',  # MySQL 서버 호스트
+        'PORT': '3306',  # MySQL 포트 번호
+        'OPTIONS': {
+            'init_command': 'SET sql_mode="STRICT_TRANS_TABLES"',
+        },
     }
 }
+
+AUTH_USER_MODEL = 'accounts.CustomUser'
+
 
 
 # Password validation
@@ -128,6 +133,9 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
+LOGIN_REDIRECT_URL = 'accounts:index'
+LOGOUT_REDIRECT_URL = 'accounts:login'
+
 TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
@@ -138,10 +146,10 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    'D:\\woorangzo\\static',
+    'D:\woorangzo\static',
 ]
 
 # Default primary key field type

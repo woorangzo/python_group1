@@ -1,22 +1,27 @@
 from django import forms
-from django.core.exceptions import ValidationError
-from django.core.validators import MaxValueValidator
-from accounts.models import Member
+from accounts.models import CustomUser
+
 
 class JoinForm(forms.Form):
-    member_id = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    member_pw = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    member_repw = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    phone = forms.CharField(max_length=15, required=False, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    username = forms.CharField(max_length=20, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    email = forms.EmailField(required=False, widget=forms.TextInput(attrs={'class': 'join-form'}))
-    jumin = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class': 'join-form'}))
+    member_id = forms.CharField(max_length=100)
+    member_pw = forms.CharField(max_length=100)
+    member_repw = forms.CharField(max_length=100)
+    phone = forms.CharField(max_length=15, required=False)
+    member_nm = forms.CharField(max_length=20)
+    email = forms.EmailField(required=False)
+    regisNum = forms.CharField(max_length=100)
 
-    def clean_name(self):
-        member_id = self.cleaned_data['member_id']
-        if Member.objects.filter(member_id=member_id).exists():
-            raise ValidationError("이미 사용 중인 아이디입니다.")
-        return member_id
+
+class CustomUserUpdateForm(forms.ModelForm):
+    member_pw = forms.CharField(max_length=100, required=False)
+    member_repw = forms.CharField(max_length=100)
+    email = forms.EmailField(required=False,initial='')
+    phone = forms.CharField(max_length=15, required=False,initial='')
+
+
+    class Meta:
+        model = CustomUser
+        fields = ['member_pw', 'phone', 'email']
 
     def clean(self):
         cleaned_data = super().clean()
