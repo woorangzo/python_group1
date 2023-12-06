@@ -6,13 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="44ce3f39-f0a4-4721-9d09-373827d0e5d3" name="Changes" comment="[Ver 1.4] 취합">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accounts/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/single_page/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/single_page/templates/accounts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/analyze.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/relatedStocks.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/templates/accounts/stockRecommend.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/news/templates/news.html" beforeDir="false" afterPath="$PROJECT_DIR$/news/templates/news.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/alltest10.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/stock/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/stock/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/woorangzo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/woorangzo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news/templates/newsDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/news/templates/newsDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/single_page/templates/accounts/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/single_page/templates/accounts/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,7 +250,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701826044932</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="[Ver 1.4] 취합">
+      <option name="closed" value="true" />
+      <created>1701827885276</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701827885276</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
