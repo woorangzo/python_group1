@@ -1,23 +1,16 @@
-import random
-
-from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
+import os
+import pandas as pd
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import PasswordChangeForm
-from django.core.checks import messages
 from django.http import JsonResponse
-from django.contrib.auth.models import User
 from django.contrib.auth.hashers import check_password, make_password
-from django.contrib import auth
-from django.urls import reverse
-from django.views.generic import TemplateView
-from django.http import HttpResponse
 import mysql.connector
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
+from matplotlib import pyplot as plt
+from woorangzo import settings
 from .forms import JoinForm, CustomUserUpdateForm
-from mysql.connector import Error
 from django.urls import reverse
 from .models import CustomUser
-
 
 def custom_join(request):
     if request.method == 'POST':
@@ -60,9 +53,6 @@ def custom_login(request):
 def custom_logout(request):
     logout(request)
     return redirect('/')
-
-
-from django.contrib.auth.hashers import make_password
 
 
 @login_required
@@ -122,99 +112,12 @@ def analyze(request):
 def theme(request):
     return render(request, 'accounts/theme.html')
 
+
 def calc(request):
     return render(request, 'accounts/calc.html')
 
-def get_price(code, name, n):
-    url = f'http://finance.daum.net/api/charts/A{code}/days?limit={n}&adjusted=true'
-
-    headers = {
-        'Accept': 'application/json, text/plain, */*',
-        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'
-    }
-
-    headers['Referer'] = f'http://finance.daum.net/quotes/A{code}'
-
-    r = requests.get(url, headers=headers)
-    data = json.loads(r.text)
-
-    # 데이터가 없으면 None 반환
-    if 'data' not in data:
-        return None
-
-    df = pd.DataFrame(data['data'])
-    df.index = pd.to_datetime(df['candleTime'])
-
-    return df
-
-def plot_stock_prices(request):
-    stock_info_list = []
-
-    if request.method == 'POST':
-        form = StockInputForm(request.POST)
-        if form.is_valid():
-            # Split the input codes and names, and remove leading/trailing whitespaces
-            codes = [item.strip() for item in form.cleaned_data['codes'].split(',')]
-            names = [item.strip() for item in form.cleaned_data['names'].split(',')]
-
-            if len(codes) != len(names):
-                return render(request, 'accounts/plot_stock_prices.html', {'plot_path': None, 'error': 'Mismatched number of codes and names.'})
-
-            n = 50
-            plt.figure(figsize=(10, 6))
-
-            for code, name in zip(codes, names):
-                data = get_price(code, name, n)
-
-                if data is not None:
-                    returns = data['changeRate']
-                    plt.plot(data.index, returns, label=name)
-
-                    stock_info_list.append({
-                        'code': code,
-                        'name': name,
-                        'change_rate': data['changeRate'].tolist(),
-
-                    })
-
-                    # 데이터를 모델에 저장
-                    for index, row in data.iterrows():
-                        StockData.objects.create(
-                            code=code,
-                            name=name,
-                            date=index,
-                            change_rate=row['changeRate'],
-
-                        )
-
-            plt.title('주식 등락률 비교')
-            plt.xlabel('일자')
-            plt.ylabel('등락률(%)')
-            plt.axhline(0, color='black', linestyle='--', linewidth=1, label='Zero Line')
-            plt.legend()
-
-            y_ticks = [i / 100 for i in range(-10, 11, 1)]
-            plt.yticks(y_ticks)
-
-            plt.gca().xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
-
-            # 그래프 저장
-            plot_path = "./accounts/static/pic/stock_plot.png"
-
-            # 디렉토리 생성
-            os.makedirs(os.path.dirname(plot_path), exist_ok=True)
-
-            plt.savefig(plot_path)
-            plt.close()
-
-            return render(request, 'accounts/plot_stock_prices.html', {'plot_path': plot_path,
-                                                                       'stock_info_list': stock_info_list,})
-
-    else:
-        form = StockInputForm()
-
-
-    return render(request, 'accounts/plot_stock_prices.html', {'form': form})
+def login_message_required(args):
+    pass
 
 def stock_compare(request):
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest' and request.method == 'GET':
@@ -239,8 +142,6 @@ def stock_compare(request):
             data = {'status': 'error', 'message': '유효하지 않은 업종입니다.'}
             return JsonResponse(data)
 
-def login_message_required(args):
-    pass
         # 선택한 날짜에 해당하는 업종에서 상위 3개 종목 가져오기
         cursor.execute('''
             SELECT s.stock_cd, s.stock_rate, si.stock_nm, s.stock_volume, s.low_price, s.high_price

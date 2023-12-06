@@ -33,17 +33,16 @@
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
 
-<style>
+    <style>
         .up {
-        color: #fc2f2f !important;
-    }
-</style>
+            color: #fc2f2f !important;
+        }
+    </style>
 
 </head>
 
 <body style="margin:0 0;">
 <div class="container-xxl position-relative bg-white d-flex p-0">
-    <!-- Spinner Start -->
     {% include 'accounts/header.html' %}
 
     <div class="container-fluid">
@@ -108,21 +107,9 @@
         </div>
     </div>
 
-    <!-- Sign Up End -->
 
 </div>
-<footer>
-    <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-        <p>&copy; 2023 Company, Inc. All rights reserved.</p>
-    </div>
-</footer>
-<!-- Footer End -->
-
-<!-- Content End -->
-
-
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+{% include 'accounts/footer.html' %}
 </div>
 
 <!-- JavaScript Libraries -->
