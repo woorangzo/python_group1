@@ -39,8 +39,4 @@ urlpatterns = [
     path('analyze/', views.analyze),
     path('relatedStocks/', views.relatedStocks, name='relatedStocks'),
     path('stock_compare', stock_compare, name='stock_compare')
-
 ]
-
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

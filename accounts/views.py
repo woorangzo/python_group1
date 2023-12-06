@@ -1,29 +1,13 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth.models import User
 from django.contrib import auth
-from django.urls import reverse
-import matplotlib.dates as mdates
-
-
-from django.views.generic import TemplateView
-
 from accounts.forms import JoinForm
-
-# 새로추가
-from django.db.models import F, Window
-from django.db.models.functions import Rank
 from django.http import JsonResponse
-
-from io import BytesIO
-import base64
 from django.conf import settings
-
-
 from .forms import StockInputForm
 from .models import Member
 import mysql.connector
 import matplotlib.pyplot as plt
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
+
 from matplotlib import dates as mdates
 import requests
 import json

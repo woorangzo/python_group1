@@ -22,6 +22,6 @@ urlpatterns = [
     path('accounts/', include('accounts.urls', namespace='accounts')),
     path('', include('single_page.urls')),
     path('', include('kpi_app.urls')),  # 앱의 urls.py와 연결
-    path('news/', include('news.urls'))
+    path('news/', include('news.urls')),
     path('stock/', include('stock.urls')),
 ]
