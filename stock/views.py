@@ -24,7 +24,7 @@ def stock_recommendation_view(request):
     # MySQL 연결 종료
     conn.close()
 
-    # 가져온 정보를 HTML 템플릿에 넘겨줍니다.
+    # 가져온 정보를 HTML 템플릿에 넘겨줍니다..
     context = {
         'top_5_stocks_data': top_5_stocks_data
     }

@@ -160,92 +160,21 @@
                             <td>{{ stock.4 }}%</td>
                             <td>{{ stock.5 }}</td>
                         </tr>
-                        <!-- 그래프 -->
-                        <tr>
-                            <td colspan="6">
-                                <div class="graph-div" id="graph{{ forloop.counter }}" style="display: none;">
-                                    <img src="{{ stock.6 }}" alt="Stock Graph">
-                                </div>
-                            </td>
-                        </tr>
-                        <!-- 그래프 -->
                         {% endfor %}
                     </tbody>
                 </table>
             </div>
-            <div class="container-fluid p-4 px-4" id="chart1"  style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-4 px-4" id="chart2" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-salestwo"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-4 px-4" id="chart3" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales3"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-4 px-4" id="chart4" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales4"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-4 px-4" id="chart5" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales5"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container-fluid p-4 px-4" id="chart6" style="display: none;">
-                <div class="row g-4">
-                    <div class="col-sm-12 col-xl" >
-                        <div class="bg-light text-center rounded p-4" >
-                            <div class="d-flex align-items-center justify-content-between mb-4" >
-                                <h5 class="mb-0">관련주 비교</h5>
-                            </div>
-                            <canvas id="worldwide-sales6"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
+<!--        <div class="container-fluid p-4">-->
+<!--            <h3 style="color: #009CFF;">그래프</h3>-->
+<!--            {% for stock in top_5_stocks_data %}-->
+<!--                <div>-->
+<!--                    &lt;!&ndash; 각 주식에 대한 그래프 표시 &ndash;&gt;-->
+<!--                    <h4>{{ stock.0 }} 그래프</h4>-->
+<!--                    <img src="{{ stock.6 }}" alt="{{ stock.0 }} 그래프" width="400">-->
+<!--                </div>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
     </div>
     <footer>
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top" style="margin-left: -15rem; margin-right: -19rem">
@@ -299,23 +228,7 @@
     });
 </script>
 
-<script>
-    $(document).ready(function () {
-        $(".view-button").click(function () {
-            var index = $(this).attr('id').substr(-1);
-            $("#graph" + index).show();
-            $("#button" + index).hide();
-            $("#cbutton" + index).show();
-        });
 
-        $(".close-button").click(function () {
-            var index = $(this).attr('id').substr(-1);
-            $("#graph" + index).hide();
-            $("#button" + index).show();
-            $("#cbutton" + index).hide();
-        });
-    });
-</script>
 
 </body>
 

@@ -15,7 +15,7 @@ font_path = "C:/Windows/Fonts/malgun.TTF"
 font = font_manager.FontProperties(fname=font_path).get_name()
 rc('font', family=font)
 
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # TensorFlow의 DNN 옵션을 비활성화
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0' # TensorFlow의 DNN 옵션을 비활성화.
 
 # LSTM 모델 학습을 위한 함수 정의
 def train_lstm_model(data):
