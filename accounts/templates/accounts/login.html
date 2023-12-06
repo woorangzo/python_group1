@@ -48,7 +48,12 @@
 .up {
     color: #fc2f2f !important;
 }
+    [name="member_id"] {
+    display: inline-block;
+    margin-left: 100px;
+    width: 100%;
 
+}
 </style>
 </head>
 
@@ -65,21 +70,24 @@
                                 </a>
                                 <h4>로그인</h4>
                             </div>
-                            <form method="post" action="{% url 'accounts:login' %}">
-                                {% csrf_token %}
-                                <div class="form-floating mb-3">
-                                    <input type="text" class="form-control" id="floatingText" name="ID">
-                                    <label for="floatingText">ID</label>
-                                    <div id="idError" class="error-message"></div>
-                                </div>
-                                <div class="form-floating mb-4">
-                                    <input type="password" class="form-control" id="floatingPassword" name="Password">
-                                    <label for="floatingPassword">Password</label>
-                                    <div id="passwordError" class="error-message"></div>
-                                </div>
-                                <button type="submit" class="btn btn-primary py-3 w-100 mb-4" onclick="return validateLoginForm()">로그인</button>
-                                <p class="text-center mb-0">계정이 없으신가요? 디질래? <a href="{% url 'accounts:join' %}">회원가입</a></p>
-                            </form>
+                            <form method="post" onsubmit="return validateLoginForm()">
+                            {% csrf_token %}
+
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" name="member_id" id="floatingText" placeholder="ID">
+                                <label for="floatingText">ID</label>
+                                <div id="idError" class="error-message"></div>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" name="password" id="floatingPassword"
+                                       placeholder="Password">
+                                <label for="floatingPassword">Password</label>
+                                <div id="passwordError" class="error-message"></div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4">로그인</button>
+                        </form>
                         </div>
                     </div>
                 </div>

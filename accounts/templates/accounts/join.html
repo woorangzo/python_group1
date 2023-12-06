@@ -32,7 +32,6 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
-
 </head>
 
 <body style="margin:0 0;">
@@ -49,7 +48,7 @@
                         <h4>회원가입</h4>
                     </div>
 
-                    <form method="post" action="{% url 'accounts:join' %}" class="mb-4">
+                   <form method="post" action="{% url 'accounts:join' %}" class="mb-4">
                         {% csrf_token %}
 
                         <div class="mb-3">
@@ -68,8 +67,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="{{ form.username.id_for_label }}">이름</label>
-                            {{ form.username }}
+                            <label for="{{ form.member_nm.id_for_label }}">이름</label>
+                            {{ form.member_nm }}
                         </div>
 
                         <div class="mb-3">
@@ -93,7 +92,7 @@
                         {% endif %}
 
                         <p class="text-center mb-0" style="font-size: 14px;">이미 계정이 있으신가요? <a
-                                 href="{% url 'accounts:login' %}" class="text-primary">로그인</a></p>
+                                href="{% url 'accounts:login' %}" class="text-primary">로그인</a></p>
                     </form>
                 </div>
             </div>
